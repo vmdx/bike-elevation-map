@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?sensor=false">
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(37.770443,-122.448172),
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+
+        $.getJSON('data/sf_data.json', function(intersections) {
+            $.getJSON('data/sf.json', function(area_data) {
+                console.log(area_data);
+                for (var street in area_data['streets']) {
+                    console.log(street);
+
+                    for (var index in area_data['streets'][street]) {
+                        index = parseInt(index);
+                        console.log(area_data['streets'][street]);
+                        if ((index + 1) >= area_data['streets'][street].length) {
+                            console.log('continued');
+                            continue;
+                        }
+                        var point1 = intersections[area_data['streets'][street][index]];
+                        var point2 = intersections[area_data['streets'][street][index+1]];
+                        console.log(point1, point2);
+                        if (point1 == undefined || point2 == undefined) {
+                            console.log('undefined points, continuing...');
+                            continue;
+                        }
+                        var lineCoordinates = [
+                            new google.maps.LatLng(point1['lat'], point1['lng']),
+                            new google.maps.LatLng(point2['lat'], point2['lng']),
+                        ];
+                        console.log(area_data['streets'][street][index], area_data['streets'][street][index+1]);
+                        console.log(point1['elevation'], point2['elevation'])
+
+                        /* ARROWS POINT DOWNHILL */
+                        var arrowPoint = google.maps.SymbolPath.FORWARD_CLOSED_ARROW;
+                        var arrowLocation = '100%';
+
+                        if (point1['elevation'] < point2['elevation']) { // uphill
+                            arrowPoint = google.maps.SymbolPath.BACKWARD_CLOSED_ARROW;
+                            arrowLocation = '0%';
+                        }
+
+                        var lineSymbol = {
+                          path: arrowPoint
+                          // https://developers.google.com/maps/documentation/javascript/reference#Symbol
+                        };
+
+                        var line = new google.maps.Polyline({
+                          // https://developers.google.com/maps/documentation/javascript/overlays#PolylineOptions
+                          path: lineCoordinates,
+                          icons: [{
+                            icon: lineSymbol,
+                            offset: arrowLocation
+                          }],
+                          strokeColor: "#FF0000",
+                          strokeOpacity: 0.5,
+                          strokeWeight: 4,
+                          map: map
+                        });
+
+                    }
+                }
+                console.log(intersections);
+            });
+        });
+
+      }
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+  </body>
+</html>
+
+<!--
+http://maps.googleapis.com/maps/api/geocode/json?address=1st+and+Folsom,+San+Francisco,+CA&sensor=false
+https://developers.google.com/maps/documentation/geocoding/index#GeocodingResponses
+
+https://developers.google.com/maps/documentation/javascript/geocoding
+
+Get all intersections in the city.
+
+Get all elevations of all intersections in the city.
+https://developers.google.com/maps/documentation/elevation/#ElevationRequests
+http://maps.googleapis.com/maps/api/elevation/json?locations=37.78732780,-122.39444910&sensor=false
+
+Store all that shit.
+Create overlays to map them
+https://developers.google.com/maps/documentation/javascript/overlays#Polylines
+
+# colored and arrowed based on elevation up / down.
+
+HARD: how to make all the overlays? how do you determine "neighboring intersections"?
+    - how about defining via street? i.e. 'Geary Blvd': ['Geary and 1st', 'Geary and 2nd', 'Geary and 3rd', etc.]
+
+DATA:
+    - cities -> set of streets                          === DEFINED BY ME ===
+    - streets -> ordered list of intersections          === DEFINED BY ME ===
+    - intersections -> lat/long/elevation               === SCRAPED AND CACHED ===
+
+for each street:
+    for each ordered intersection in street:
+        get elevation and location info for intersection, next intersection
+        create overlay for intersection -> next intersection
+            (rearrange lineCoordinates so that arrows point downhill)
+
+
+Use of the Google Geocoding API is subject to a query limit of 2,500 geolocation requests per day. (User of Google Maps API for Business may perform up to 100,000 requests per day.)
+
+Web sites and applications using the Google Maps API may at no cost generate up to 25,000 map loads per day for each service.
+
+
+SNAP TO ROAD: two adjacent intersections on a CURVY road?
+    http://stackoverflow.com/questions/10513360/polyline-snap-to-road-using-google-maps-api-v3
+
+Use of the Google Directions API is subject to a query limit of 2,500 directions requests per day. Each directions search will count as a single request against your daily quota when the mode of transportation is driving, walking or cycling. Searching for transit directions will count as 4 requests.
+-->

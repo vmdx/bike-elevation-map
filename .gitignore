@@ -1,0 +1,10 @@
+# Python
+*.py[co]
+
+# Vim
+*.swp
+
+# saved API resources for debugging
+resources/
+data/
+NOTES.md
