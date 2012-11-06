@@ -7,78 +7,168 @@
       body { height: 100%; margin: 0; padding: 0 }
       #map_canvas { height: 100% }
     </style>
+    <!--
     <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?sensor=false">
     </script>
+    -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false"></script>
     <script type="text/javascript">
       function initialize() {
+
+        // See here for features: https://developers.google.com/maps/documentation/javascript/styling#map_features
+        // https://developers.google.com/maps/documentation/javascript/reference#MapTypeStyleFeatureType
+        var styleArray = [
+          {
+            featureType: "all",
+            stylers: [
+              { saturation: -80 }
+            ]
+          },{
+            featureType: "road.arterial",
+            elementType: "geometry",
+            stylers: [
+              { hue: "#00ffee" },
+              { saturation: 50 }
+            ]
+          },{
+            featureType: "poi.business",
+            elementType: "labels",
+            stylers: [
+              { visibility: "off" }
+            ]
+          }
+        ];
+
         var mapOptions = {
           center: new google.maps.LatLng(37.770443,-122.448172),
           zoom: 13,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles: styleArray,
         };
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
 
-        $.getJSON('data/sf_data.json', function(intersections) {
-            $.getJSON('data/sf.json', function(area_data) {
-                console.log(area_data);
-                for (var street in area_data['streets']) {
-                    console.log(street);
 
-                    for (var index in area_data['streets'][street]) {
-                        index = parseInt(index);
-                        console.log(area_data['streets'][street]);
-                        if ((index + 1) >= area_data['streets'][street].length) {
-                            console.log('continued');
-                            continue;
-                        }
-                        var point1 = intersections[area_data['streets'][street][index]];
-                        var point2 = intersections[area_data['streets'][street][index+1]];
-                        console.log(point1, point2);
-                        if (point1 == undefined || point2 == undefined) {
-                            console.log('undefined points, continuing...');
-                            continue;
-                        }
-                        var lineCoordinates = [
-                            new google.maps.LatLng(point1['lat'], point1['lng']),
-                            new google.maps.LatLng(point2['lat'], point2['lng']),
-                        ];
-                        console.log(area_data['streets'][street][index], area_data['streets'][street][index+1]);
-                        console.log(point1['elevation'], point2['elevation'])
+        $.getJSON('new-test.json', function(area_data) {
+            console.log(area_data);
+            for (var street in area_data['paths']) {
+                //console.log(street);
 
-                        /* ARROWS POINT DOWNHILL */
-                        var arrowPoint = google.maps.SymbolPath.FORWARD_CLOSED_ARROW;
-                        var arrowLocation = '100%';
-
-                        if (point1['elevation'] < point2['elevation']) { // uphill
-                            arrowPoint = google.maps.SymbolPath.BACKWARD_CLOSED_ARROW;
-                            arrowLocation = '0%';
-                        }
-
-                        var lineSymbol = {
-                          path: arrowPoint
-                          // https://developers.google.com/maps/documentation/javascript/reference#Symbol
-                        };
-
-                        var line = new google.maps.Polyline({
-                          // https://developers.google.com/maps/documentation/javascript/overlays#PolylineOptions
-                          path: lineCoordinates,
-                          icons: [{
-                            icon: lineSymbol,
-                            offset: arrowLocation
-                          }],
-                          strokeColor: "#FF0000",
-                          strokeOpacity: 0.5,
-                          strokeWeight: 4,
-                          map: map
-                        });
-
+                for (var index in area_data['paths'][street]) {
+                    index = parseInt(index);
+                    // Skip if we are on a break!!
+                    if (area_data['paths'][street][index] == 'BREAK') {
+                        continue;
                     }
+                    //console.log(area_data['streets'][street]);
+                    var point1 = area_data['intersections'][area_data['paths'][street][index]];
+                    if (point1 == undefined) {
+                        //console.log('undefined points, continuing...');
+                        continue;
+                    }
+
+                    // for each point, add a marker that shows up only on mouseover.
+                    /*
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: new google.maps.LatLng(point1['lat'], point1['lng']),
+                        title: area_data['paths'][street][index],
+                        visible: true,
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 1
+                        }
+                    });
+                    google.maps.event.addListener(marker, 'mouseover', function(event) { this.setOptions({visible: true}); });
+                    google.maps.event.addListener(marker, 'mouseout', function(event) { this.setOptions({visible: false}); });
+                    */
+
+                    if ((index + 1) >= area_data['paths'][street].length) {
+                        //console.log('continued');
+                        continue;
+                    }
+
+                    // If the second point is a break, continue as well.
+                    if (area_data['paths'][street][index+1] == 'BREAK') {
+                        console.log('hit a break!! front end');
+                        console.log(area_data['paths'][street][index]);
+                        continue;
+                    }
+
+
+                    var point2 = area_data['intersections'][area_data['paths'][street][index+1]];
+                    //console.log(point1, point2);
+                    if (point1 == undefined || point2 == undefined) {
+                        //console.log('undefined points, continuing...');
+                        continue;
+                    }
+                    var lineCoordinates = [
+                        new google.maps.LatLng(point1['lat'], point1['lng']),
+                        new google.maps.LatLng(point2['lat'], point2['lng']),
+                    ];
+                    console.log(area_data['paths'][street][index], area_data['paths'][street][index+1]);
+                    //console.log(point1['elevation'], point2['elevation']);
+
+                    /* ARROWS POINT DOWNHILL */
+                    var arrowPoint = google.maps.SymbolPath.FORWARD_OPEN_ARROW;
+                    var arrowLocation = '100%';
+
+                    if (point1['elevation'] < point2['elevation']) { // uphill
+                        arrowPoint = google.maps.SymbolPath.BACKWARD_OPEN_ARROW;
+                        arrowLocation = '0%';
+                    }
+
+                    var lineSymbol = {
+                      path: arrowPoint
+                      // https://developers.google.com/maps/documentation/javascript/reference#Symbol
+                    };
+
+                    var elevation_diff = Math.abs(point1['elevation'] - point2['elevation']);
+                    var color = "#FF0000";
+
+                    switch(Math.floor(elevation_diff / 5)) {
+                    case 0:
+                        color = "#00FF00";
+                        break;
+                    case 1:
+                        color = "#FFFF00";
+                        break;
+                    case 2:
+                        color = "#FF8C00";
+                        break;
+                    case 3:
+                        color = "#B22222";
+                        break;
+                    }
+
+
+                    var line = new google.maps.Polyline({
+                      // https://developers.google.com/maps/documentation/javascript/overlays#PolylineOptions
+                      path: lineCoordinates,
+                      strokeColor: color,
+                      strokeOpacity: 0.5,
+                      strokeWeight: 8,
+                      map: map
+                    });
+
+                    var arrows = new google.maps.Polyline({
+                      // https://developers.google.com/maps/documentation/javascript/overlays#PolylineOptions
+                      path: lineCoordinates,
+                      icons: [{
+                        icon: lineSymbol,
+                        offset: '0',
+                        repeat: '20px'
+                      }],
+                      strokeOpacity: 0.5,
+                      strokeWeight: 1,
+                      map: map
+                    });
+
+
                 }
-                console.log(intersections);
-            });
+            }
         });
 
       }
