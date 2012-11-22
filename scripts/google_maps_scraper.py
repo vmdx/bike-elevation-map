@@ -1,4 +1,5 @@
 import argparse
+import datetime
 import json
 import logging
 import os.path
@@ -39,12 +40,13 @@ def compute_all_intersections(source_file, cache=None):
     assert os.path.exists(source_file)
     data_module = imp.load_source('local_data', source_file)
 
-    while len(data_module.paths) > 0:
-        bucket = data_module.paths.pop(0)
-        for street in bucket:
-            for other_bucket in data_module.paths:
-                for other_street in other_bucket:
-                    all_intersections.add('%s and %s' % (street, other_street))
+    for region in data_module.regions:
+        while len(region) > 0:
+            bucket = region.pop(0)
+            for street in bucket:
+                for other_bucket in region:
+                    for other_street in other_bucket:
+                        all_intersections.add('%s and %s' % (street, other_street))
 
     return all_intersections
 
@@ -57,22 +59,20 @@ def get_all_paths(source_file):
     assert os.path.exists(source_file)
     data_module = imp.load_source('local_data', source_file)
 
-    while len(data_module.paths) > 0:
-        bucket = data_module.paths.pop(0)
-        for street in bucket:
-            all_paths.add(street)
+    for region in data_module.regions:
+        while len(region) > 0:
+            bucket = region.pop(0)
+            for street in bucket:
+                all_paths.add(street)
 
     return all_paths
 
-def get_path_attr(source_file, path, attr):
+def get_path_breaks(source_file, path):
     """
-    Given a source file and a path, get the specified attr.
+    Given a source file and a path, get the breaks on that path.
     """
     data_module = imp.load_source('local_data', source_file)
-    for bucket in data_module.paths:
-        if path in bucket:
-            return bucket[path][attr]
-    raise KeyError
+    return data_module.breaks.get(path, set([]))
 
 def get_city(source_file):
     """
@@ -259,6 +259,8 @@ def lookup_all_intersections(cache, intersections, bad_address_cache, city):
         logging.info(' [fetched] %s  %s' % \
             (intersection, str(i_cache[intersection])))
 
+        print ' [fetched] %s  %s' % (intersection, str(i_cache[intersection]))
+
         # If we in fact added this new intersection, add it to the paths list. We'll sort later.
         parts = intersection.split(' and ')
         for index in (0, 1):
@@ -273,6 +275,23 @@ def lookup_all_intersections(cache, intersections, bad_address_cache, city):
 def sort_path_cache(cache, input_data):
     """
     Do cool stuff
+
+    # Now, sort the path cache, so that all paths' intersections go from west -> east or south -> south.
+    # TODO: Persist, somehow, exceptions (i.e. 2nd Ave -> Fulton to Lincoln are actually two paths)
+
+    # Here, we need to compute the minimum and maximum lats / longitudes of all intersections
+    # of a street.
+
+    # We use these to compute a reasonable starting point:
+    #   - use choice = latitude
+    #       if abs(max_lat - min_lat) > abs(max_lng - min_lng),
+    #       else choice = lng
+    #   - pick point with the minimum choice
+
+    # To order the intersections, sort by the choice.
+    # (alternatively [much more work] compute euclidean distance for each point and sort)
+    # NOW DO THE SORT PER STREET
+
     """
     i_cache = cache['intersections']
     p_cache = cache['paths']
@@ -306,7 +325,7 @@ def sort_path_cache(cache, input_data):
             #print 'west -> east'
 
         # Add the breaks!
-        breaks = get_path_attr(input_data, path, 'breaks')
+        breaks = get_path_breaks(input_data, path)
         path_with_breaks = []
         for intersection in sorted_path:
             path_with_breaks.append(intersection)
@@ -335,8 +354,10 @@ parser.add_argument('bad_cache', help="cache for bad addresses")
 
 
 if __name__ == "__main__":
+    now = time.time()
     args = parser.parse_args()
     print args
+
 
     if args.verbose:
         logging.getLogger().setLevel(logging.INFO)
@@ -368,119 +389,8 @@ if __name__ == "__main__":
     cache, bad_address_cache, stats = lookup_all_intersections(cache, intersections, bad_address_cache, city)
 
     cache = sort_path_cache(cache, args.input_data)
-    """
-    cached, good, bad, skipped, error = (0, 0, 0, 0, 0)
 
-    i_cache = cache['intersections']
-    p_cache = cache['paths']
-    for intersection in intersections:
-        if intersection in bad_address_cache['not_intersection'] or intersection in bad_address_cache['ambiguous']:
-            logging.info(' [skipped] %s' % intersection)
-            skipped += 1
-            continue
-
-        if intersection in i_cache:
-            logging.info(' [cached] %s' % intersection)
-            cached += 1
-            continue
-
-        try:
-            latitude, longitude, elevation = get_lat_lng_and_elevation(intersection, get_city(args.input_data))
-            good += 1
-        except NotIntersectionAddressException:
-            bad_address_cache['not_intersection'].add(intersection)
-            bad += 1
-            continue
-        except AmbiguousAddressException:
-            bad_address_cache['ambiguous'].add(intersection)
-            bad += 1
-            continue
-        except Exception as e:
-            logging.error(e)
-            error += 1
-            continue
-
-        i_cache[intersection] = {'lat': latitude,
-                                'lng': longitude,
-                                'elevation': elevation,
-                                'time': int(time.time())
-                               }
-
-        logging.info(' [fetched] %s  %s' % \
-            (intersection, str(i_cache[intersection])))
-
-        # If we in fact added this new intersection, add it to the paths list. We'll sort later.
-        parts = intersection.split(' and ')
-        for index in (0, 1):
-            if parts[index] not in p_cache:
-                p_cache[parts[index]] = [intersection]
-            else:
-                p_cache[parts[index]].append(intersection)
-
-    """
-
-
-    # Now, sort the path cache, so that all paths' intersections go from west -> east or south -> south.
-    # TODO: Persist, somehow, exceptions (i.e. 2nd Ave -> Fulton to Lincoln are actually two paths)
-
-    # Here, we need to compute the minimum and maximum lats / longitudes of all intersections
-    # of a street.
-
-    # We use these to compute a reasonable starting point:
-    #   - use choice = latitude
-    #       if abs(max_lat - min_lat) > abs(max_lng - min_lng),
-    #       else choice = lng
-    #   - pick point with the minimum choice
-
-    # To order the intersections, sort by the choice.
-    # (alternatively [much more work] compute euclidean distance for each point and sort)
-    # NOW DO THE SORT PER STREET
-    """
-    for path in p_cache:
-
-        #print path,
-
-        # kill all the breaks in the cache - we will recompute these every time.
-        p_cache[path] = filter(lambda k: k != 'BREAK', p_cache[path])
-
-        # compute the min and max lats
-        min_lat = i_cache[min(p_cache[path], key=lambda k: i_cache[k]['lat'])]['lat']
-        max_lat = i_cache[max(p_cache[path], key=lambda k: i_cache[k]['lat'])]['lat']
-        min_lng = i_cache[min(p_cache[path], key=lambda k: i_cache[k]['lng'])]['lng']
-        max_lng = i_cache[max(p_cache[path], key=lambda k: i_cache[k]['lng'])]['lng']
-
-        #print min_lat, min_lng, max_lat, max_lng
-
-        if abs(max_lng - min_lng) > abs(max_lat - min_lat):
-            choice = 'lng'
-        else:
-            choice = 'lat'
-
-        # use sorted() for creating new object, sort() for inplace.
-        sorted_path = sorted(p_cache[path], key=lambda k: i_cache[k][choice])
-
-        #if choice == 'lat':
-            #print 'south -> north'
-        #if choice == 'lng':
-            #print 'west -> east'
-
-        # Add the breaks!
-        breaks = get_path_attr(args.input_data, path, 'breaks')
-        path_with_breaks = []
-        for intersection in sorted_path:
-            path_with_breaks.append(intersection)
-            parts = intersection.split(' and ')
-            if parts[0] in breaks or parts[1] in breaks:
-                path_with_breaks.append('BREAK')
-
-        #print path_with_breaks
-
-        p_cache[path] = path_with_breaks
-
-    """
-
-
-
+    cache['buildtime'] = datetime.datetime.fromtimestamp(now).strftime('%Y-%m-%d-%H%M')
 
     with open(args.output_file, 'w') as result_file:
         json.dump(cache, result_file)

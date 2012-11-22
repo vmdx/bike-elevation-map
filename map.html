@@ -156,11 +156,11 @@
 
                     var elevation_diff = Math.abs(point1['elevation'] - point2['elevation']);
                     var run_distance = google.maps.geometry.spherical.computeDistanceBetween(lineCoordinates[0], lineCoordinates[1]);
-                    console.log(elevation_diff, run_distance);
-                    console.log(area_data['paths'][street][index]);
-                    console.log(area_data['paths'][street][index+1]);
-                    console.log(elevation_diff / run_distance * 100);
-                    console.log('----')
+                    //console.log(elevation_diff, run_distance);
+                    //console.log(area_data['paths'][street][index]);
+                    //console.log(area_data['paths'][street][index+1]);
+                    //console.log(elevation_diff / run_distance * 100);
+                    //console.log('----')
 
                     var grade = elevation_diff / run_distance * 100;
                     var grade_div_5 = Math.floor(grade / 5);
@@ -227,6 +227,26 @@
                 }
             }
         });
+
+        /* Overlay the road labels */
+        var onlyRoadLabelStyles = [
+            {
+                featureType: "all",
+                elementType: "labels",
+                stylers: [
+                    { visibility: "on" }
+                ]
+            },{
+                featureType: "all",
+                elementType: "geometry",
+                stylers: [
+                    { visibility: "off" }
+                ]
+            }
+        ];
+
+        //var styledMap = new google.maps.StyledMapType(onlyRoadLabelStyles, {name: "Styled Map"});
+        //map.overlayMapTypes.insertAt(0, styledMap);
 
       }
     </script>

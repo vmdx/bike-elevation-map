@@ -16,6 +16,9 @@ SUFFIXES = {
 if __name__ == '__main__':
     number = int(sys.argv[1])
     while number <= int(sys.argv[2]):
-        print "'" + str(number) + SUFFIXES.get(str(number), 'th'),
+        if number == 11 or number == 12 or number == 13:
+            print "'" + str(number) + 'th',
+        else:
+            print "'" + str(number) + SUFFIXES.get(str(number)[-1], 'th'),
         print sys.argv[3] + "',",
         number += 1
