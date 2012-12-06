@@ -30,7 +30,7 @@ regions = [
         ],
         [
             'Van Ness Ave', 'Franklin St', 'Gough St',
-            'Octavia Blvd', 'Laguna St', 'Buchanan St',
+            'Octavia Blvd', 'Octavia St', 'Laguna St', 'Buchanan St',
             'Webster St', 'Fillmore St', 'Steiner St', 'Pierce St', 'Scott St',
             # Div -> Masonic
             'Divisadero St', "Broderick St", 'Baker St', 'Lyon St', 'Central Ave', 'Masonic Ave',
@@ -78,7 +78,7 @@ regions = [
         [
             'Lyon St', 'Baker St', 'Broderick St', 'Divisadero St',
             'Scott St', 'Pierce St', 'Steiner St', 'Fillmore St',
-            'Webster St', 'Buchanan St', 'Laguna St', 'Octavia Blvd',
+            'Webster St', 'Buchanan St', 'Laguna St', 'Octavia Blvd', 'Octavia St',
             'Gough St', 'Franklin St', 'Van Ness Ave',
             'Polk St', 'Larkin St', 'Hyde St', 'Leavenworth St',
             'Jones St', 'Taylor St', 'Mason St',
@@ -101,7 +101,50 @@ regions = [
             'Highland Ave', 'Park St', 'Murray St',
             'Appleton Ave', 'Elsie St', 'Bocana St',
         ]
-    ]
+    ],
+
+    # Laurel Heights
+    [
+        # west -> east streets
+        [
+            'Pacific Ave', 'Jackson St', 'Washington St',
+            'Clay St', 'Sacramento St', 'California St',
+            'Mayfair Dr', 'Euclid Ave', 'Geary Blvd',
+            'Anza St', 'Terra Vista Ave', 'Edward St',
+            'Anza Vista Ave', 'McAllister St', 'Golden Gate Ave',
+        ],
+
+        [
+            'Arguello Blvd', 'Cherry St', 'Maple St', 'Spruce St',
+            'Locust St', 'Laurel St', 'Walnut St', 'Presidio Ave',
+            'Palm Ave', 'Jordan Ave', 'Commonwealth Ave', 'Parker Ave',
+            'Collins St', 'Stanyan St',
+            'Wood St', 'Beaumont Ave', 'Willard N',
+            'Baker St', "St Joseph's Ave"
+        ],
+
+    ],
+
+    # I need to bike home from Crocker Amazon, fuuu
+    [
+        # west->east streets
+        [
+            'Geneva Ave', 'Amazon Ave', 'Italy Ave', 'France Ave',
+            'Russia Ave', 'Persia Ave', 'Brazil Ave', 'Excelsior Ave',
+            'Avalon Ave', 'Silver Ave', 'Maynard St', 'Ney St',
+            'Trumbull St', 'Alemany Blvd', 'Bosworth St', 'Crescent Ave',
+            'Richland Ave', 'Park St', 'Highland Ave', 'Appleton Ave',
+            'Randall St', '30th St', 'Day St',
+            '29th St', '28th St', '27th St', '26th St', '25th St', '24th St',
+            '23rd St', '22nd St', '21st St', '20th St', '19th St', '18th St',
+            '17th St', '16th St',
+        ],
+
+        # mission st, lol
+        [
+            'Mission St', 'Dolores St'
+        ],
+    ],
 
 
 ]
@@ -153,8 +196,8 @@ breaks = {
     '12th Ave': set(['Lincoln Way']),
     'Funston Ave': set(['Lincoln Way']),
     '14th Ave': set(['Lincoln Way']),
-    '15th Ave': set(['Lincoln Way']),
-    '16th Ave': set(['Lincoln Way']),
+    '15th Ave': set(['Lincoln Way', 'Lawton St']),
+    '16th Ave': set(['Lincoln Way', 'Lawton St']),
     '17th Ave': set(['Lincoln Way']),
     '18th Ave': set(['Lincoln Way']),
     '19th Ave': set(['Lincoln Way']),
@@ -189,3 +232,26 @@ breaks = {
     '48th Ave': set(['Lincoln Way']),
 }
 
+
+
+# For curved roads, where we will need to call the google maps
+# directions API, define which parts of which paths are curved.
+# WEST -> EAST
+# SOUTH -> NORTH
+curved_roads = {
+    'Lawton St': [('16th Ave', 'Funston Ave')],
+    '15th Ave': [('Noriega St', 'Lawton St')]
+}
+
+# These will be copied straight into the paths json object.
+# All addresses in the paths will be looked up and given NEXT
+# attributes.
+custom_paths = {
+    'The Panhandle / SF Bike Route 30': [
+        'Baker St and Fell St',
+        'San Francisco Bicycle Route 30 and Masonic Ave',
+        'San Francisco Bicycle Route 30 and Stanyan St',
+    ]
+
+
+}

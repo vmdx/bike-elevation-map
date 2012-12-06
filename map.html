@@ -5,7 +5,6 @@
     <style type="text/css">
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
-      #map_canvas { height: 100% }
     </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <!-- include the geometry library -->
@@ -121,8 +120,8 @@
 
                     // If the second point is a break, continue as well.
                     if (area_data['paths'][street][index+1] == 'BREAK') {
-                        console.log('hit a break!! front end');
-                        console.log(area_data['paths'][street][index]);
+                        //console.log('hit a break!! front end');
+                        //console.log(area_data['paths'][street][index]);
                         continue;
                     }
 
@@ -133,10 +132,22 @@
                         //console.log('undefined points, continuing...');
                         continue;
                     }
-                    var lineCoordinates = [
-                        new google.maps.LatLng(point1['lat'], point1['lng']),
-                        new google.maps.LatLng(point2['lat'], point2['lng']),
-                    ];
+
+                    // Look to see if we have a curved road direction on this link.
+                    var link_name = area_data['paths'][street][index] + ' | ' + area_data['paths'][street][index+1]
+                    if (area_data['directions'][link_name] != undefined) {
+                        var lineCoordinates = google.maps.geometry.encoding.decodePath(area_data['directions'][link_name]);
+                        var run_distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(point1['lat'], point1['lng']), new google.maps.LatLng(point2['lat'], point2['lng']));
+
+                    }
+                    else {
+                        var lineCoordinates = [
+                            new google.maps.LatLng(point1['lat'], point1['lng']),
+                            new google.maps.LatLng(point2['lat'], point2['lng']),
+                        ];
+                        var run_distance = google.maps.geometry.spherical.computeDistanceBetween(lineCoordinates[0], lineCoordinates[1]);
+
+                    }
                     //console.log(area_data['paths'][street][index], area_data['paths'][street][index+1]);
                     //console.log(point1['elevation'], point2['elevation']);
 
@@ -155,7 +166,15 @@
                     };
 
                     var elevation_diff = Math.abs(point1['elevation'] - point2['elevation']);
-                    var run_distance = google.maps.geometry.spherical.computeDistanceBetween(lineCoordinates[0], lineCoordinates[1]);
+
+                    if (street == 'The Panhandle / SF Bike Route 30') {
+                        console.log(elevation_diff, run_distance);
+                        console.log(area_data['paths'][street][index]);
+                        console.log(area_data['paths'][street][index+1]);
+                        console.log(elevation_diff / run_distance * 100);
+                        console.log('----')
+
+                    }
                     //console.log(elevation_diff, run_distance);
                     //console.log(area_data['paths'][street][index]);
                     //console.log(area_data['paths'][street][index+1]);
@@ -245,6 +264,14 @@
             }
         ];
 
+        /* Draw a random polyline
+        var randoline = new google.maps.Polyline({
+            path: google.maps.geometry.encoding.decodePath('kopeFtejjVRx@Xn@BZAl@Gv@Bj@Jt@JtCHx@J`@`@x@PbAAz@In@C`ABnAHhAHj@B\\@nAFdABp@DRVZNVBL?RDNPXFPFH@\\Fj@Fh@OBDJHX'),
+            strokeColor: '#ff0000',
+            map: map
+        })
+        */
+
         //var styledMap = new google.maps.StyledMapType(onlyRoadLabelStyles, {name: "Styled Map"});
         //map.overlayMapTypes.insertAt(0, styledMap);
 
@@ -252,7 +279,14 @@
     </script>
   </head>
   <body onload="initialize()">
-    <div id="map_canvas" style="width:100%; height:100%"></div>
+    <div id="wrapper" style="min-height: 100%; height: 100%; margin-top: -80px; background-color: red;">
+        <div id="map_canvas" style="width:100%; height:100%;"></div>
+    </div>
+    <div id="control_bar" style="height: 80px;">
+        <button>north/east/south/west</button>
+        <button>only major bike paths vs all paths</button>
+        <button>scrolldown - home page, other maps</button>
+    </div>
   </body>
 </html>
 

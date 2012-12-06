@@ -40,6 +40,7 @@ def compute_all_intersections(source_file, cache=None):
     assert os.path.exists(source_file)
     data_module = imp.load_source('local_data', source_file)
 
+    # TODO: use getattr, since it is easier to distinguish strings
     for region in data_module.regions:
         while len(region) > 0:
             bucket = region.pop(0)
@@ -73,6 +74,20 @@ def get_path_breaks(source_file, path):
     """
     data_module = imp.load_source('local_data', source_file)
     return data_module.breaks.get(path, set([]))
+
+def get_curved_roads(source_file):
+    """
+    Given a source file, get the dict of curved roads.
+    """
+    data_module = imp.load_source('local_data', source_file)
+    return data_module.curved_roads
+
+def get_custom_paths(source_file):
+    """
+    Given a source file, get the dict of custom paths.
+    """
+    data_module = imp.load_source('local_data', source_file)
+    return data_module.custom_paths
 
 def get_city(source_file):
     """
@@ -115,18 +130,6 @@ def write_bad_address_cache(fp, cache):
 ##################
 # google api calls
 ##################
-def get_direction_path(start, end):
-    """
-
-"Haight St and Divisadero St": {"lat": 37.7712742, "lng": -122.4370859
-    37.7712742,-122.4370859   haight divis
-    37.772204,-122.4372752  page divis
-
-    http://maps.googleapis.com/maps/api/directions/json?origin=Page+St+and+Divisadero+St&destination=Haight+St+and+Divisadero+St&sensor=false
-
-    """
-
-
 def get_lat_lng_and_elevation(intersection, city):
     """
     Given an intersection string ("Divisadero St and McAllister St"),
@@ -144,6 +147,7 @@ def get_geocode(intersection, city):
     and a city string ("San Francisco, CA"), return the latitude
     and longitude as a tuple, or raise an exception.
     """
+    original_city = city
     city = city.replace(' ', '+')
 
     geocode_uri = 'http://maps.googleapis.com/maps/api/geocode/json?address=%s,+%s&sensor=false' % (intersection, city)
@@ -157,7 +161,8 @@ def get_geocode(intersection, city):
     parts = intersection.split(' and ')
 
     if parts[0] not in data['results'][0]['formatted_address'] or \
-       parts[1] not in data['results'][0]['formatted_address']:
+       parts[1] not in data['results'][0]['formatted_address'] or \
+       original_city not in data['results'][0]['formatted_address']:
         logging.error('This address was not an intersection!: %s' % geocode_uri)
         raise NotIntersectionAddressException(intersection, city)
 
@@ -179,6 +184,21 @@ def get_elevation(lat, lng):
     elevation_uri = 'http://maps.googleapis.com/maps/api/elevation/json?locations=%s,%s&sensor=false' % (lat, lng)
     data = make_json_request(elevation_uri)
     return data['results'][0]['elevation']
+
+
+def get_directions(origin, destination):
+    directions_uri = 'http://maps.googleapis.com/maps/api/directions/json?origin=%s&destination=%s&sensor=false&mode=walking' % \
+                        (origin.replace(' ', '+'), destination.replace(' ', '+'))
+    data = make_json_request(directions_uri)
+    print directions_uri
+
+    try:
+        if len(data['routes']) > 1:
+            logging.warning('> 1 route on directions req: %s' % directions_uri)
+        return data['routes'][0]['overview_polyline']['points']
+    except:
+        logging.error('failed directions request: %s' % directions_uri)
+        pass
 
 
 def make_json_request(uri):
@@ -253,7 +273,6 @@ def lookup_all_intersections(cache, intersections, bad_address_cache, city):
         i_cache[intersection] = {'lat': latitude,
                                 'lng': longitude,
                                 'elevation': elevation,
-                                'time': int(time.time())
                                }
 
         logging.info(' [fetched] %s  %s' % \
@@ -339,6 +358,85 @@ def sort_path_cache(cache, input_data):
 
     return cache
 
+@timeit
+def lookup_curved_road_directions(cache, input_data):
+    p_cache = cache['paths']
+    d_cache = cache['directions']
+    curved_roads = get_curved_roads(input_data)
+
+    for road, curved_sections in curved_roads.iteritems():
+        in_section = False
+        last_intersection = None
+        for intersection in p_cache[road]:
+            if len(curved_sections) == 0:
+                break
+
+            secondary_street = curved_sections[0][0] if not in_section else curved_sections[0][1]
+            int_name1 = ' and '.join([road, secondary_street])
+            int_name2 = ' and '.join([secondary_street, road])
+
+            # Start the section if needed. We will call direction API on the NEXT intersection.
+            if not in_section and (int_name1 == intersection or int_name2 == intersection):
+                in_section = True
+
+            # Call the direction API.
+            elif in_section:
+                key_name = '%s | %s' % (last_intersection, intersection)
+                if key_name in d_cache:
+                    print ' [skipped directions] %s -> %s' % (last_intersection, intersection)
+                else:
+                    d_cache[key_name] = get_directions(last_intersection, intersection)
+                    print ' [fetched directions] %s -> %s' % (last_intersection, intersection)
+
+                # Are we done with this section?
+                if int_name1 == intersection or int_name2 == intersection:
+                    in_section = False
+                    curved_sections.pop(0)
+
+            last_intersection = intersection
+
+    return cache
+
+@timeit
+def lookup_and_add_custom_paths(cache, input_data, city):
+    i_cache = cache['intersections']
+    p_cache = cache['paths']
+    d_cache = cache['directions']
+    custom_paths = get_custom_paths(input_data)
+
+    for custom_path, intersections in custom_paths.iteritems():
+        for intersection in intersections:
+            # look it up if its not there already
+            if intersection not in i_cache:
+                latitude, longitude, elevation = get_lat_lng_and_elevation(intersection, city)
+                # TODO: error handling similar to lookup_all_intersections
+                i_cache[intersection] = {'lat': latitude,
+                                        'lng': longitude,
+                                        'elevation': elevation}
+                print ' [fetched] %s  %s' % (intersection, str(i_cache[intersection]))
+            else:
+                print ' [cached custom intersection] %s' % intersection
+
+        # get directions for all the intersections
+        last_intersection = None
+        for intersection in intersections:
+            if last_intersection is None:
+                last_intersection = intersection
+                continue
+
+            key_name = '%s | %s' % (last_intersection, intersection)
+            if key_name in d_cache:
+                print ' [skipped custom directions] %s -> %s' % (last_intersection, intersection)
+            else:
+                d_cache[key_name] = get_directions(last_intersection, intersection)
+                print ' [fetched custom directions] %s -> %s' % (last_intersection, intersection)
+
+            last_intersection = intersection
+
+        p_cache[custom_path] = intersections
+
+    return cache
+
 #################
 # main script executable
 #################
@@ -368,10 +466,13 @@ if __name__ == "__main__":
 
     # Set the cache from an existing output file
     if args.force or not os.path.exists(args.output_file):
-        cache = {'paths': {}, 'intersections': {}}
+        cache = {'paths': {}, 'intersections': {}, 'directions': {}}
     else:
         with open(args.output_file) as filecache:
             cache = json.load(filecache)
+            for key in ['paths', 'intersections', 'directions']:
+                if key not in cache:
+                    cache[key] = {}
 
     # Get the bad address cache, if it exists
     if args.bad_cache and os.path.exists(args.bad_cache):
@@ -386,14 +487,22 @@ if __name__ == "__main__":
 
     city = get_city(args.input_data)
 
+    # Lookup every intersection's lat/lng/elevation, fill out the paths json
     cache, bad_address_cache, stats = lookup_all_intersections(cache, intersections, bad_address_cache, city)
 
+    # Sort the paths json. TODO: fix docs - this also adds BREAKs into the paths.
     cache = sort_path_cache(cache, args.input_data)
+
+    # Get any custom Google Directions API info we need.
+    cache = lookup_curved_road_directions(cache, args.input_data)
+
+    # TODO: Look up custom paths. These should all be ordered, so we do not need to sort these paths!
+    cache = lookup_and_add_custom_paths(cache, args.input_data, city)
 
     cache['buildtime'] = datetime.datetime.fromtimestamp(now).strftime('%Y-%m-%d-%H%M')
 
     with open(args.output_file, 'w') as result_file:
-        json.dump(cache, result_file)
+        json.dump(cache, result_file, indent=2)
 
     with open(args.bad_cache, 'w') as bcache_fp:
         write_bad_address_cache(bcache_fp, bad_address_cache)
