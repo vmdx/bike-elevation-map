@@ -185,7 +185,7 @@ breaks = {
     'Arguello Blvd': set(['Frederick St']),
     '2nd Ave': set(['Lincoln Way']),
     '3rd Ave': set(['Lincoln Way']),
-    '4th Ave': set(['Lincoln Way']),
+    '4th Ave': set(['Kirkham St', 'Lincoln Way']),
     '5th Ave': set(['Lincoln Way']),
     '6th Ave': set(['Lincoln Way']),
     '7th Ave': set(['Lincoln Way']),
