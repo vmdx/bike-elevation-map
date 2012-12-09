@@ -186,7 +186,12 @@ def get_elevation(lat, lng):
     return data['results'][0]['elevation']
 
 
-def get_directions(origin, destination):
+def get_directions_and_length(origin, destination):
+    """
+    Given an origin and destination, return the
+    encoded directions path, as well as the distance of the trip,
+    in a dict.
+    """
     directions_uri = 'http://maps.googleapis.com/maps/api/directions/json?origin=%s&destination=%s&sensor=false&mode=walking' % \
                         (origin.replace(' ', '+'), destination.replace(' ', '+'))
     data = make_json_request(directions_uri)
@@ -195,7 +200,9 @@ def get_directions(origin, destination):
     try:
         if len(data['routes']) > 1:
             logging.warning('> 1 route on directions req: %s' % directions_uri)
-        return data['routes'][0]['overview_polyline']['points']
+        # Note: we are doing point to point directions, so there will only be
+        # one "leg" of the journey from the Google Directions API
+        return {'path': data['routes'][0]['overview_polyline']['points'], 'length': data['routes'][0]['legs'][0]['distance']['value']}
     except:
         logging.error('failed directions request: %s' % directions_uri)
         pass
@@ -385,7 +392,7 @@ def lookup_curved_road_directions(cache, input_data):
                 if key_name in d_cache:
                     print ' [skipped directions] %s -> %s' % (last_intersection, intersection)
                 else:
-                    d_cache[key_name] = get_directions(last_intersection, intersection)
+                    d_cache[key_name] = get_directions_and_length(last_intersection, intersection)
                     print ' [fetched directions] %s -> %s' % (last_intersection, intersection)
 
                 # Are we done with this section?
@@ -428,7 +435,7 @@ def lookup_and_add_custom_paths(cache, input_data, city):
             if key_name in d_cache:
                 print ' [skipped custom directions] %s -> %s' % (last_intersection, intersection)
             else:
-                d_cache[key_name] = get_directions(last_intersection, intersection)
+                d_cache[key_name] = get_directions_and_length(last_intersection, intersection)
                 print ' [fetched custom directions] %s -> %s' % (last_intersection, intersection)
 
             last_intersection = intersection

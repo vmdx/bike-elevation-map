@@ -1,11 +1,29 @@
 {
   "directions": {
-    "Lawton St and 15th Ave | Lawton St and Funston Ave": "_ymeFrhojVT}@Vk@LUx@}@RYDMJm@?Y?i@",
-    "Lawton St and 16th Ave | Lawton St and 15th Ave": "{rmeFrsojVuELSEOSCSx@_I",
-    "Noriega St and 15th Ave | Moraga St and 15th Ave": "_|leFxiojVc@OUAiBC}AbAI@qAx@YH",
-    "San Francisco Bicycle Route 30 and Masonic Ave | San Francisco Bicycle Route 30 and Stanyan St": "kopeFtejjVRx@Xn@BZAl@Gv@Bj@Jt@JtCHx@J`@`@x@PbAAz@In@C`ABnAHhAHj@B\\@nAFdABp@DRVZNVBL?RDNPXFPFH@\\Fj@Fh@OBDJHX",
-    "Moraga St and 15th Ave | Lawton St and 15th Ave": "wgmeFlmojVm@Aq@k@kAs@}@[OEMDI[OWWUSIi@KoDbA",
-    "Baker St and Fell St | San Francisco Bicycle Route 30 and Masonic Ave": "gtpeFvfijVTRDJFv@DPNTDPVnBVbBAp@Gf@@bAN|Cb@zH"
+    "Lawton St and 15th Ave | Lawton St and Funston Ave": {
+      "path": "_ymeFrhojVT}@Vk@LUx@}@RYDMJm@?Y?i@",
+      "length": 182
+    },
+    "Lawton St and 16th Ave | Lawton St and 15th Ave": {
+      "path": "{rmeFrsojVuELSEOSCSx@_I",
+      "length": 296
+    },
+    "Noriega St and 15th Ave | Moraga St and 15th Ave": {
+      "path": "_|leFxiojVc@OUAiBC}AbAI@qAx@YH",
+      "length": 226
+    },
+    "San Francisco Bicycle Route 30 and Masonic Ave | San Francisco Bicycle Route 30 and Stanyan St": {
+      "path": "kopeFtejjVRx@Xn@BZAl@Gv@Bj@Jt@JtCHx@J`@`@x@PbAAz@In@C`ABnAHhAHj@B\\@nAFdABp@DRVZNVBL?RDNPXFPFH@\\Fj@Fh@OBDJHX",
+      "length": 771
+    },
+    "Moraga St and 15th Ave | Lawton St and 15th Ave": {
+      "path": "wgmeFlmojVm@Aq@k@kAs@}@[OEMDI[OWWUSIi@KoDbA",
+      "length": 343
+    },
+    "Baker St and Fell St | San Francisco Bicycle Route 30 and Masonic Ave": {
+      "path": "gtpeFvfijVTRDJFv@DPNTDPVnBVbBAp@Gf@@bAN|Cb@zH",
+      "length": 454
+    }
   },
   "paths": {
     "19th Ave": [
@@ -189,6 +207,11 @@
       "California St and 9th Ave",
       "Lake St and 9th Ave"
     ],
+    "The Panhandle / SF Bike Route 30": [
+      "Baker St and Fell St",
+      "San Francisco Bicycle Route 30 and Masonic Ave",
+      "San Francisco Bicycle Route 30 and Stanyan St"
+    ],
     "Central Ave": [
       "Waller St and Central Ave",
       "Haight St and Central Ave",
@@ -226,29 +249,8 @@
       "Geary Blvd and 41st Ave",
       "Clement St and 41st Ave"
     ],
-    "Mason St": [
-      "Post St and Mason St",
-      "Sutter St and Mason St",
-      "Bush St and Mason St",
-      "Pine St and Mason St",
-      "Sacramento St and Mason St",
-      "Clay St and Mason St",
-      "Washington St and Mason St",
-      "Jackson St and Mason St",
-      "Pacific Ave and Mason St",
-      "Broadway St and Mason St",
-      "Vallejo St and Mason St",
-      "Green St and Mason St",
-      "Union St and Mason St",
-      "Filbert St and Mason St",
-      "Greenwich St and Mason St",
-      "Mason St and Columbus Ave",
-      "Lombard St and Mason St",
-      "Chestnut St and Mason St",
-      "Francisco St and Mason St",
-      "Bay St and Mason St",
-      "North Point St and Mason St",
-      "Beach St and Mason St"
+    "Wood St": [
+      "Anza St and Wood St"
     ],
     "Anza St": [
       "Anza St and 48th Ave",
@@ -307,36 +309,6 @@
       "Anza St and Collins St",
       "Anza St and Wood St"
     ],
-    "Greenwich St": [
-      "Greenwich St and Lyon St",
-      "Greenwich St and Baker St",
-      "Greenwich St and Broderick St",
-      "Greenwich St and Divisadero St",
-      "Greenwich St and Scott St",
-      "Greenwich St and Pierce St",
-      "Greenwich St and Steiner St",
-      "Greenwich St and Fillmore St",
-      "Greenwich St and Webster St",
-      "Greenwich St and Buchanan St",
-      "Greenwich St and Laguna St",
-      "Greenwich St and Octavia St",
-      "Greenwich St and Gough St",
-      "Greenwich St and Franklin St",
-      "Greenwich St and Van Ness Ave",
-      "Greenwich St and Polk St",
-      "Greenwich St and Larkin St",
-      "Greenwich St and Hyde St",
-      "Greenwich St and Leavenworth St",
-      "Greenwich St and Jones St",
-      "Greenwich St and Taylor St",
-      "Greenwich St and Mason St",
-      "Greenwich St and Columbus Ave",
-      "Greenwich St and Powell St",
-      "Greenwich St and Stockton St",
-      "Greenwich St and Grant Ave",
-      "Greenwich St and Sansome St",
-      "Greenwich St and Battery St"
-    ],
     "Oak St": [
       "Oak St and Stanyan St",
       "Oak St and Shrader St",
@@ -361,47 +333,6 @@
       "Oak St and Gough St",
       "Oak St and Franklin St",
       "Oak St and Van Ness Ave"
-    ],
-    "Sacramento St": [
-      "Sacramento St and Arguello Blvd",
-      "Sacramento St and Cherry St",
-      "Sacramento St and Maple St",
-      "Sacramento St and Spruce St",
-      "Sacramento St and Locust St",
-      "Sacramento St and Laurel St",
-      "Sacramento St and Walnut St",
-      "Sacramento St and Presidio Ave",
-      "Sacramento St and Lyon St",
-      "Sacramento St and Baker St",
-      "Sacramento St and Broderick St",
-      "Sacramento St and Divisadero St",
-      "Sacramento St and Scott St",
-      "Sacramento St and Pierce St",
-      "Sacramento St and Steiner St",
-      "Sacramento St and Fillmore St",
-      "Sacramento St and Webster St",
-      "Sacramento St and Buchanan St",
-      "Sacramento St and Laguna St",
-      "Sacramento St and Octavia St",
-      "Sacramento St and Gough St",
-      "Sacramento St and Franklin St",
-      "Sacramento St and Van Ness Ave",
-      "Sacramento St and Polk St",
-      "Sacramento St and Larkin St",
-      "Sacramento St and Hyde St",
-      "Sacramento St and Leavenworth St",
-      "Sacramento St and Jones St",
-      "Sacramento St and Taylor St",
-      "Sacramento St and Mason St",
-      "Sacramento St and Powell St",
-      "Sacramento St and Stockton St",
-      "Sacramento St and Grant Ave",
-      "Sacramento St and Montgomery St",
-      "Sacramento St and Sansome St",
-      "Sacramento St and Battery St",
-      "Sacramento St and Front St",
-      "Sacramento St and Davis St",
-      "Sacramento St and Drumm St"
     ],
     "Laurel St": [
       "Euclid Ave and Laurel St",
@@ -716,6 +647,14 @@
       "North Point St and Webster St",
       "Beach St and Webster St"
     ],
+    "Presidio Ave": [
+      "Euclid Ave and Presidio Ave",
+      "Sacramento St and Presidio Ave",
+      "Clay St and Presidio Ave",
+      "Washington St and Presidio Ave",
+      "Jackson St and Presidio Ave",
+      "Pacific Ave and Presidio Ave"
+    ],
     "Stockton St": [
       "Post St and Stockton St",
       "Sutter St and Stockton St",
@@ -776,6 +715,9 @@
       "Anza St and 33rd Ave",
       "Geary Blvd and 33rd Ave",
       "Clement St and 33rd Ave"
+    ],
+    "Persia Ave": [
+      "Persia Ave and Mission St"
     ],
     "Lake St": [
       "Lake St and 30th Ave",
@@ -1054,77 +996,44 @@
       "Terra Vista Ave and Baker St",
       "Terra Vista Ave and St Joseph's Ave"
     ],
-    "Fulton St": [
-      "Fulton St and 48th Ave",
-      "Fulton St and 47th Ave",
-      "Fulton St and 46th Ave",
-      "Fulton St and 45th Ave",
-      "Fulton St and 44th Ave",
-      "Fulton St and 43rd Ave",
-      "Fulton St and 42nd Ave",
-      "Fulton St and 41st Ave",
-      "Fulton St and 40th Ave",
-      "Fulton St and 39th Ave",
-      "Fulton St and 38th Ave",
-      "Fulton St and 37th Ave",
-      "Fulton St and 36th Ave",
-      "Fulton St and 35th Ave",
-      "Fulton St and 34th Ave",
-      "Fulton St and 33rd Ave",
-      "Fulton St and 32nd Ave",
-      "Fulton St and 31st Ave",
-      "Fulton St and 30th Ave",
-      "Fulton St and 29th Ave",
-      "Fulton St and 28th Ave",
-      "Fulton St and 27th Ave",
-      "Fulton St and 26th Ave",
-      "Fulton St and 25th Ave",
-      "Fulton St and 24th Ave",
-      "Fulton St and 23rd Ave",
-      "Fulton St and 22nd Ave",
-      "Fulton St and 21st Ave",
-      "Fulton St and 20th Ave",
-      "Fulton St and 19th Ave",
-      "Fulton St and 18th Ave",
-      "Fulton St and 17th Ave",
-      "Fulton St and 16th Ave",
-      "Fulton St and 15th Ave",
-      "Fulton St and 14th Ave",
-      "Fulton St and Park Presidio Blvd",
-      "Fulton St and Funston Ave",
-      "Fulton St and 12th Ave",
-      "Fulton St and 11th Ave",
-      "Fulton St and 10th Ave",
-      "Fulton St and 9th Ave",
-      "Fulton St and 8th Ave",
-      "Fulton St and 7th Ave",
-      "Fulton St and 6th Ave",
-      "Fulton St and 5th Ave",
-      "Fulton St and 4th Ave",
-      "Fulton St and 3rd Ave",
-      "Fulton St and 2nd Ave",
-      "Fulton St and Arguello Blvd",
-      "Fulton St and Stanyan St",
-      "Fulton St and Shrader St",
-      "Fulton St and Parker Ave",
-      "Fulton St and Cole St",
-      "Fulton St and Clayton St",
-      "Fulton St and Masonic Ave",
-      "Fulton St and Central Ave",
-      "Fulton St and Lyon St",
-      "Fulton St and Baker St",
-      "Fulton St and Broderick St",
-      "Fulton St and Divisadero St",
-      "Fulton St and Scott St",
-      "Fulton St and Pierce St",
-      "Fulton St and Steiner St",
-      "Fulton St and Fillmore St",
-      "Fulton St and Webster St",
-      "Fulton St and Buchanan St",
-      "Fulton St and Laguna St",
-      "Fulton St and Octavia St",
-      "Fulton St and Gough St",
-      "Fulton St and Franklin St"
+    "Pacific Ave": [
+      "Pacific Ave and Arguello Blvd",
+      "Pacific Ave and Spruce St",
+      "Pacific Ave and Locust St",
+      "Pacific Ave and Laurel St",
+      "Pacific Ave and Walnut St",
+      "Pacific Ave and Presidio Ave",
+      "Pacific Ave and Lyon St",
+      "Pacific Ave and Baker St",
+      "Pacific Ave and Broderick St",
+      "Pacific Ave and Divisadero St",
+      "Pacific Ave and Scott St",
+      "Pacific Ave and Pierce St",
+      "Pacific Ave and Steiner St",
+      "Pacific Ave and Fillmore St",
+      "Pacific Ave and Webster St",
+      "Pacific Ave and Buchanan St",
+      "Pacific Ave and Laguna St",
+      "Pacific Ave and Octavia St",
+      "Pacific Ave and Gough St",
+      "Pacific Ave and Franklin St",
+      "Pacific Ave and Van Ness Ave",
+      "Pacific Ave and Polk St",
+      "Pacific Ave and Larkin St",
+      "Pacific Ave and Hyde St",
+      "Pacific Ave and Leavenworth St",
+      "Pacific Ave and Jones St",
+      "Pacific Ave and Taylor St",
+      "Pacific Ave and Mason St",
+      "Pacific Ave and Powell St",
+      "Pacific Ave and Stockton St",
+      "Pacific Ave and Grant Ave",
+      "Pacific Ave and Columbus Ave",
+      "Pacific Ave and Montgomery St",
+      "Pacific Ave and Sansome St",
+      "Pacific Ave and Battery St",
+      "Pacific Ave and Front St",
+      "Pacific Ave and Davis St"
     ],
     "Eddy St": [
       "Eddy St and Broderick St",
@@ -1319,6 +1228,57 @@
       "Page St and Gough St",
       "Page St and Franklin St"
     ],
+    "Irving St": [
+      "Irving St and 48th Ave",
+      "Irving St and 47th Ave",
+      "Irving St and 46th Ave",
+      "Irving St and 45th Ave",
+      "Irving St and 44th Ave",
+      "Irving St and 43rd Ave",
+      "Irving St and 42nd Ave",
+      "Irving St and 41st Ave",
+      "Irving St and 40th Ave",
+      "Irving St and 39th Ave",
+      "Irving St and 38th Ave",
+      "Irving St and 37th Ave",
+      "Irving St and Sunset Blvd",
+      "Irving St and 36th Ave",
+      "Irving St and 35th Ave",
+      "Irving St and 34th Ave",
+      "Irving St and 33rd Ave",
+      "Irving St and 32nd Ave",
+      "Irving St and 31st Ave",
+      "Irving St and 30th Ave",
+      "Irving St and 29th Ave",
+      "Irving St and 28th Ave",
+      "Irving St and 27th Ave",
+      "Irving St and 26th Ave",
+      "Irving St and 25th Ave",
+      "Irving St and 24th Ave",
+      "Irving St and 23rd Ave",
+      "Irving St and 22nd Ave",
+      "Irving St and 21st Ave",
+      "Irving St and 20th Ave",
+      "Irving St and 19th Ave",
+      "Irving St and 18th Ave",
+      "Irving St and 17th Ave",
+      "Irving St and 16th Ave",
+      "Irving St and 15th Ave",
+      "Irving St and 14th Ave",
+      "Irving St and Funston Ave",
+      "Irving St and 12th Ave",
+      "Irving St and 11th Ave",
+      "Irving St and 10th Ave",
+      "Irving St and 9th Ave",
+      "Irving St and 8th Ave",
+      "Irving St and 7th Ave",
+      "Irving St and 6th Ave",
+      "Irving St and 5th Ave",
+      "Irving St and 4th Ave",
+      "Irving St and 3rd Ave",
+      "Irving St and 2nd Ave",
+      "Irving St and Arguello Blvd"
+    ],
     "Gough St": [
       "Haight St and Gough St",
       "Page St and Gough St",
@@ -1353,8 +1313,35 @@
       "Francisco St and Gough St",
       "Bay St and Gough St"
     ],
-    "Murray St": [
-      "Holly Park Cir and Murray St"
+    "Bush St": [
+      "Bush St and Lyon St",
+      "Bush St and Baker St",
+      "Bush St and Broderick St",
+      "Bush St and Divisadero St",
+      "Bush St and Scott St",
+      "Bush St and Pierce St",
+      "Bush St and Steiner St",
+      "Bush St and Fillmore St",
+      "Bush St and Webster St",
+      "Bush St and Buchanan St",
+      "Bush St and Laguna St",
+      "Bush St and Octavia St",
+      "Bush St and Gough St",
+      "Bush St and Franklin St",
+      "Bush St and Van Ness Ave",
+      "Bush St and Polk St",
+      "Bush St and Larkin St",
+      "Bush St and Hyde St",
+      "Bush St and Leavenworth St",
+      "Bush St and Jones St",
+      "Bush St and Taylor St",
+      "Bush St and Mason St",
+      "Bush St and Powell St",
+      "Bush St and Stockton St",
+      "Bush St and Grant Ave",
+      "Bush St and Montgomery St",
+      "Bush St and Sansome St",
+      "Bush St and Battery St"
     ],
     "43rd Ave": [
       "Ulloa St and 43rd Ave",
@@ -1450,28 +1437,6 @@
       "Francisco St and Franklin St",
       "Bay St and Franklin St"
     ],
-    "Francisco St": [
-      "Francisco St and Lyon St",
-      "Francisco St and Baker St",
-      "Francisco St and Broderick St",
-      "Francisco St and Divisadero St",
-      "Francisco St and Scott St",
-      "Francisco St and Laguna St",
-      "Francisco St and Octavia St",
-      "Francisco St and Gough St",
-      "Francisco St and Franklin St",
-      "Francisco St and Polk St",
-      "Francisco St and Hyde St",
-      "Francisco St and Leavenworth St",
-      "Francisco St and Jones St",
-      "Francisco St and Columbus Ave",
-      "Francisco St and Taylor St",
-      "Francisco St and Mason St",
-      "Francisco St and Powell St",
-      "Francisco St and Stockton St",
-      "Francisco St and Grant Ave",
-      "Francisco St and Montgomery St"
-    ],
     "Grant Ave": [
       "Post St and Grant Ave",
       "Sutter St and Grant Ave",
@@ -1524,28 +1489,8 @@
       "Geary Blvd and 36th Ave",
       "Clement St and 36th Ave"
     ],
-    "25th Ave": [
-      "Ulloa St and 25th Ave",
-      "Taraval St and 25th Ave",
-      "Santiago St and 25th Ave",
-      "Rivera St and 25th Ave",
-      "Quintara St and 25th Ave",
-      "Ortega St and 25th Ave",
-      "Noriega St and 25th Ave",
-      "Moraga St and 25th Ave",
-      "Lawton St and 25th Ave",
-      "Kirkham St and 25th Ave",
-      "Judah St and 25th Ave",
-      "Irving St and 25th Ave",
-      "Lincoln Way and 25th Ave",
-      "BREAK",
-      "Fulton St and 25th Ave",
-      "Cabrillo St and 25th Ave",
-      "Balboa St and 25th Ave",
-      "Anza St and 25th Ave",
-      "Geary Blvd and 25th Ave",
-      "Clement St and 25th Ave",
-      "Lake St and 25th Ave"
+    "Maynard St": [
+      "Maynard St and Mission St"
     ],
     "Spruce St": [
       "Anza St and Spruce St",
@@ -1664,18 +1609,9 @@
       "Clement St and Funston Ave",
       "Lake St and Funston Ave"
     ],
-    "The Embarcadero": [
-      "Taylor St and The Embarcadero",
-      "Powell St and The Embarcadero",
-      "Beach St and The Embarcadero",
-      "Grant Ave and The Embarcadero",
-      "North Point St and The Embarcadero",
-      "Bay St and The Embarcadero",
-      "Lombard St and The Embarcadero",
-      "Battery St and The Embarcadero",
-      "Filbert St and The Embarcadero",
-      "Green St and The Embarcadero",
-      "Broadway St and The Embarcadero"
+    "17th St": [
+      "17th St and Dolores St",
+      "17th St and Mission St"
     ],
     "Front St": [
       "Pine St and Front St",
@@ -1800,35 +1736,27 @@
       "Ulloa St and 14th Ave",
       "Ulloa St and Funston Ave"
     ],
-    "Larkin St": [
-      "Post St and Larkin St",
-      "Sutter St and Larkin St",
-      "Bush St and Larkin St",
-      "Pine St and Larkin St",
-      "Sacramento St and Larkin St",
-      "Clay St and Larkin St",
-      "Washington St and Larkin St",
-      "Jackson St and Larkin St",
-      "Pacific Ave and Larkin St",
-      "Broadway St and Larkin St",
-      "Vallejo St and Larkin St",
-      "Green St and Larkin St",
-      "Union St and Larkin St",
-      "Filbert St and Larkin St",
-      "Greenwich St and Larkin St",
-      "Lombard St and Larkin St",
-      "Chestnut St and Larkin St",
-      "Bay St and Larkin St",
-      "North Point St and Larkin St",
-      "Beach St and Larkin St"
+    "Mayfair Dr": [
+      "Mayfair Dr and Spruce St",
+      "Mayfair Dr and Locust St",
+      "Mayfair Dr and Collins St",
+      "Mayfair Dr and Laurel St"
     ],
     "Italy Ave": [
       "Italy Ave and Mission St"
     ],
-    "The Panhandle / SF Bike Route 30": [
-      "Baker St and Fell St",
-      "San Francisco Bicycle Route 30 and Masonic Ave",
-      "San Francisco Bicycle Route 30 and Stanyan St"
+    "The Embarcadero": [
+      "Taylor St and The Embarcadero",
+      "Powell St and The Embarcadero",
+      "Beach St and The Embarcadero",
+      "Grant Ave and The Embarcadero",
+      "North Point St and The Embarcadero",
+      "Bay St and The Embarcadero",
+      "Lombard St and The Embarcadero",
+      "Battery St and The Embarcadero",
+      "Filbert St and The Embarcadero",
+      "Green St and The Embarcadero",
+      "Broadway St and The Embarcadero"
     ],
     "Beach St": [
       "Beach St and Baker St",
@@ -2122,6 +2050,14 @@
       "O'Farrell St and Masonic Ave",
       "Geary Blvd and Masonic Ave"
     ],
+    "Turk Blvd": [
+      "Turk Blvd and Stanyan St",
+      "Turk Blvd and Parker Ave",
+      "Turk Blvd and Masonic Ave",
+      "Turk Blvd and Central Ave",
+      "Turk Blvd and Lyon St",
+      "Turk Blvd and Baker St"
+    ],
     "Powell St": [
       "Post St and Powell St",
       "Sutter St and Powell St",
@@ -2149,6 +2085,39 @@
     "Beaumont Ave": [
       "Anza St and Beaumont Ave",
       "Geary Blvd and Beaumont Ave"
+    ],
+    "Broadway St": [
+      "Broadway St and Lyon St",
+      "Broadway St and Baker St",
+      "Broadway St and Broderick St",
+      "Broadway St and Divisadero St",
+      "Broadway St and Scott St",
+      "Broadway St and Pierce St",
+      "Broadway St and Steiner St",
+      "Broadway St and Fillmore St",
+      "Broadway St and Webster St",
+      "Broadway St and Buchanan St",
+      "Broadway St and Laguna St",
+      "Broadway St and Octavia St",
+      "Broadway St and Gough St",
+      "Broadway St and Franklin St",
+      "Broadway St and Van Ness Ave",
+      "Broadway St and Polk St",
+      "Broadway St and Larkin St",
+      "Broadway St and Leavenworth St",
+      "Broadway St and Jones St",
+      "Broadway St and Taylor St",
+      "Broadway St and Mason St",
+      "Broadway St and Powell St",
+      "Broadway St and Stockton St",
+      "Broadway St and Grant Ave",
+      "Broadway St and Columbus Ave",
+      "Broadway St and Montgomery St",
+      "Broadway St and Sansome St",
+      "Broadway St and Battery St",
+      "Broadway St and Front St",
+      "Broadway St and Davis St",
+      "Broadway St and The Embarcadero"
     ],
     "Jackson St": [
       "Jackson St and Arguello Blvd",
@@ -2192,8 +2161,29 @@
       "Jackson St and Davis St",
       "Jackson St and Drumm St"
     ],
-    "Wood St": [
-      "Anza St and Wood St"
+    "Mason St": [
+      "Post St and Mason St",
+      "Sutter St and Mason St",
+      "Bush St and Mason St",
+      "Pine St and Mason St",
+      "Sacramento St and Mason St",
+      "Clay St and Mason St",
+      "Washington St and Mason St",
+      "Jackson St and Mason St",
+      "Pacific Ave and Mason St",
+      "Broadway St and Mason St",
+      "Vallejo St and Mason St",
+      "Green St and Mason St",
+      "Union St and Mason St",
+      "Filbert St and Mason St",
+      "Greenwich St and Mason St",
+      "Mason St and Columbus Ave",
+      "Lombard St and Mason St",
+      "Chestnut St and Mason St",
+      "Francisco St and Mason St",
+      "Bay St and Mason St",
+      "North Point St and Mason St",
+      "Beach St and Mason St"
     ],
     "Collins St": [
       "Anza St and Collins St",
@@ -2207,10 +2197,6 @@
     "29th St": [
       "29th St and Dolores St",
       "29th St and Mission St"
-    ],
-    "17th St": [
-      "17th St and Dolores St",
-      "17th St and Mission St"
     ],
     "Green St": [
       "Green St and Lyon St",
@@ -2409,61 +2395,55 @@
     "Richland Ave": [
       "Richland Ave and Mission St"
     ],
-    "24th Ave": [
-      "Ulloa St and 24th Ave",
-      "Taraval St and 24th Ave",
-      "Santiago St and 24th Ave",
-      "Rivera St and 24th Ave",
-      "Quintara St and 24th Ave",
-      "Pacheco St and 24th Ave",
-      "Ortega St and 24th Ave",
-      "Noriega St and 24th Ave",
-      "Moraga St and 24th Ave",
-      "Lawton St and 24th Ave",
-      "Kirkham St and 24th Ave",
-      "Judah St and 24th Ave",
-      "Irving St and 24th Ave",
-      "Lincoln Way and 24th Ave",
-      "BREAK",
-      "Fulton St and 24th Ave",
-      "Cabrillo St and 24th Ave",
-      "Balboa St and 24th Ave",
-      "Anza St and 24th Ave",
-      "Geary Blvd and 24th Ave",
-      "Clement St and 24th Ave",
-      "Lake St and 24th Ave"
-    ],
-    "Filbert St": [
-      "Filbert St and Lyon St",
-      "Filbert St and Baker St",
-      "Filbert St and Broderick St",
-      "Filbert St and Divisadero St",
-      "Filbert St and Scott St",
-      "Filbert St and Pierce St",
-      "Filbert St and Steiner St",
-      "Filbert St and Fillmore St",
-      "Filbert St and Webster St",
-      "Filbert St and Buchanan St",
-      "Filbert St and Laguna St",
-      "Filbert St and Octavia St",
-      "Filbert St and Gough St",
-      "Filbert St and Franklin St",
-      "Filbert St and Van Ness Ave",
-      "Filbert St and Polk St",
-      "Filbert St and Larkin St",
-      "Filbert St and Hyde St",
-      "Filbert St and Leavenworth St",
-      "Filbert St and Jones St",
-      "Filbert St and Taylor St",
-      "Filbert St and Mason St",
+    "Columbus Ave": [
+      "Beach St and Columbus Ave",
+      "Leavenworth St and Columbus Ave",
+      "North Point St and Columbus Ave",
+      "Bay St and Columbus Ave",
+      "Jones St and Columbus Ave",
+      "Francisco St and Columbus Ave",
+      "Taylor St and Columbus Ave",
+      "Chestnut St and Columbus Ave",
+      "Lombard St and Columbus Ave",
+      "Mason St and Columbus Ave",
+      "Greenwich St and Columbus Ave",
       "Filbert St and Columbus Ave",
-      "Filbert St and Powell St",
-      "Filbert St and Stockton St",
-      "Filbert St and Grant Ave",
-      "Filbert St and Montgomery St",
-      "Filbert St and Sansome St",
-      "Filbert St and Battery St",
-      "Filbert St and The Embarcadero"
+      "Powell St and Columbus Ave",
+      "Union St and Columbus Ave",
+      "Green St and Columbus Ave",
+      "Stockton St and Columbus Ave",
+      "Vallejo St and Columbus Ave",
+      "Grant Ave and Columbus Ave",
+      "Broadway St and Columbus Ave",
+      "Pacific Ave and Columbus Ave",
+      "Jackson St and Columbus Ave",
+      "Montgomery St and Columbus Ave",
+      "Washington St and Columbus Ave"
+    ],
+    "Taylor St": [
+      "Post St and Taylor St",
+      "Sutter St and Taylor St",
+      "Bush St and Taylor St",
+      "Pine St and Taylor St",
+      "Sacramento St and Taylor St",
+      "Clay St and Taylor St",
+      "Washington St and Taylor St",
+      "Jackson St and Taylor St",
+      "Pacific Ave and Taylor St",
+      "Broadway St and Taylor St",
+      "Vallejo St and Taylor St",
+      "Green St and Taylor St",
+      "Union St and Taylor St",
+      "Filbert St and Taylor St",
+      "Greenwich St and Taylor St",
+      "Lombard St and Taylor St",
+      "Chestnut St and Taylor St",
+      "Taylor St and Columbus Ave",
+      "Francisco St and Taylor St",
+      "Bay St and Taylor St",
+      "North Point St and Taylor St",
+      "Beach St and Taylor St",
+      "Taylor St and The Embarcadero"
     ],
     "10th Ave": [
       "Quintara St and 10th Ave",
@@ -2486,82 +2466,8 @@
       "California St and 10th Ave",
       "Lake St and 10th Ave"
     ],
-    "Cabrillo St": [
-      "Cabrillo St and 48th Ave",
-      "Cabrillo St and 47th Ave",
-      "Cabrillo St and 46th Ave",
-      "Cabrillo St and 45th Ave",
-      "Cabrillo St and 44th Ave",
-      "Cabrillo St and 43rd Ave",
-      "Cabrillo St and 42nd Ave",
-      "Cabrillo St and 41st Ave",
-      "Cabrillo St and 40th Ave",
-      "Cabrillo St and 39th Ave",
-      "Cabrillo St and 38th Ave",
-      "Cabrillo St and 37th Ave",
-      "Cabrillo St and 36th Ave",
-      "Cabrillo St and 35th Ave",
-      "Cabrillo St and 34th Ave",
-      "Cabrillo St and 33rd Ave",
-      "Cabrillo St and 32nd Ave",
-      "Cabrillo St and 31st Ave",
-      "Cabrillo St and 30th Ave",
-      "Cabrillo St and 29th Ave",
-      "Cabrillo St and 28th Ave",
-      "Cabrillo St and 27th Ave",
-      "Cabrillo St and 26th Ave",
-      "Cabrillo St and 25th Ave",
-      "Cabrillo St and 24th Ave",
-      "Cabrillo St and 23rd Ave",
-      "Cabrillo St and 22nd Ave",
-      "Cabrillo St and 21st Ave",
-      "Cabrillo St and 20th Ave",
-      "Cabrillo St and 19th Ave",
-      "Cabrillo St and 18th Ave",
-      "Cabrillo St and 17th Ave",
-      "Cabrillo St and 16th Ave",
-      "Cabrillo St and 15th Ave",
-      "Cabrillo St and 14th Ave",
-      "Cabrillo St and Park Presidio Blvd",
-      "Cabrillo St and Funston Ave",
-      "Cabrillo St and 12th Ave",
-      "Cabrillo St and 11th Ave",
-      "Cabrillo St and 10th Ave",
-      "Cabrillo St and 9th Ave",
-      "Cabrillo St and 8th Ave",
-      "Cabrillo St and 7th Ave",
-      "Cabrillo St and 6th Ave",
-      "Cabrillo St and 5th Ave",
-      "Cabrillo St and 4th Ave",
-      "Cabrillo St and 3rd Ave",
-      "Cabrillo St and 2nd Ave",
-      "Cabrillo St and Arguello Blvd"
-    ],
     "Brazil Ave": [
       "Brazil Ave and Mission St"
-    ],
-    "Golden Gate Ave": [
-      "Golden Gate Ave and Arguello Blvd",
-      "Golden Gate Ave and Stanyan St",
-      "BREAK",
-      "Golden Gate Ave and Parker Ave",
-      "Golden Gate Ave and Masonic Ave",
-      "Golden Gate Ave and Central Ave",
-      "Golden Gate Ave and Lyon St",
-      "Golden Gate Ave and Baker St",
-      "Golden Gate Ave and Broderick St",
-      "Golden Gate Ave and Divisadero St",
-      "Golden Gate Ave and Scott St",
-      "Golden Gate Ave and Pierce St",
-      "Golden Gate Ave and Steiner St",
-      "Golden Gate Ave and Fillmore St",
-      "Golden Gate Ave and Webster St",
-      "Golden Gate Ave and Buchanan St",
-      "Golden Gate Ave and Laguna St",
-      "Golden Gate Ave and Octavia St",
-      "Golden Gate Ave and Gough St",
-      "Golden Gate Ave and Franklin St",
-      "Golden Gate Ave and Van Ness Ave"
     ],
     "47th Ave": [
       "Ulloa St and 47th Ave",
@@ -2623,55 +2529,40 @@
       "North Point St and Divisadero St",
       "Beach St and Divisadero St"
     ],
-    "Balboa St": [
-      "Balboa St and 48th Ave",
-      "Balboa St and 47th Ave",
-      "Balboa St and 46th Ave",
-      "Balboa St and 45th Ave",
-      "Balboa St and 44th Ave",
-      "Balboa St and 43rd Ave",
-      "Balboa St and 42nd Ave",
-      "Balboa St and 41st Ave",
-      "Balboa St and 40th Ave",
-      "Balboa St and 39th Ave",
-      "Balboa St and 38th Ave",
-      "Balboa St and 37th Ave",
-      "Balboa St and 36th Ave",
-      "Balboa St and 35th Ave",
-      "Balboa St and 34th Ave",
-      "Balboa St and 33rd Ave",
-      "Balboa St and 32nd Ave",
-      "Balboa St and 31st Ave",
-      "Balboa St and 30th Ave",
-      "Balboa St and 29th Ave",
-      "Balboa St and 28th Ave",
-      "Balboa St and 27th Ave",
-      "Balboa St and 26th Ave",
-      "Balboa St and 25th Ave",
-      "Balboa St and 24th Ave",
-      "Balboa St and 23rd Ave",
-      "Balboa St and 22nd Ave",
-      "Balboa St and 21st Ave",
-      "Balboa St and 20th Ave",
-      "Balboa St and 19th Ave",
-      "Balboa St and 18th Ave",
-      "Balboa St and 17th Ave",
-      "Balboa St and 16th Ave",
-      "Balboa St and 15th Ave",
-      "Balboa St and 14th Ave",
-      "Balboa St and Funston Ave",
-      "Balboa St and 12th Ave",
-      "Balboa St and 11th Ave",
-      "Balboa St and 10th Ave",
-      "Balboa St and 9th Ave",
-      "Balboa St and 8th Ave",
-      "Balboa St and 7th Ave",
-      "Balboa St and 6th Ave",
-      "Balboa St and 5th Ave",
-      "Balboa St and 4th Ave",
-      "Balboa St and 3rd Ave",
-      "Balboa St and 2nd Ave",
-      "Balboa St and Arguello Blvd"
+    "Mission St": [
+      "Geneva Ave and Mission St",
+      "Amazon Ave and Mission St",
+      "Italy Ave and Mission St",
+      "France Ave and Mission St",
+      "Russia Ave and Mission St",
+      "Persia Ave and Mission St",
+      "Brazil Ave and Mission St",
+      "Excelsior Ave and Mission St",
+      "Avalon Ave and Mission St",
+      "Silver Ave and Mission St",
+      "Maynard St and Mission St",
+      "Ney St and Mission St",
+      "Trumbull St and Mission St",
+      "Bosworth St and Mission St",
+      "Crescent Ave and Mission St",
+      "Richland Ave and Mission St",
+      "Park St and Mission St",
+      "Highland Ave and Mission St",
+      "Appleton Ave and Mission St",
+      "Randall St and Mission St",
+      "30th St and Mission St",
+      "29th St and Mission St",
+      "26th St and Mission St",
+      "25th St and Mission St",
+      "24th St and Mission St",
+      "23rd St and Mission St",
+      "22nd St and Mission St",
+      "21st St and Mission St",
+      "20th St and Mission St",
+      "19th St and Mission St",
+      "18th St and Mission St",
+      "17th St and Mission St",
+      "16th St and Mission St"
     ],
     "39th Ave": [
       "Ulloa St and 39th Ave",
@@ -2900,41 +2791,97 @@
       "Appleton Ave and Mission St",
       "Holly Park Cir and Appleton Ave"
     ],
-    "Persia Ave": [
-      "Persia Ave and Mission St"
+    "Cabrillo St": [
+      "Cabrillo St and 48th Ave",
+      "Cabrillo St and 47th Ave",
+      "Cabrillo St and 46th Ave",
+      "Cabrillo St and 45th Ave",
+      "Cabrillo St and 44th Ave",
+      "Cabrillo St and 43rd Ave",
+      "Cabrillo St and 42nd Ave",
+      "Cabrillo St and 41st Ave",
+      "Cabrillo St and 40th Ave",
+      "Cabrillo St and 39th Ave",
+      "Cabrillo St and 38th Ave",
+      "Cabrillo St and 37th Ave",
+      "Cabrillo St and 36th Ave",
+      "Cabrillo St and 35th Ave",
+      "Cabrillo St and 34th Ave",
+      "Cabrillo St and 33rd Ave",
+      "Cabrillo St and 32nd Ave",
+      "Cabrillo St and 31st Ave",
+      "Cabrillo St and 30th Ave",
+      "Cabrillo St and 29th Ave",
+      "Cabrillo St and 28th Ave",
+      "Cabrillo St and 27th Ave",
+      "Cabrillo St and 26th Ave",
+      "Cabrillo St and 25th Ave",
+      "Cabrillo St and 24th Ave",
+      "Cabrillo St and 23rd Ave",
+      "Cabrillo St and 22nd Ave",
+      "Cabrillo St and 21st Ave",
+      "Cabrillo St and 20th Ave",
+      "Cabrillo St and 19th Ave",
+      "Cabrillo St and 18th Ave",
+      "Cabrillo St and 17th Ave",
+      "Cabrillo St and 16th Ave",
+      "Cabrillo St and 15th Ave",
+      "Cabrillo St and 14th Ave",
+      "Cabrillo St and Park Presidio Blvd",
+      "Cabrillo St and Funston Ave",
+      "Cabrillo St and 12th Ave",
+      "Cabrillo St and 11th Ave",
+      "Cabrillo St and 10th Ave",
+      "Cabrillo St and 9th Ave",
+      "Cabrillo St and 8th Ave",
+      "Cabrillo St and 7th Ave",
+      "Cabrillo St and 6th Ave",
+      "Cabrillo St and 5th Ave",
+      "Cabrillo St and 4th Ave",
+      "Cabrillo St and 3rd Ave",
+      "Cabrillo St and 2nd Ave",
+      "Cabrillo St and Arguello Blvd"
     ],
-    "Broadway St": [
-      "Broadway St and Lyon St",
-      "Broadway St and Baker St",
-      "Broadway St and Broderick St",
-      "Broadway St and Divisadero St",
-      "Broadway St and Scott St",
-      "Broadway St and Pierce St",
-      "Broadway St and Steiner St",
-      "Broadway St and Fillmore St",
-      "Broadway St and Webster St",
-      "Broadway St and Buchanan St",
-      "Broadway St and Laguna St",
-      "Broadway St and Octavia St",
-      "Broadway St and Gough St",
-      "Broadway St and Franklin St",
-      "Broadway St and Van Ness Ave",
-      "Broadway St and Polk St",
-      "Broadway St and Larkin St",
-      "Broadway St and Leavenworth St",
-      "Broadway St and Jones St",
-      "Broadway St and Taylor St",
-      "Broadway St and Mason St",
-      "Broadway St and Powell St",
-      "Broadway St and Stockton St",
-      "Broadway St and Grant Ave",
-      "Broadway St and Columbus Ave",
-      "Broadway St and Montgomery St",
-      "Broadway St and Sansome St",
-      "Broadway St and Battery St",
-      "Broadway St and Front St",
-      "Broadway St and Davis St",
-      "Broadway St and The Embarcadero"
+    "Sacramento St": [
+      "Sacramento St and Arguello Blvd",
+      "Sacramento St and Cherry St",
+      "Sacramento St and Maple St",
+      "Sacramento St and Spruce St",
+      "Sacramento St and Locust St",
+      "Sacramento St and Laurel St",
+      "Sacramento St and Walnut St",
+      "Sacramento St and Presidio Ave",
+      "Sacramento St and Lyon St",
+      "Sacramento St and Baker St",
+      "Sacramento St and Broderick St",
+      "Sacramento St and Divisadero St",
+      "Sacramento St and Scott St",
+      "Sacramento St and Pierce St",
+      "Sacramento St and Steiner St",
+      "Sacramento St and Fillmore St",
+      "Sacramento St and Webster St",
+      "Sacramento St and Buchanan St",
+      "Sacramento St and Laguna St",
+      "Sacramento St and Octavia St",
+      "Sacramento St and Gough St",
+      "Sacramento St and Franklin St",
+      "Sacramento St and Van Ness Ave",
+      "Sacramento St and Polk St",
+      "Sacramento St and Larkin St",
+      "Sacramento St and Hyde St",
+      "Sacramento St and Leavenworth St",
+      "Sacramento St and Jones St",
+      "Sacramento St and Taylor St",
+      "Sacramento St and Mason St",
+      "Sacramento St and Powell St",
+      "Sacramento St and Stockton St",
+      "Sacramento St and Grant Ave",
+      "Sacramento St and Montgomery St",
+      "Sacramento St and Sansome St",
+      "Sacramento St and Battery St",
+      "Sacramento St and Front St",
+      "Sacramento St and Davis St",
+      "Sacramento St and Drumm St"
     ],
     "Santiago St": [
       "Santiago St and 48th Ave",
@@ -3004,89 +2951,54 @@
       "Fell St and Gough St",
       "Fell St and Franklin St"
     ],
-    "Bush St": [
-      "Bush St and Lyon St",
-      "Bush St and Baker St",
-      "Bush St and Broderick St",
-      "Bush St and Divisadero St",
-      "Bush St and Scott St",
-      "Bush St and Pierce St",
-      "Bush St and Steiner St",
-      "Bush St and Fillmore St",
-      "Bush St and Webster St",
-      "Bush St and Buchanan St",
-      "Bush St and Laguna St",
-      "Bush St and Octavia St",
-      "Bush St and Gough St",
-      "Bush St and Franklin St",
-      "Bush St and Van Ness Ave",
-      "Bush St and Polk St",
-      "Bush St and Larkin St",
-      "Bush St and Hyde St",
-      "Bush St and Leavenworth St",
-      "Bush St and Jones St",
-      "Bush St and Taylor St",
-      "Bush St and Mason St",
-      "Bush St and Powell St",
-      "Bush St and Stockton St",
-      "Bush St and Grant Ave",
-      "Bush St and Montgomery St",
-      "Bush St and Sansome St",
-      "Bush St and Battery St"
+    "Murray St": [
+      "Holly Park Cir and Murray St"
     ],
-    "Irving St": [
-      "Irving St and 48th Ave",
-      "Irving St and 47th Ave",
-      "Irving St and 46th Ave",
-      "Irving St and 45th Ave",
-      "Irving St and 44th Ave",
-      "Irving St and 43rd Ave",
-      "Irving St and 42nd Ave",
-      "Irving St and 41st Ave",
-      "Irving St and 40th Ave",
-      "Irving St and 39th Ave",
-      "Irving St and 38th Ave",
-      "Irving St and 37th Ave",
-      "Irving St and Sunset Blvd",
-      "Irving St and 36th Ave",
-      "Irving St and 35th Ave",
-      "Irving St and 34th Ave",
-      "Irving St and 33rd Ave",
-      "Irving St and 32nd Ave",
-      "Irving St and 31st Ave",
-      "Irving St and 30th Ave",
-      "Irving St and 29th Ave",
-      "Irving St and 28th Ave",
-      "Irving St and 27th Ave",
-      "Irving St and 26th Ave",
+    "Golden Gate Ave": [
+      "Golden Gate Ave and Arguello Blvd",
+      "Golden Gate Ave and Stanyan St",
+      "BREAK",
+      "Golden Gate Ave and Parker Ave",
+      "Golden Gate Ave and Masonic Ave",
+      "Golden Gate Ave and Central Ave",
+      "Golden Gate Ave and Lyon St",
+      "Golden Gate Ave and Baker St",
+      "Golden Gate Ave and Broderick St",
+      "Golden Gate Ave and Divisadero St",
+      "Golden Gate Ave and Scott St",
+      "Golden Gate Ave and Pierce St",
+      "Golden Gate Ave and Steiner St",
+      "Golden Gate Ave and Fillmore St",
+      "Golden Gate Ave and Webster St",
+      "Golden Gate Ave and Buchanan St",
+      "Golden Gate Ave and Laguna St",
+      "Golden Gate Ave and Octavia St",
+      "Golden Gate Ave and Gough St",
+      "Golden Gate Ave and Franklin St",
+      "Golden Gate Ave and Van Ness Ave"
+    ],
+    "25th Ave": [
+      "Ulloa St and 25th Ave",
+      "Taraval St and 25th Ave",
+      "Santiago St and 25th Ave",
+      "Rivera St and 25th Ave",
+      "Quintara St and 25th Ave",
+      "Ortega St and 25th Ave",
+      "Noriega St and 25th Ave",
+      "Moraga St and 25th Ave",
+      "Lawton St and 25th Ave",
+      "Kirkham St and 25th Ave",
+      "Judah St and 25th Ave",
       "Irving St and 25th Ave",
-      "Irving St and 24th Ave",
-      "Irving St and 23rd Ave",
-      "Irving St and 22nd Ave",
-      "Irving St and 21st Ave",
-      "Irving St and 20th Ave",
-      "Irving St and 19th Ave",
-      "Irving St and 18th Ave",
-      "Irving St and 17th Ave",
-      "Irving St and 16th Ave",
-      "Irving St and 15th Ave",
-      "Irving St and 14th Ave",
-      "Irving St and Funston Ave",
-      "Irving St and 12th Ave",
-      "Irving St and 11th Ave",
-      "Irving St and 10th Ave",
-      "Irving St and 9th Ave",
-      "Irving St and 8th Ave",
-      "Irving St and 7th Ave",
-      "Irving St and 6th Ave",
-      "Irving St and 5th Ave",
-      "Irving St and 4th Ave",
-      "Irving St and 3rd Ave",
-      "Irving St and 2nd Ave",
-      "Irving St and Arguello Blvd"
-    ],
-    "Maynard St": [
-      "Maynard St and Mission St"
+      "Lincoln Way and 25th Ave",
+      "BREAK",
+      "Fulton St and 25th Ave",
+      "Cabrillo St and 25th Ave",
+      "Balboa St and 25th Ave",
+      "Anza St and 25th Ave",
+      "Geary Blvd and 25th Ave",
+      "Clement St and 25th Ave",
+      "Lake St and 25th Ave"
     ],
     "Jordan Ave": [
       "Geary Blvd and Jordan Ave",
@@ -3206,30 +3118,37 @@
       "17th St and Dolores St",
       "16th St and Dolores St"
     ],
-    "Taylor St": [
-      "Post St and Taylor St",
-      "Sutter St and Taylor St",
-      "Bush St and Taylor St",
-      "Pine St and Taylor St",
-      "Sacramento St and Taylor St",
-      "Clay St and Taylor St",
-      "Washington St and Taylor St",
-      "Jackson St and Taylor St",
-      "Pacific Ave and Taylor St",
-      "Broadway St and Taylor St",
-      "Vallejo St and Taylor St",
-      "Green St and Taylor St",
-      "Union St and Taylor St",
+    "Filbert St": [
+      "Filbert St and Lyon St",
+      "Filbert St and Baker St",
+      "Filbert St and Broderick St",
+      "Filbert St and Divisadero St",
+      "Filbert St and Scott St",
+      "Filbert St and Pierce St",
+      "Filbert St and Steiner St",
+      "Filbert St and Fillmore St",
+      "Filbert St and Webster St",
+      "Filbert St and Buchanan St",
+      "Filbert St and Laguna St",
+      "Filbert St and Octavia St",
+      "Filbert St and Gough St",
+      "Filbert St and Franklin St",
+      "Filbert St and Van Ness Ave",
+      "Filbert St and Polk St",
+      "Filbert St and Larkin St",
+      "Filbert St and Hyde St",
+      "Filbert St and Leavenworth St",
+      "Filbert St and Jones St",
       "Filbert St and Taylor St",
-      "Greenwich St and Taylor St",
-      "Lombard St and Taylor St",
-      "Chestnut St and Taylor St",
-      "Taylor St and Columbus Ave",
-      "Francisco St and Taylor St",
-      "Bay St and Taylor St",
-      "North Point St and Taylor St",
-      "Beach St and Taylor St",
-      "Taylor St and The Embarcadero"
+      "Filbert St and Mason St",
+      "Filbert St and Columbus Ave",
+      "Filbert St and Powell St",
+      "Filbert St and Stockton St",
+      "Filbert St and Grant Ave",
+      "Filbert St and Montgomery St",
+      "Filbert St and Sansome St",
+      "Filbert St and Battery St",
+      "Filbert St and The Embarcadero"
     ],
     "20th Ave": [
       "Ulloa St and 20th Ave",
@@ -3585,13 +3504,35 @@
       "Vallejo St and Front St",
       "Vallejo St and Davis St"
     ],
-    "Turk Blvd": [
-      "Turk Blvd and Stanyan St",
-      "Turk Blvd and Parker Ave",
-      "Turk Blvd and Masonic Ave",
-      "Turk Blvd and Central Ave",
-      "Turk Blvd and Lyon St",
-      "Turk Blvd and Baker St"
+    "Greenwich St": [
+      "Greenwich St and Lyon St",
+      "Greenwich St and Baker St",
+      "Greenwich St and Broderick St",
+      "Greenwich St and Divisadero St",
+      "Greenwich St and Scott St",
+      "Greenwich St and Pierce St",
+      "Greenwich St and Steiner St",
+      "Greenwich St and Fillmore St",
+      "Greenwich St and Webster St",
+      "Greenwich St and Buchanan St",
+      "Greenwich St and Laguna St",
+      "Greenwich St and Octavia St",
+      "Greenwich St and Gough St",
+      "Greenwich St and Franklin St",
+      "Greenwich St and Van Ness Ave",
+      "Greenwich St and Polk St",
+      "Greenwich St and Larkin St",
+      "Greenwich St and Hyde St",
+      "Greenwich St and Leavenworth St",
+      "Greenwich St and Jones St",
+      "Greenwich St and Taylor St",
+      "Greenwich St and Mason St",
+      "Greenwich St and Columbus Ave",
+      "Greenwich St and Powell St",
+      "Greenwich St and Stockton St",
+      "Greenwich St and Grant Ave",
+      "Greenwich St and Sansome St",
+      "Greenwich St and Battery St"
     ],
     "18th St": [
       "18th St and Dolores St",
@@ -3638,44 +3579,77 @@
       "Park St and Mission St",
       "Holly Park Cir and Park St"
     ],
-    "Pacific Ave": [
-      "Pacific Ave and Arguello Blvd",
-      "Pacific Ave and Spruce St",
-      "Pacific Ave and Locust St",
-      "Pacific Ave and Laurel St",
-      "Pacific Ave and Walnut St",
-      "Pacific Ave and Presidio Ave",
-      "Pacific Ave and Lyon St",
-      "Pacific Ave and Baker St",
-      "Pacific Ave and Broderick St",
-      "Pacific Ave and Divisadero St",
-      "Pacific Ave and Scott St",
-      "Pacific Ave and Pierce St",
-      "Pacific Ave and Steiner St",
-      "Pacific Ave and Fillmore St",
-      "Pacific Ave and Webster St",
-      "Pacific Ave and Buchanan St",
-      "Pacific Ave and Laguna St",
-      "Pacific Ave and Octavia St",
-      "Pacific Ave and Gough St",
-      "Pacific Ave and Franklin St",
-      "Pacific Ave and Van Ness Ave",
-      "Pacific Ave and Polk St",
-      "Pacific Ave and Larkin St",
-      "Pacific Ave and Hyde St",
-      "Pacific Ave and Leavenworth St",
-      "Pacific Ave and Jones St",
-      "Pacific Ave and Taylor St",
-      "Pacific Ave and Mason St",
-      "Pacific Ave and Powell St",
-      "Pacific Ave and Stockton St",
-      "Pacific Ave and Grant Ave",
-      "Pacific Ave and Columbus Ave",
-      "Pacific Ave and Montgomery St",
-      "Pacific Ave and Sansome St",
-      "Pacific Ave and Battery St",
-      "Pacific Ave and Front St",
-      "Pacific Ave and Davis St"
+    "Fulton St": [
+      "Fulton St and 48th Ave",
+      "Fulton St and 47th Ave",
+      "Fulton St and 46th Ave",
+      "Fulton St and 45th Ave",
+      "Fulton St and 44th Ave",
+      "Fulton St and 43rd Ave",
+      "Fulton St and 42nd Ave",
+      "Fulton St and 41st Ave",
+      "Fulton St and 40th Ave",
+      "Fulton St and 39th Ave",
+      "Fulton St and 38th Ave",
+      "Fulton St and 37th Ave",
+      "Fulton St and 36th Ave",
+      "Fulton St and 35th Ave",
+      "Fulton St and 34th Ave",
+      "Fulton St and 33rd Ave",
+      "Fulton St and 32nd Ave",
+      "Fulton St and 31st Ave",
+      "Fulton St and 30th Ave",
+      "Fulton St and 29th Ave",
+      "Fulton St and 28th Ave",
+      "Fulton St and 27th Ave",
+      "Fulton St and 26th Ave",
+      "Fulton St and 25th Ave",
+      "Fulton St and 24th Ave",
+      "Fulton St and 23rd Ave",
+      "Fulton St and 22nd Ave",
+      "Fulton St and 21st Ave",
+      "Fulton St and 20th Ave",
+      "Fulton St and 19th Ave",
+      "Fulton St and 18th Ave",
+      "Fulton St and 17th Ave",
+      "Fulton St and 16th Ave",
+      "Fulton St and 15th Ave",
+      "Fulton St and 14th Ave",
+      "Fulton St and Park Presidio Blvd",
+      "Fulton St and Funston Ave",
+      "Fulton St and 12th Ave",
+      "Fulton St and 11th Ave",
+      "Fulton St and 10th Ave",
+      "Fulton St and 9th Ave",
+      "Fulton St and 8th Ave",
+      "Fulton St and 7th Ave",
+      "Fulton St and 6th Ave",
+      "Fulton St and 5th Ave",
+      "Fulton St and 4th Ave",
+      "Fulton St and 3rd Ave",
+      "Fulton St and 2nd Ave",
+      "Fulton St and Arguello Blvd",
+      "Fulton St and Stanyan St",
+      "Fulton St and Shrader St",
+      "Fulton St and Parker Ave",
+      "Fulton St and Cole St",
+      "Fulton St and Clayton St",
+      "Fulton St and Masonic Ave",
+      "Fulton St and Central Ave",
+      "Fulton St and Lyon St",
+      "Fulton St and Baker St",
+      "Fulton St and Broderick St",
+      "Fulton St and Divisadero St",
+      "Fulton St and Scott St",
+      "Fulton St and Pierce St",
+      "Fulton St and Steiner St",
+      "Fulton St and Fillmore St",
+      "Fulton St and Webster St",
+      "Fulton St and Buchanan St",
+      "Fulton St and Laguna St",
+      "Fulton St and Octavia St",
+      "Fulton St and Gough St",
+      "Fulton St and Franklin St"
     ],
     "16th St": [
       "16th St and Dolores St",
@@ -3703,30 +3677,8 @@
       "Anza St and 46th Ave",
       "Geary Blvd and 46th Ave"
     ],
-    "Van Ness Ave": [
-      "Oak St and Van Ness Ave",
-      "Golden Gate Ave and Van Ness Ave",
-      "Eddy St and Van Ness Ave",
-      "Ellis St and Van Ness Ave",
-      "Post St and Van Ness Ave",
-      "Sutter St and Van Ness Ave",
-      "Bush St and Van Ness Ave",
-      "Pine St and Van Ness Ave",
-      "Sacramento St and Van Ness Ave",
-      "Clay St and Van Ness Ave",
-      "Washington St and Van Ness Ave",
-      "Jackson St and Van Ness Ave",
-      "Pacific Ave and Van Ness Ave",
-      "Broadway St and Van Ness Ave",
-      "Vallejo St and Van Ness Ave",
-      "Green St and Van Ness Ave",
-      "Union St and Van Ness Ave",
-      "Filbert St and Van Ness Ave",
-      "Greenwich St and Van Ness Ave",
-      "Lombard St and Van Ness Ave",
-      "Chestnut St and Van Ness Ave",
-      "Bay St and Van Ness Ave",
-      "North Point St and Van Ness Ave"
+    "Bosworth St": [
+      "Bosworth St and Mission St"
     ],
     "29th Ave": [
       "Ulloa St and 29th Ave",
@@ -3808,11 +3760,27 @@
       "Geary Blvd and 42nd Ave",
       "Clement St and 42nd Ave"
     ],
-    "Mayfair Dr": [
-      "Mayfair Dr and Spruce St",
-      "Mayfair Dr and Locust St",
-      "Mayfair Dr and Collins St",
-      "Mayfair Dr and Laurel St"
+    "Larkin St": [
+      "Post St and Larkin St",
+      "Sutter St and Larkin St",
+      "Bush St and Larkin St",
+      "Pine St and Larkin St",
+      "Sacramento St and Larkin St",
+      "Clay St and Larkin St",
+      "Washington St and Larkin St",
+      "Jackson St and Larkin St",
+      "Pacific Ave and Larkin St",
+      "Broadway St and Larkin St",
+      "Vallejo St and Larkin St",
+      "Green St and Larkin St",
+      "Union St and Larkin St",
+      "Filbert St and Larkin St",
+      "Greenwich St and Larkin St",
+      "Lombard St and Larkin St",
+      "Chestnut St and Larkin St",
+      "Bay St and Larkin St",
+      "North Point St and Larkin St",
+      "Beach St and Larkin St"
     ],
     "Locust St": [
       "Mayfair Dr and Locust St",
@@ -3885,30 +3853,29 @@
       "Geary Blvd and 34th Ave",
       "Clement St and 34th Ave"
     ],
-    "Columbus Ave": [
-      "Beach St and Columbus Ave",
-      "Leavenworth St and Columbus Ave",
-      "North Point St and Columbus Ave",
-      "Bay St and Columbus Ave",
-      "Jones St and Columbus Ave",
-      "Francisco St and Columbus Ave",
-      "Taylor St and Columbus Ave",
-      "Chestnut St and Columbus Ave",
-      "Lombard St and Columbus Ave",
-      "Mason St and Columbus Ave",
-      "Greenwich St and Columbus Ave",
-      "Filbert St and Columbus Ave",
-      "Powell St and Columbus Ave",
-      "Union St and Columbus Ave",
-      "Green St and Columbus Ave",
-      "Stockton St and Columbus Ave",
-      "Vallejo St and Columbus Ave",
-      "Grant Ave and Columbus Ave",
-      "Broadway St and Columbus Ave",
-      "Pacific Ave and Columbus Ave",
-      "Jackson St and Columbus Ave",
-      "Montgomery St and Columbus Ave",
-      "Washington St and Columbus Ave"
+    "24th Ave": [
+      "Ulloa St and 24th Ave",
+      "Taraval St and 24th Ave",
+      "Santiago St and 24th Ave",
+      "Rivera St and 24th Ave",
+      "Quintara St and 24th Ave",
+      "Pacheco St and 24th Ave",
+      "Ortega St and 24th Ave",
+      "Noriega St and 24th Ave",
+      "Moraga St and 24th Ave",
+      "Lawton St and 24th Ave",
+      "Kirkham St and 24th Ave",
+      "Judah St and 24th Ave",
+      "Irving St and 24th Ave",
+      "Lincoln Way and 24th Ave",
+      "BREAK",
+      "Fulton St and 24th Ave",
+      "Cabrillo St and 24th Ave",
+      "Balboa St and 24th Ave",
+      "Anza St and 24th Ave",
+      "Geary Blvd and 24th Ave",
+      "Clement St and 24th Ave",
+      "Lake St and 24th Ave"
     ],
     "16th Ave": [
       "Ulloa St and 16th Ave",
@@ -3959,40 +3926,55 @@
       "Leavenworth St and Columbus Ave",
       "Beach St and Leavenworth St"
     ],
-    "Mission St": [
-      "Geneva Ave and Mission St",
-      "Amazon Ave and Mission St",
-      "Italy Ave and Mission St",
-      "France Ave and Mission St",
-      "Russia Ave and Mission St",
-      "Persia Ave and Mission St",
-      "Brazil Ave and Mission St",
-      "Excelsior Ave and Mission St",
-      "Avalon Ave and Mission St",
-      "Silver Ave and Mission St",
-      "Maynard St and Mission St",
-      "Ney St and Mission St",
-      "Trumbull St and Mission St",
-      "Bosworth St and Mission St",
-      "Crescent Ave and Mission St",
-      "Richland Ave and Mission St",
-      "Park St and Mission St",
-      "Highland Ave and Mission St",
-      "Appleton Ave and Mission St",
-      "Randall St and Mission St",
-      "30th St and Mission St",
-      "29th St and Mission St",
-      "26th St and Mission St",
-      "25th St and Mission St",
-      "24th St and Mission St",
-      "23rd St and Mission St",
-      "22nd St and Mission St",
-      "21st St and Mission St",
-      "20th St and Mission St",
-      "19th St and Mission St",
-      "18th St and Mission St",
-      "17th St and Mission St",
-      "16th St and Mission St"
+    "Balboa St": [
+      "Balboa St and 48th Ave",
+      "Balboa St and 47th Ave",
+      "Balboa St and 46th Ave",
+      "Balboa St and 45th Ave",
+      "Balboa St and 44th Ave",
+      "Balboa St and 43rd Ave",
+      "Balboa St and 42nd Ave",
+      "Balboa St and 41st Ave",
+      "Balboa St and 40th Ave",
+      "Balboa St and 39th Ave",
+      "Balboa St and 38th Ave",
+      "Balboa St and 37th Ave",
+      "Balboa St and 36th Ave",
+      "Balboa St and 35th Ave",
+      "Balboa St and 34th Ave",
+      "Balboa St and 33rd Ave",
+      "Balboa St and 32nd Ave",
+      "Balboa St and 31st Ave",
+      "Balboa St and 30th Ave",
+      "Balboa St and 29th Ave",
+      "Balboa St and 28th Ave",
+      "Balboa St and 27th Ave",
+      "Balboa St and 26th Ave",
+      "Balboa St and 25th Ave",
+      "Balboa St and 24th Ave",
+      "Balboa St and 23rd Ave",
+      "Balboa St and 22nd Ave",
+      "Balboa St and 21st Ave",
+      "Balboa St and 20th Ave",
+      "Balboa St and 19th Ave",
+      "Balboa St and 18th Ave",
+      "Balboa St and 17th Ave",
+      "Balboa St and 16th Ave",
+      "Balboa St and 15th Ave",
+      "Balboa St and 14th Ave",
+      "Balboa St and Funston Ave",
+      "Balboa St and 12th Ave",
+      "Balboa St and 11th Ave",
+      "Balboa St and 10th Ave",
+      "Balboa St and 9th Ave",
+      "Balboa St and 8th Ave",
+      "Balboa St and 7th Ave",
+      "Balboa St and 6th Ave",
+      "Balboa St and 5th Ave",
+      "Balboa St and 4th Ave",
+      "Balboa St and 3rd Ave",
+      "Balboa St and 2nd Ave",
+      "Balboa St and Arguello Blvd"
     ],
     "Holly Park Cir": [
       "Holly Park Cir and Murray St",
@@ -4062,13 +4044,27 @@
       "North Point St and Scott St",
       "Beach St and Scott St"
     ],
-    "Presidio Ave": [
-      "Euclid Ave and Presidio Ave",
-      "Sacramento St and Presidio Ave",
-      "Clay St and Presidio Ave",
-      "Washington St and Presidio Ave",
-      "Jackson St and Presidio Ave",
-      "Pacific Ave and Presidio Ave"
+    "Francisco St": [
+      "Francisco St and Lyon St",
+      "Francisco St and Baker St",
+      "Francisco St and Broderick St",
+      "Francisco St and Divisadero St",
+      "Francisco St and Scott St",
+      "Francisco St and Laguna St",
+      "Francisco St and Octavia St",
+      "Francisco St and Gough St",
+      "Francisco St and Franklin St",
+      "Francisco St and Polk St",
+      "Francisco St and Hyde St",
+      "Francisco St and Leavenworth St",
+      "Francisco St and Jones St",
+      "Francisco St and Columbus Ave",
+      "Francisco St and Taylor St",
+      "Francisco St and Mason St",
+      "Francisco St and Powell St",
+      "Francisco St and Stockton St",
+      "Francisco St and Grant Ave",
+      "Francisco St and Montgomery St"
     ],
     "Commonwealth Ave": [
       "Geary Blvd and Commonwealth Ave",
@@ -4166,8 +4162,30 @@
       "Moraga St and 9th Ave",
       "Moraga St and 8th Ave"
     ],
-    "Bosworth St": [
-      "Bosworth St and Mission St"
+    "Van Ness Ave": [
+      "Oak St and Van Ness Ave",
+      "Golden Gate Ave and Van Ness Ave",
+      "Eddy St and Van Ness Ave",
+      "Ellis St and Van Ness Ave",
+      "Post St and Van Ness Ave",
+      "Sutter St and Van Ness Ave",
+      "Bush St and Van Ness Ave",
+      "Pine St and Van Ness Ave",
+      "Sacramento St and Van Ness Ave",
+      "Clay St and Van Ness Ave",
+      "Washington St and Van Ness Ave",
+      "Jackson St and Van Ness Ave",
+      "Pacific Ave and Van Ness Ave",
+      "Broadway St and Van Ness Ave",
+      "Vallejo St and Van Ness Ave",
+      "Green St and Van Ness Ave",
+      "Union St and Van Ness Ave",
+      "Filbert St and Van Ness Ave",
+      "Greenwich St and Van Ness Ave",
+      "Lombard St and Van Ness Ave",
+      "Chestnut St and Van Ness Ave",
+      "Bay St and Van Ness Ave",
+      "North Point St and Van Ness Ave"
     ],
     "Parker Ave": [
       "Fulton St and Parker Ave",
@@ -4298,7 +4316,7 @@
       "Clement St and Arguello Blvd"
     ]
   },
-  "buildtime": "2012-12-07-2316",
+  "buildtime": "2012-12-08-2049",
   "intersections": {
     "Lawton St and 18th Ave": {
       "lat": 37.7580167,
@@ -4306,11 +4324,11 @@
       "elevation": 106.3576507568359,
       "time": 1352424398
     },
-    "Pacific Ave and Laurel St": {
-      "lat": 37.7912129,
-      "lng": -122.4510013,
-      "elevation": 61.12641143798828,
-      "time": 1353574968
+    "Lawton St and 48th Ave": {
+      "lat": 37.75659720000001,
+      "lng": -122.5078116,
+      "elevation": 4.958455085754395,
+      "time": 1352424401
     },
     "Clay St and Drumm St": {
       "lat": 37.7955165,
@@ -4330,11 +4348,11 @@
       "elevation": 21.15204429626465,
       "time": 1352424470
     },
-    "Santiago St and 14th Ave": {
-      "lat": 37.7451657,
-      "lng": -122.4703711,
-      "elevation": 145.0072937011719,
-      "time": 1352424638
+    "Noriega St and 27th Ave": {
+      "lat": 37.7538629,
+      "lng": -122.485045,
+      "elevation": 96.78732299804688,
+      "time": 1352424637
     },
     "Jackson St and Drumm St": {
       "lat": 37.79722659999999,
@@ -4450,11 +4468,11 @@
       "elevation": 3.343343734741211,
       "time": 1353178749
     },
-    "Broadway St and Pierce St": {
-      "lat": 37.79385,
-      "lng": -122.438209,
-      "elevation": 57.09099960327148,
-      "time": 1353179015
+    "Edward St and Arguello Blvd": {
+      "lat": 37.7780042,
+      "lng": -122.4586431,
+      "elevation": 66.5524673461914,
+      "time": 1353574967
     },
     "Vallejo St and Van Ness Ave": {
       "lat": 37.796676,
@@ -4498,11 +4516,11 @@
       "elevation": 38.39016342163086,
       "time": 1352424430
     },
-    "Lawton St and 48th Ave": {
-      "lat": 37.75659720000001,
-      "lng": -122.5078116,
-      "elevation": 4.958455085754395,
-      "time": 1352424401
+    "Pacific Ave and Laurel St": {
+      "lat": 37.7912129,
+      "lng": -122.4510013,
+      "elevation": 61.12641143798828,
+      "time": 1353574968
     },
     "Mayfair Dr and Collins St": {
       "lat": 37.7861073,
@@ -4534,10 +4552,11 @@
       "elevation": 72.34292602539062,
       "time": 1352424434
     },
-    "San Francisco Bicycle Route 30 and Masonic Ave": {
-      "lat": 37.7728632,
-      "lng": -122.4458731,
-      "elevation": 70.78959655761719
+    "Rivera St and 32nd Ave": {
+      "lat": 37.746165,
+      "lng": -122.489879,
+      "elevation": 67.2692642211914,
+      "time": 1352424402
     },
     "Rivera St and 26th Ave": {
       "lat": 37.746449,
@@ -4581,11 +4600,11 @@
       "elevation": 99.32035064697266,
       "time": 1352424442
     },
-    "Geary Blvd and Laguna St": {
-      "lat": 37.78505579999999,
-      "lng": -122.4280064,
-      "elevation": 53.47917175292969,
-      "time": 1352424405
+    "Lincoln Way and 30th Ave": {
+      "lat": 37.7648962,
+      "lng": -122.4890394,
+      "elevation": 54.9256591796875,
+      "time": 1352424443
     },
     "Clay St and Franklin St": {
       "lat": 37.7919702,
@@ -4611,11 +4630,11 @@
       "elevation": 23.5944709777832,
       "time": 1352424446
     },
-    "Cabrillo St and 45th Ave": {
-      "lat": 37.77345589999999,
-      "lng": -122.505747,
-      "elevation": 20.71030426025391,
-      "time": 1352424406
+    "19th St and Dolores St": {
+      "lat": 37.7598312,
+      "lng": -122.4258747,
+      "elevation": 21.36231803894043,
+      "time": 1354068804
     },
     "Washington St and Grant Ave": {
       "lat": 37.7951646,
@@ -4671,11 +4690,11 @@
       "elevation": 86.6612319946289,
       "time": 1352424458
     },
-    "Taraval St and 38th Ave": {
-      "lat": 37.7421509,
-      "lng": -122.4960577,
-      "elevation": 39.54959487915039,
-      "time": 1352424503
+    "Rivera St and 40th Ave": {
+      "lat": 37.7457859,
+      "lng": -122.498453,
+      "elevation": 36.86352920532227,
+      "time": 1352424435
     },
     "Sutter St and Hyde St": {
       "lat": 37.7882032,
@@ -4827,11 +4846,11 @@
       "elevation": 4.79042911529541,
       "time": 1353178762
     },
-    "Ulloa St and 47th Ave": {
-      "lat": 37.7398586,
-      "lng": -122.5055641,
-      "elevation": 8.212042808532715,
-      "time": 1352424549
+    "Pacheco St and 10th Ave": {
+      "lat": 37.7509415,
+      "lng": -122.4664798,
+      "elevation": 189.29833984375,
+      "time": 1352424747
     },
     "Irving St and 9th Ave": {
       "lat": 37.7640492,
@@ -5133,11 +5152,11 @@
       "elevation": 96.07186889648438,
       "time": 1352424573
     },
-    "Greenwich St and Divisadero St": {
-      "lat": 37.798119,
-      "lng": -122.442461,
-      "elevation": 19.9025936126709,
-      "time": 1353178769
+    "Haight St and Pierce St": {
+      "lat": 37.7717004,
+      "lng": -122.4337105,
+      "elevation": 45.43647384643555,
+      "time": 1352424569
     },
     "Sacramento St and Scott St": {
       "lat": 37.7892079,
@@ -5331,6 +5350,12 @@
       "elevation": 47.72481155395508,
       "time": 1352424539
     },
+    "Noriega St and 45th Ave": {
+      "lat": 37.7530128,
+      "lng": -122.5043382,
+      "elevation": 15.77657127380371,
+      "time": 1352424570
+    },
     "Geary Blvd and 27th Ave": {
       "lat": 37.7799427,
       "lng": -122.4868648,
@@ -5343,11 +5368,11 @@
       "elevation": 44.323974609375,
       "time": 1353179370
     },
-    "Vallejo St and Front St": {
-      "lat": 37.7996962,
-      "lng": -122.4000828,
-      "elevation": 3.595471620559692,
-      "time": 1353178943
+    "Noriega St and 21st Ave": {
+      "lat": 37.7541455,
+      "lng": -122.4786133,
+      "elevation": 102.466438293457,
+      "time": 1352424573
     },
     "18th St and Mission St": {
       "lat": 37.7618377,
@@ -5367,11 +5392,11 @@
       "elevation": 45.93308639526367,
       "time": 1352424574
     },
-    "Balboa St and 39th Ave": {
-      "lat": 37.775618,
-      "lng": -122.4994625,
-      "elevation": 54.7680778503418,
-      "time": 1352424418
+    "Ulloa St and Sunset Blvd": {
+      "lat": 37.7403657,
+      "lng": -122.4942378,
+      "elevation": 37.85443496704102,
+      "time": 1352424571
     },
     "Washington St and Larkin St": {
       "lat": 37.7934923,
@@ -5391,17 +5416,17 @@
       "elevation": 36.59241485595703,
       "time": 1352424579
     },
-    "Jackson St and Battery St": {
-      "lat": 37.7967882,
-      "lng": -122.4006978,
-      "elevation": 3.379781484603882,
-      "time": 1353178778
+    "North Point St and Polk St": {
+      "lat": 37.8053079,
+      "lng": -122.4236801,
+      "elevation": 18.05850028991699,
+      "time": 1353178959
     },
-    "North Point St and Taylor St": {
-      "lat": 37.8063673,
-      "lng": -122.4154651,
-      "elevation": 3.388216972351074,
-      "time": 1353178778
+    "Green St and The Embarcadero": {
+      "lat": 37.8009687,
+      "lng": -122.3990399,
+      "elevation": 2.525497198104858,
+      "time": 1353179021
     },
     "Green St and Larkin St": {
       "lat": 37.79806689999999,
@@ -5463,16 +5488,16 @@
       "elevation": 67.59490203857422,
       "time": 1353177800
     },
+    "Lincoln Way and 38th Ave": {
+      "lat": 37.7645155,
+      "lng": -122.4976268,
+      "elevation": 36.88948059082031,
+      "time": 1352424543
+    },
     "Ortega St and 37th Ave": {
       "lat": 37.7515269,
       "lng": -122.4956414,
       "elevation": 48.9484977722168,
-      "time": 1352424594
-    },
-    "Cabrillo St and 41st Ave": {
-      "lat": 37.7736543,
-      "lng": -122.5014748,
-      "elevation": 38.70458221435547,
       "time": 1352424594
     },
     "Haight St and Gough St": {
@@ -5547,11 +5572,17 @@
       "elevation": 56.78124237060547,
       "time": 1352424602
     },
-    "Cabrillo St and 35th Ave": {
-      "lat": 37.7739449,
-      "lng": -122.4950538,
-      "elevation": 47.19139862060547,
-      "time": 1352424433
+    "Irving St and 16th Ave": {
+      "lat": 37.7637197,
+      "lng": -122.4739361,
+      "elevation": 75.98788452148438,
+      "time": 1352424603
+    },
+    "Haight St and Clayton St": {
+      "lat": 37.7698065,
+      "lng": -122.4485747,
+      "elevation": 80.90133666992188,
+      "time": 1353177811
     },
     "Clay St and Taylor St": {
       "lat": 37.7934572,
@@ -5588,6 +5619,18 @@
       "lng": -122.4415099,
       "elevation": 100.7655334472656,
       "time": 1353178977
+    },
+    "Clay St and Pierce St": {
+      "lat": 37.7902998,
+      "lng": -122.4374866,
+      "elevation": 67.34754943847656,
+      "time": 1353178979
+    },
+    "Clay St and Baker St": {
+      "lat": 37.7894581,
+      "lng": -122.4441109,
+      "elevation": 75.73797607421875,
+      "time": 1353178784
     },
     "California St and 2nd Ave": {
       "lat": 37.7855411,
@@ -5757,6 +5800,12 @@
       "elevation": 65.046630859375,
       "time": 1352424625
     },
+    "Washington St and Divisadero St": {
+      "lat": 37.7907576,
+      "lng": -122.4409852,
+      "elevation": 79.01839447021484,
+      "time": 1353178789
+    },
     "Fulton St and Pierce St": {
       "lat": 37.7772917,
       "lng": -122.4348664,
@@ -5769,17 +5818,17 @@
       "elevation": 34.48580551147461,
       "time": 1353178789
     },
-    "Fell St and Franklin St": {
-      "lat": 37.776164,
-      "lng": -122.4211663,
-      "elevation": 17.72688484191895,
-      "time": 1352424437
+    "Green St and Buchanan St": {
+      "lat": 37.7965844,
+      "lng": -122.4320042,
+      "elevation": 30.43816947937012,
+      "time": 1353178776
     },
-    "Anza St and 23rd Ave": {
-      "lat": 37.7782621,
-      "lng": -122.4824904,
-      "elevation": 44.7160530090332,
-      "time": 1352424605
+    "Filbert St and Hyde St": {
+      "lat": 37.8001452,
+      "lng": -122.4192806,
+      "elevation": 88.09449768066406,
+      "time": 1353178790
     },
     "Geary Blvd and Scott St": {
       "lat": 37.7836293,
@@ -5822,12 +5871,6 @@
       "lng": -122.4667332,
       "elevation": 155.0411224365234,
       "time": 1352424491
-    },
-    "Rivera St and 27th Ave": {
-      "lat": 37.746401,
-      "lng": -122.484524,
-      "elevation": 102.8509979248047,
-      "time": 1352424578
     },
     "Kirkham St and 12th Ave": {
       "lat": 37.7601726,
@@ -6003,11 +6046,11 @@
       "elevation": 37.62153625488281,
       "time": 1352424659
     },
-    "Santiago St and 47th Ave": {
-      "lat": 37.7435899,
-      "lng": -122.5058235,
-      "elevation": 10.12207984924316,
-      "time": 1352424589
+    "Fulton St and Clayton St": {
+      "lat": 37.7753963,
+      "lng": -122.44971,
+      "elevation": 91.30626678466797,
+      "time": 1353177807
     },
     "Oak St and Steiner St": {
       "lat": 37.7737676,
@@ -6044,12 +6087,6 @@
       "lng": -122.505014,
       "elevation": 11.1802396774292,
       "time": 1352424703
-    },
-    "Sutter St and Laguna St": {
-      "lat": 37.7867161,
-      "lng": -122.4283505,
-      "elevation": 57.98140716552734,
-      "time": 1353178798
     },
     "Anza St and 9th Ave": {
       "lat": 37.778948,
@@ -6105,11 +6142,11 @@
       "elevation": 5.09635066986084,
       "time": 1353178800
     },
-    "Lincoln Way and 40th Ave": {
-      "lat": 37.7644215,
-      "lng": -122.4997645,
-      "elevation": 32.22512817382812,
-      "time": 1352424674
+    "Kirkham St and 6th Ave": {
+      "lat": 37.7604609,
+      "lng": -122.4628484,
+      "elevation": 108.2319030761719,
+      "time": 1352424710
     },
     "Irving St and 43rd Ave": {
       "lat": 37.7624278,
@@ -6177,11 +6214,11 @@
       "elevation": 60.87477493286133,
       "time": 1352424687
     },
-    "Noriega St and 27th Ave": {
-      "lat": 37.7538629,
-      "lng": -122.485045,
-      "elevation": 96.78732299804688,
-      "time": 1352424637
+    "Santiago St and 14th Ave": {
+      "lat": 37.7451657,
+      "lng": -122.4703711,
+      "elevation": 145.0072937011719,
+      "time": 1352424638
     },
     "Haight St and Laguna St": {
       "lat": 37.7727315,
@@ -6237,6 +6274,12 @@
       "elevation": 8.058029174804688,
       "time": 1352424696
     },
+    "Post St and Lyon St": {
+      "lat": 37.783688,
+      "lng": -122.4446442,
+      "elevation": 67.12956237792969,
+      "time": 1353178802
+    },
     "Clement St and 35th Ave": {
       "lat": 37.7815307,
       "lng": -122.4956027,
@@ -6261,11 +6304,11 @@
       "elevation": 68.65823364257812,
       "time": 1353178803
     },
-    "Lincoln Way and 22nd Ave": {
-      "lat": 37.7652722,
-      "lng": -122.4804761,
-      "elevation": 62.11605453491211,
-      "time": 1352424597
+    "Filbert St and Baker St": {
+      "lat": 37.796767,
+      "lng": -122.4455878,
+      "elevation": 22.74013710021973,
+      "time": 1353178804
     },
     "Ulloa St and 45th Ave": {
       "lat": 37.73996140000001,
@@ -6315,12 +6358,6 @@
       "elevation": 40.45366668701172,
       "time": 1352424545
     },
-    "Washington St and Lyon St": {
-      "lat": 37.7901247,
-      "lng": -122.4459361,
-      "elevation": 94.99495697021484,
-      "time": 1353178806
-    },
     "Fulton St and 45th Ave": {
       "lat": 37.771592,
       "lng": -122.505611,
@@ -6345,11 +6382,11 @@
       "elevation": 23.87916374206543,
       "time": 1353178808
     },
-    "Ulloa St and Sunset Blvd": {
-      "lat": 37.7403657,
-      "lng": -122.4942378,
-      "elevation": 37.85443496704102,
-      "time": 1352424571
+    "Balboa St and 39th Ave": {
+      "lat": 37.775618,
+      "lng": -122.4994625,
+      "elevation": 54.7680778503418,
+      "time": 1352424418
     },
     "Lake St and 14th Ave": {
       "lat": 37.7862985,
@@ -6386,6 +6423,12 @@
       "lng": -122.4971171,
       "elevation": 38.05913925170898,
       "time": 1352424472
+    },
+    "Geary Blvd and Collins St": {
+      "lat": 37.7820526,
+      "lng": -122.4500918,
+      "elevation": 76.19020080566406,
+      "time": 1353574978
     },
     "Anza St and 26th Ave": {
       "lat": 37.7781008,
@@ -6483,11 +6526,11 @@
       "elevation": 38.09675216674805,
       "time": 1352424740
     },
-    "Vallejo St and Battery St": {
-      "lat": 37.7995536,
-      "lng": -122.4012806,
-      "elevation": 5.993607997894287,
-      "time": 1353178813
+    "Pine St and Polk St": {
+      "lat": 37.7896487,
+      "lng": -122.4205116,
+      "elevation": 49.18943786621094,
+      "time": 1353179026
     },
     "Pine St and Larkin St": {
       "lat": 37.7898455,
@@ -6542,11 +6585,11 @@
       "elevation": 101.7957458496094,
       "time": 1353177801
     },
-    "Lake St and 15th Ave": {
-      "lat": 37.7862414,
-      "lng": -122.4743964,
-      "elevation": 41.63795852661133,
-      "time": 1352424749
+    "Green St and Grant Ave": {
+      "lat": 37.7997174,
+      "lng": -122.4074187,
+      "elevation": 31.45706748962402,
+      "time": 1353178911
     },
     "Union St and Jones St": {
       "lat": 37.7996317,
@@ -6578,29 +6621,17 @@
       "elevation": 76.05532836914062,
       "time": 1353574979
     },
-    "Balboa St and 35th Ave": {
-      "lat": 37.7758074,
-      "lng": -122.4951786,
-      "elevation": 62.35151290893555,
-      "time": 1352424754
-    },
-    "Pacific Ave and Scott St": {
-      "lat": 37.7927289,
-      "lng": -122.4396633,
-      "elevation": 86.38322448730469,
-      "time": 1353178756
+    "Lake St and 15th Ave": {
+      "lat": 37.7862414,
+      "lng": -122.4743964,
+      "elevation": 41.63795852661133,
+      "time": 1352424749
     },
     "Waller St and Webster St": {
       "lat": 37.7713965,
       "lng": -122.4285902,
       "elevation": 42.79021835327148,
       "time": 1352424755
-    },
-    "Golden Gate Ave and Central Ave": {
-      "lat": 37.777891,
-      "lng": -122.4451544,
-      "elevation": 80.86479949951172,
-      "time": 1352424526
     },
     "Clement St and 27th Ave": {
       "lat": 37.7819239,
@@ -6620,17 +6651,23 @@
       "elevation": 49.55094909667969,
       "time": 1352424758
     },
-    "Noriega St and 47th Ave": {
-      "lat": 37.7529169,
-      "lng": -122.506476,
-      "elevation": 7.894257545471191,
-      "time": 1352424631
+    "Lawton St and 24th Ave": {
+      "lat": 37.7577386,
+      "lng": -122.482091,
+      "elevation": 81.4559555053711,
+      "time": 1352424759
     },
     "Beach St and Jones St": {
       "lat": 37.807098,
       "lng": -122.417287,
       "elevation": 3.256123304367065,
       "time": 1353178816
+    },
+    "Fulton St and 12th Ave": {
+      "lat": 37.7732078,
+      "lng": -122.4701694,
+      "elevation": 69.43633270263672,
+      "time": 1352424809
     },
     "O'Farrell St and Divisadero St": {
       "lat": 37.7824538,
@@ -6704,17 +6741,17 @@
       "elevation": 62.45288467407227,
       "time": 1353178819
     },
-    "Rivera St and 30th Ave": {
-      "lat": 37.74626,
-      "lng": -122.487736,
-      "elevation": 79.4999771118164,
-      "time": 1352424405
+    "Lincoln Way and 36th Ave": {
+      "lat": 37.7646125,
+      "lng": -122.4954772,
+      "elevation": 41.28573226928711,
+      "time": 1352424772
     },
-    "Judah St and 40th Ave": {
-      "lat": 37.760709,
-      "lng": -122.499497,
-      "elevation": 36.87887191772461,
-      "time": 1352424446
+    "Hayes St and Scott St": {
+      "lat": 37.7752138,
+      "lng": -122.436121,
+      "elevation": 66.36062622070312,
+      "time": 1352424773
     },
     "Post St and Steiner St": {
       "lat": 37.7849566,
@@ -6746,11 +6783,11 @@
       "elevation": 28.1871166229248,
       "time": 1353178820
     },
-    "Anza St and 44th Ave": {
-      "lat": 37.7772618,
-      "lng": -122.5049744,
-      "elevation": 60.35863494873047,
-      "time": 1352424475
+    "Page St and Steiner St": {
+      "lat": 37.77283329999999,
+      "lng": -122.4322623,
+      "elevation": 57.02626037597656,
+      "time": 1352424777
     },
     "Kirkham St and 45th Ave": {
       "lat": 37.7586132,
@@ -6782,6 +6819,12 @@
       "elevation": 49.83012008666992,
       "time": 1353178821
     },
+    "Balboa St and 2nd Ave": {
+      "lat": 37.7774207,
+      "lng": -122.4597315,
+      "elevation": 63.04511642456055,
+      "time": 1352423463
+    },
     "Anza St and 37th Ave": {
       "lat": 37.7775789,
       "lng": -122.497455,
@@ -6806,11 +6849,11 @@
       "elevation": 67.02702331542969,
       "time": 1353178822
     },
-    "Ellis St and Fillmore St": {
-      "lat": 37.7823396,
-      "lng": -122.432515,
-      "elevation": 37.12452697753906,
-      "time": 1353179372
+    "Irving St and 27th Ave": {
+      "lat": 37.7632001,
+      "lng": -122.4856838,
+      "elevation": 61.52227401733398,
+      "time": 1352424610
     },
     "Vallejo St and Taylor St": {
       "lat": 37.7980344,
@@ -6841,6 +6884,12 @@
       "lng": -122.4290669,
       "elevation": 21.1203727722168,
       "time": 1353610274
+    },
+    "Euclid Ave and Laurel St": {
+      "lat": 37.7846879,
+      "lng": -122.4492729,
+      "elevation": 98.29363250732422,
+      "time": 1353574981
     },
     "Greenwich St and Columbus Ave": {
       "lat": 37.8019526,
@@ -6884,11 +6933,11 @@
       "elevation": 21.10900497436523,
       "time": 1353178825
     },
-    "Chestnut St and Van Ness Ave": {
-      "lat": 37.8023043,
-      "lng": -122.4246595,
-      "elevation": 28.11480712890625,
-      "time": 1353179011
+    "Noriega St and 44th Ave": {
+      "lat": 37.7530618,
+      "lng": -122.5032684,
+      "elevation": 19.72855949401855,
+      "time": 1352424789
     },
     "Bay St and Broderick St": {
       "lat": 37.801634,
@@ -6919,6 +6968,12 @@
       "lng": -122.49832,
       "elevation": 43.82635116577148,
       "time": 1352424800
+    },
+    "Ortega St and 34th Ave": {
+      "lat": 37.75166189999999,
+      "lng": -122.492417,
+      "elevation": 66.01132202148438,
+      "time": 1352424820
     },
     "Judah St and 36th Ave": {
       "lat": 37.7608949,
@@ -6955,6 +7010,12 @@
       "lng": -122.4938783,
       "elevation": 70.84281158447266,
       "time": 1352424806
+    },
+    "Euclid Ave and Palm Ave": {
+      "lat": 37.783878,
+      "lng": -122.4579208,
+      "elevation": 61.51573181152344,
+      "time": 1353574982
     },
     "Francisco St and Montgomery St": {
       "lat": 37.805719,
@@ -7052,11 +7113,11 @@
       "elevation": 31.04226875305176,
       "time": 1352424688
     },
-    "Lincoln Way and 47th Ave": {
-      "lat": 37.7641591,
-      "lng": -122.5072642,
-      "elevation": 12.25407218933105,
-      "time": 1352424652
+    "Page St and Octavia Blvd": {
+      "lat": 37.7739038,
+      "lng": -122.4239143,
+      "elevation": 20.94350624084473,
+      "time": 1352424825
     },
     "Ulloa St and 44th Ave": {
       "lat": 37.7399996,
@@ -7076,11 +7137,11 @@
       "elevation": 9.539305686950684,
       "time": 1352424546
     },
-    "Sacramento St and Jones St": {
-      "lat": 37.7923591,
-      "lng": -122.4142792,
-      "elevation": 106.1431045532227,
-      "time": 1353178909
+    "Kirkham St and 4th Ave": {
+      "lat": 37.7605644,
+      "lng": -122.4606704,
+      "elevation": 129.2891387939453,
+      "time": 1352424831
     },
     "Lincoln Way and 32nd Ave": {
       "lat": 37.7648041,
@@ -7208,11 +7269,11 @@
       "elevation": 4.453859806060791,
       "time": 1353178832
     },
-    "Bay St and Buchanan St": {
-      "lat": 37.8030737,
-      "lng": -122.4333225,
-      "elevation": 8.259002685546875,
-      "time": 1353178975
+    "Persia Ave and Mission St": {
+      "lat": 37.7231408,
+      "lng": -122.4359722,
+      "elevation": 53.33755493164062,
+      "time": 1354068809
     },
     "Hayes St and Clayton St": {
       "lat": 37.7735328,
@@ -7255,12 +7316,6 @@
       "lng": -122.4209017,
       "elevation": 33.34532165527344,
       "time": 1353179373
-    },
-    "Jackson St and Scott St": {
-      "lat": 37.7918461,
-      "lng": -122.439482,
-      "elevation": 91.74471282958984,
-      "time": 1353178995
     },
     "Bush St and Sansome St": {
       "lat": 37.7911916,
@@ -7316,6 +7371,12 @@
       "elevation": 76.8933334350586,
       "time": 1352424434
     },
+    "Green St and Webster St": {
+      "lat": 37.7963698,
+      "lng": -122.4336389,
+      "elevation": 33.54085159301758,
+      "time": 1353178835
+    },
     "Greenwich St and Scott St": {
       "lat": 37.7983264,
       "lng": -122.4407923,
@@ -7358,11 +7419,17 @@
       "elevation": 68.83056640625,
       "time": 1352424583
     },
-    "Lincoln Way and 36th Ave": {
-      "lat": 37.7646125,
-      "lng": -122.4954772,
-      "elevation": 41.28573226928711,
-      "time": 1352424772
+    "Rivera St and 30th Ave": {
+      "lat": 37.74626,
+      "lng": -122.487736,
+      "elevation": 79.4999771118164,
+      "time": 1352424405
+    },
+    "Pine St and Stockton St": {
+      "lat": 37.791318,
+      "lng": -122.4073417,
+      "elevation": 51.34259033203125,
+      "time": 1353179037
     },
     "Fulton St and 35th Ave": {
       "lat": 37.772081,
@@ -7382,17 +7449,17 @@
       "elevation": 15.28567600250244,
       "time": 1352424444
     },
-    "Greenwich St and Stockton St": {
-      "lat": 37.8023083,
-      "lng": -122.4096006,
-      "elevation": 31.89216995239258,
-      "time": 1353178839
+    "Santiago St and 46th Ave": {
+      "lat": 37.7436348,
+      "lng": -122.5047487,
+      "elevation": 13.62683773040771,
+      "time": 1352424625
     },
-    "Hayes St and Scott St": {
-      "lat": 37.7752138,
-      "lng": -122.436121,
-      "elevation": 66.36062622070312,
-      "time": 1352424773
+    "Judah St and 40th Ave": {
+      "lat": 37.760709,
+      "lng": -122.499497,
+      "elevation": 36.87887191772461,
+      "time": 1352424446
     },
     "Clay St and Stockton St": {
       "lat": 37.7940683,
@@ -7406,17 +7473,11 @@
       "elevation": 21.40639686584473,
       "time": 1352424448
     },
-    "Hayes St and Cole St": {
-      "lat": 37.77332080000001,
-      "lng": -122.450982,
-      "elevation": 78.6509780883789,
-      "time": 1353177813
-    },
-    "Sutter St and Van Ness Ave": {
-      "lat": 37.7875681,
-      "lng": -122.4218391,
-      "elevation": 52.44084930419922,
-      "time": 1353178992
+    "18th St and Dolores St": {
+      "lat": 37.7614291,
+      "lng": -122.4261596,
+      "elevation": 17.06522750854492,
+      "time": 1354068811
     },
     "Cabrillo St and 9th Ave": {
       "lat": 37.77522640000001,
@@ -7490,11 +7551,11 @@
       "elevation": 33.62337875366211,
       "time": 1354068811
     },
-    "Fulton St and 38th Ave": {
-      "lat": 37.77193400000001,
-      "lng": -122.498114,
-      "elevation": 36.4816780090332,
-      "time": 1352424460
+    "Quintara St and 19th Ave": {
+      "lat": 37.7486529,
+      "lng": -122.4759773,
+      "elevation": 136.6012878417969,
+      "time": 1352424530
     },
     "Fulton St and Stanyan St": {
       "lat": 37.77476679999999,
@@ -7537,12 +7598,6 @@
       "lng": -122.4380267,
       "elevation": 72.15415954589844,
       "time": 1353178843
-    },
-    "Green St and Leavenworth St": {
-      "lat": 37.7985117,
-      "lng": -122.4172479,
-      "elevation": 93.01090240478516,
-      "time": 1353178844
     },
     "Pacific Ave and Leavenworth St": {
       "lat": 37.7956808,
@@ -7622,11 +7677,11 @@
       "elevation": 12.92156314849854,
       "time": 1353178846
     },
-    "Page St and Steiner St": {
-      "lat": 37.77283329999999,
-      "lng": -122.4322623,
-      "elevation": 57.02626037597656,
-      "time": 1352424777
+    "Anza St and 44th Ave": {
+      "lat": 37.7772618,
+      "lng": -122.5049744,
+      "elevation": 60.35863494873047,
+      "time": 1352424475
     },
     "Pacheco St and 28th Ave": {
       "lat": 37.750085,
@@ -7838,12 +7893,6 @@
       "elevation": 84.95916748046875,
       "time": 1352424512
     },
-    "Moraga St and Sunset Blvd": {
-      "lat": 37.75527719999999,
-      "lng": -122.4954377,
-      "elevation": 56.05393218994141,
-      "time": 1352424515
-    },
     "Pine St and Mason St": {
       "lat": 37.7909026,
       "lng": -122.4106309,
@@ -7874,12 +7923,6 @@
       "elevation": 73.50639343261719,
       "time": 1352424700
     },
-    "Filbert St and Divisadero St": {
-      "lat": 37.7971819,
-      "lng": -122.4422834,
-      "elevation": 34.23141479492188,
-      "time": 1353178856
-    },
     "Quintara St and 33rd Ave": {
       "lat": 37.747983,
       "lng": -122.491082,
@@ -7891,12 +7934,6 @@
       "lng": -122.4783396,
       "elevation": 63.74263000488281,
       "time": 1352424582
-    },
-    "Clement St and Funston Ave": {
-      "lat": 37.7826131,
-      "lng": -122.4719281,
-      "elevation": 49.58609771728516,
-      "time": 1352424449
     },
     "Balboa St and 42nd Ave": {
       "lat": 37.775472,
@@ -7910,11 +7947,11 @@
       "elevation": 52.23318099975586,
       "time": 1352424526
     },
-    "Clay St and Baker St": {
-      "lat": 37.7894581,
-      "lng": -122.4441109,
-      "elevation": 75.73797607421875,
-      "time": 1353178784
+    "Golden Gate Ave and Central Ave": {
+      "lat": 37.777891,
+      "lng": -122.4451544,
+      "elevation": 80.86479949951172,
+      "time": 1352424526
     },
     "Ortega St and 17th Ave": {
       "lat": 37.752466,
@@ -8252,11 +8289,11 @@
       "elevation": 56.69865798950195,
       "time": 1354068813
     },
-    "North Point St and Polk St": {
-      "lat": 37.8053079,
-      "lng": -122.4236801,
-      "elevation": 18.05850028991699,
-      "time": 1353178959
+    "Jackson St and Battery St": {
+      "lat": 37.7967882,
+      "lng": -122.4006978,
+      "elevation": 3.379781484603882,
+      "time": 1353178778
     },
     "Geary Blvd and 31st Ave": {
       "lat": 37.7797409,
@@ -8300,11 +8337,11 @@
       "elevation": 74.63568878173828,
       "time": 1352424495
     },
-    "Fulton St and Clayton St": {
-      "lat": 37.7753963,
-      "lng": -122.44971,
-      "elevation": 91.30626678466797,
-      "time": 1353177807
+    "Santiago St and 47th Ave": {
+      "lat": 37.7435899,
+      "lng": -122.5058235,
+      "elevation": 10.12207984924316,
+      "time": 1352424589
     },
     "Anza St and 19th Ave": {
       "lat": 37.7784575,
@@ -8318,11 +8355,11 @@
       "elevation": 78.85064697265625,
       "time": 1352424592
     },
-    "Kirkham St and 6th Ave": {
-      "lat": 37.7604609,
-      "lng": -122.4628484,
-      "elevation": 108.2319030761719,
-      "time": 1352424710
+    "Lincoln Way and 40th Ave": {
+      "lat": 37.7644215,
+      "lng": -122.4997645,
+      "elevation": 32.22512817382812,
+      "time": 1352424674
     },
     "Francisco St and Gough St": {
       "lat": 37.8027989,
@@ -8342,23 +8379,17 @@
       "elevation": 65.80936431884766,
       "time": 1353178871
     },
-    "Filbert St and Baker St": {
-      "lat": 37.796767,
-      "lng": -122.4455878,
-      "elevation": 22.74013710021973,
-      "time": 1353178804
+    "Lincoln Way and 22nd Ave": {
+      "lat": 37.7652722,
+      "lng": -122.4804761,
+      "elevation": 62.11605453491211,
+      "time": 1352424597
     },
     "Geary Blvd and 37th Ave": {
       "lat": 37.779461,
       "lng": -122.4975937,
       "elevation": 82.1557388305664,
       "time": 1352424598
-    },
-    "Sacramento St and Baker St": {
-      "lat": 37.7885743,
-      "lng": -122.4439266,
-      "elevation": 67.60604095458984,
-      "time": 1353178872
     },
     "Grove St and Franklin St": {
       "lat": 37.77803129999999,
@@ -8378,11 +8409,11 @@
       "elevation": 14.16004085540771,
       "time": 1353178872
     },
-    "Broadway St and Lyon St": {
-      "lat": 37.7928089,
-      "lng": -122.4464361,
-      "elevation": 103.6479797363281,
-      "time": 1353178872
+    "Judah St and 15th Ave": {
+      "lat": 37.7618347,
+      "lng": -122.4726695,
+      "elevation": 84.10697937011719,
+      "time": 1352424601
     },
     "Pacific Ave and Front St": {
       "lat": 37.797809,
@@ -8408,17 +8439,17 @@
       "elevation": 56.18144607543945,
       "time": 1352424604
     },
-    "Lawton St and 24th Ave": {
-      "lat": 37.7577386,
-      "lng": -122.482091,
-      "elevation": 81.4559555053711,
-      "time": 1352424759
+    "Noriega St and 47th Ave": {
+      "lat": 37.7529169,
+      "lng": -122.506476,
+      "elevation": 7.894257545471191,
+      "time": 1352424631
     },
-    "Noriega St and 44th Ave": {
-      "lat": 37.7530618,
-      "lng": -122.5032684,
-      "elevation": 19.72855949401855,
-      "time": 1352424789
+    "Chestnut St and Van Ness Ave": {
+      "lat": 37.8023043,
+      "lng": -122.4246595,
+      "elevation": 28.11480712890625,
+      "time": 1353179011
     },
     "North Point St and Powell St": {
       "lat": 37.80678710000001,
@@ -8432,11 +8463,11 @@
       "elevation": 50.8144645690918,
       "time": 1352424609
     },
-    "Irving St and 27th Ave": {
-      "lat": 37.7632001,
-      "lng": -122.4856838,
-      "elevation": 61.52227401733398,
-      "time": 1352424610
+    "Ellis St and Fillmore St": {
+      "lat": 37.7823396,
+      "lng": -122.432515,
+      "elevation": 37.12452697753906,
+      "time": 1353179372
     },
     "Sutter St and Pierce St": {
       "lat": 37.7856641,
@@ -8630,11 +8661,11 @@
       "elevation": 48.8011589050293,
       "time": 1353178879
     },
-    "Union St and Divisadero St": {
-      "lat": 37.7962494,
-      "lng": -122.4420953,
-      "elevation": 50.29425430297852,
-      "time": 1353178880
+    "Filbert St and Divisadero St": {
+      "lat": 37.7971819,
+      "lng": -122.4422834,
+      "elevation": 34.23141479492188,
+      "time": 1353178856
     },
     "Page St and Cole St": {
       "lat": 37.7705253,
@@ -8672,11 +8703,11 @@
       "elevation": 14.41422176361084,
       "time": 1352424641
     },
-    "Hayes St and Gough St": {
-      "lat": 37.7768943,
-      "lng": -122.4229876,
-      "elevation": 19.53360176086426,
-      "time": 1352424804
+    "Filbert St and Mason St": {
+      "lat": 37.80098539999999,
+      "lng": -122.4127329,
+      "elevation": 25.00255966186523,
+      "time": 1353178881
     },
     "Noriega St and 23rd Ave": {
       "lat": 37.7540674,
@@ -8695,6 +8726,12 @@
       "lng": -122.4532734,
       "elevation": 76.63176727294922,
       "time": 1353574991
+    },
+    "Fulton St and 21st Ave": {
+      "lat": 37.772766,
+      "lng": -122.4799299,
+      "elevation": 70.73121643066406,
+      "time": 1352424644
     },
     "Kirkham St and 18th Ave": {
       "lat": 37.7598846,
@@ -8798,6 +8835,12 @@
       "elevation": 74.1086654663086,
       "time": 1352424662
     },
+    "Sacramento St and Polk St": {
+      "lat": 37.791526,
+      "lng": -122.4209171,
+      "elevation": 54.68500900268555,
+      "time": 1353178886
+    },
     "Taraval St and 23rd Ave": {
       "lat": 37.7428619,
       "lng": -122.479978,
@@ -8816,17 +8859,11 @@
       "elevation": 55.10293197631836,
       "time": 1352424664
     },
-    "Kirkham St and 14th Ave": {
-      "lat": 37.7600773,
-      "lng": -122.4714165,
-      "elevation": 101.6919708251953,
-      "time": 1352424439
-    },
-    "Union St and Buchanan St": {
-      "lat": 37.797519,
-      "lng": -122.4321778,
-      "elevation": 24.81608390808105,
-      "time": 1353178987
+    "Euclid Ave and Commonwealth Ave": {
+      "lat": 37.7839805,
+      "lng": -122.4557107,
+      "elevation": 67.69039154052734,
+      "time": 1353574993
     },
     "Cabrillo St and 18th Ave": {
       "lat": 37.7747786,
@@ -8863,6 +8900,12 @@
       "lng": -122.4691696,
       "elevation": 117.440673828125,
       "time": 1352424520
+    },
+    "Cabrillo St and 29th Ave": {
+      "lat": 37.7742409,
+      "lng": -122.4886069,
+      "elevation": 53.18403625488281,
+      "time": 1352424733
     },
     "Fulton St and 46th Ave": {
       "lat": 37.7715383,
@@ -8990,11 +9033,11 @@
       "elevation": 40.45791244506836,
       "time": 1352424692
     },
-    "Pine St and Franklin St": {
-      "lat": 37.7892129,
-      "lng": -122.4238088,
-      "elevation": 63.43522262573242,
-      "time": 1353178918
+    "Lake St and 26th Ave": {
+      "lat": 37.7856946,
+      "lng": -122.4862231,
+      "elevation": 46.99310302734375,
+      "time": 1352424694
     },
     "Silver Ave and Mission St": {
       "lat": 37.7287511,
@@ -9038,17 +9081,29 @@
       "elevation": 13.58542346954346,
       "time": 1354068814
     },
+    "McAllister St and Central Ave": {
+      "lat": 37.776954,
+      "lng": -122.4449679,
+      "elevation": 73.17098999023438,
+      "time": 1352424665
+    },
     "Anza St and 7th Ave": {
       "lat": 37.7790438,
       "lng": -122.4652176,
       "elevation": 58.18302154541016,
       "time": 1352424497
     },
-    "Moraga St and 31st Ave": {
-      "lat": 37.755541,
-      "lng": -122.489459,
-      "elevation": 93.19988250732422,
-      "time": 1352424707
+    "Quintara St and 32nd Ave": {
+      "lat": 37.748031,
+      "lng": -122.490009,
+      "elevation": 74.70808410644531,
+      "time": 1352424576
+    },
+    "Union St and Front St": {
+      "lat": 37.8015479,
+      "lng": -122.4005199,
+      "elevation": 2.578742980957031,
+      "time": 1353179008
     },
     "Anza St and 33rd Ave": {
       "lat": 37.777774,
@@ -9110,11 +9165,11 @@
       "elevation": 52.6412467956543,
       "time": 1352424669
     },
-    "Balboa St and 48th Ave": {
-      "lat": 37.775175,
-      "lng": -122.5091035,
-      "elevation": 21.89376068115234,
-      "time": 1352424524
+    "Moraga St and 46th Ave": {
+      "lat": 37.7548296,
+      "lng": -122.5055465,
+      "elevation": 13.73909664154053,
+      "time": 1352424717
     },
     "Turk St and Fillmore St": {
       "lat": 37.780496,
@@ -9134,6 +9189,12 @@
       "elevation": 38.33615112304688,
       "time": 1352424720
     },
+    "Union St and Divisadero St": {
+      "lat": 37.7962494,
+      "lng": -122.4420953,
+      "elevation": 50.29425430297852,
+      "time": 1353178880
+    },
     "Ortega St and 30th Ave": {
       "lat": 37.7518601,
       "lng": -122.4881311,
@@ -9146,11 +9207,11 @@
       "elevation": 29.50103187561035,
       "time": 1352424724
     },
-    "Pacific Ave and Laguna St": {
-      "lat": 37.793986,
-      "lng": -122.4297929,
-      "elevation": 76.17810821533203,
-      "time": 1353178972
+    "Kirkham St and 41st Ave": {
+      "lat": 37.758803,
+      "lng": -122.5004339,
+      "elevation": 33.10861206054688,
+      "time": 1352424724
     },
     "Noriega St and 32nd Ave": {
       "lat": 37.753627,
@@ -9163,12 +9224,6 @@
       "lng": -122.4425649,
       "elevation": 67.2673110961914,
       "time": 1352424727
-    },
-    "Lawton St and 21st Ave": {
-      "lat": 37.7578879,
-      "lng": -122.478891,
-      "elevation": 87.55207824707031,
-      "time": 1352424729
     },
     "Bush St and Buchanan St": {
       "lat": 37.78745,
@@ -9236,17 +9291,17 @@
       "elevation": 55.25864028930664,
       "time": 1352424736
     },
-    "Moraga St and 23rd Ave": {
-      "lat": 37.755919,
-      "lng": -122.48089,
-      "elevation": 90.20317840576172,
-      "time": 1352424528
+    "Noriega St and 15th Ave": {
+      "lat": 37.7544032,
+      "lng": -122.4721336,
+      "elevation": 156.7019653320312,
+      "time": 1352424736
     },
-    "Anza St and Parker Ave": {
-      "lat": 37.7802385,
-      "lng": -122.4538763,
-      "elevation": 79.6942367553711,
-      "time": 1353575013
+    "Geary Blvd and 36th Ave": {
+      "lat": 37.77960240000001,
+      "lng": -122.4965282,
+      "elevation": 83.53836059570312,
+      "time": 1352424687
     },
     "Fulton St and 14th Ave": {
       "lat": 37.7731128,
@@ -9284,23 +9339,17 @@
       "elevation": 67.3338394165039,
       "time": 1352424743
     },
-    "Kirkham St and 29th Ave": {
-      "lat": 37.7593589,
-      "lng": -122.48758,
-      "elevation": 74.88190460205078,
-      "time": 1352424744
-    },
     "Hayes St and Central Ave": {
       "lat": 37.7741603,
       "lng": -122.4443974,
       "elevation": 70.92593383789062,
       "time": 1352424746
     },
-    "Haight St and Broderick St": {
-      "lat": 37.7710594,
-      "lng": -122.4387011,
-      "elevation": 75.23363494873047,
-      "time": 1352424820
+    "Post St and Powell St": {
+      "lat": 37.7883216,
+      "lng": -122.4084512,
+      "elevation": 25.22031402587891,
+      "time": 1353178895
     },
     "Ortega St and 9th Ave": {
       "lat": 37.752851,
@@ -9314,17 +9363,11 @@
       "elevation": 18.17755508422852,
       "time": 1352424751
     },
-    "Pacific Ave and Gough St": {
-      "lat": 37.7943931,
-      "lng": -122.4265472,
-      "elevation": 63.7831916809082,
-      "time": 1353178988
-    },
-    "Grove St and Fillmore St": {
-      "lat": 37.776776,
-      "lng": -122.4313897,
-      "elevation": 45.54075622558594,
-      "time": 1352424752
+    "Cabrillo St and 48th Ave": {
+      "lat": 37.773309,
+      "lng": -122.508971,
+      "elevation": 13.37448883056641,
+      "time": 1352424669
     },
     "Greenwich St and Steiner St": {
       "lat": 37.7987492,
@@ -9368,11 +9411,11 @@
       "elevation": 44.2945556640625,
       "time": 1353178887
     },
-    "Irving St and 42nd Ave": {
-      "lat": 37.7624749,
-      "lng": -122.5017671,
-      "elevation": 27.29631233215332,
-      "time": 1352424760
+    "Washington St and Mason St": {
+      "lat": 37.7945396,
+      "lng": -122.4114196,
+      "elevation": 58.36394500732422,
+      "time": 1353178897
     },
     "Lombard St and Columbus Ave": {
       "lat": 37.8027619,
@@ -9380,11 +9423,11 @@
       "elevation": 7.829049587249756,
       "time": 1353178910
     },
-    "Fell St and Gough St": {
-      "lat": 37.7759739,
-      "lng": -122.4228058,
-      "elevation": 18.67043304443359,
-      "time": 1352424823
+    "Ulloa St and 20th Ave": {
+      "lat": 37.741138,
+      "lng": -122.47663,
+      "elevation": 90.66020202636719,
+      "time": 1352424833
     },
     "Taraval St and 37th Ave": {
       "lat": 37.742201,
@@ -9404,11 +9447,11 @@
       "elevation": 83.1737289428711,
       "time": 1353574997
     },
-    "Page St and Gough St": {
-      "lat": 37.7741061,
-      "lng": -122.4224287,
-      "elevation": 17.20699882507324,
-      "time": 1352424823
+    "23rd St and Dolores St": {
+      "lat": 37.7534284,
+      "lng": -122.4253845,
+      "elevation": 37.85278701782227,
+      "time": 1354068816
     },
     "Francisco St and Divisadero St": {
       "lat": 37.8009132,
@@ -9566,11 +9609,11 @@
       "elevation": 68.48981475830078,
       "time": 1353178903
     },
-    "Page St and Octavia Blvd": {
-      "lat": 37.7739038,
-      "lng": -122.4239143,
-      "elevation": 20.94350624084473,
-      "time": 1352424825
+    "Lincoln Way and 47th Ave": {
+      "lat": 37.7641591,
+      "lng": -122.5072642,
+      "elevation": 12.25407218933105,
+      "time": 1352424652
     },
     "Page St and Baker St": {
       "lat": 37.7717882,
@@ -9608,11 +9651,11 @@
       "elevation": 30.72389984130859,
       "time": 1353178904
     },
-    "Ortega St and 23rd Ave": {
-      "lat": 37.752188,
-      "lng": -122.4806368,
-      "elevation": 115.9016418457031,
-      "time": 1352424826
+    "Vallejo St and Larkin St": {
+      "lat": 37.797128,
+      "lng": -122.4203331,
+      "elevation": 54.46437454223633,
+      "time": 1353178904
     },
     "Post St and Octavia St": {
       "lat": 37.785906,
@@ -9650,11 +9693,11 @@
       "elevation": 60.30678558349609,
       "time": 1352424606
     },
-    "Rivera St and 20th Ave": {
-      "lat": 37.7467346,
-      "lng": -122.4770377,
-      "elevation": 128.9950408935547,
-      "time": 1352424827
+    "Green St and Stockton St": {
+      "lat": 37.799524,
+      "lng": -122.4089584,
+      "elevation": 27.99155044555664,
+      "time": 1353178906
     },
     "Green St and Montgomery St": {
       "lat": 37.8001167,
@@ -9668,11 +9711,11 @@
       "elevation": 66.29705810546875,
       "time": 1353178907
     },
-    "Balboa St and 6th Ave": {
-      "lat": 37.777228,
-      "lng": -122.4640135,
-      "elevation": 61.28627014160156,
-      "time": 1352424799
+    "Green St and Van Ness Ave": {
+      "lat": 37.7976202,
+      "lng": -122.4238873,
+      "elevation": 34.6887321472168,
+      "time": 1353178907
     },
     "Page St and Fillmore St": {
       "lat": 37.7730389,
@@ -9764,17 +9807,11 @@
       "elevation": 42.49562835693359,
       "time": 1353178909
     },
-    "Lincoln Way and 42nd Ave": {
-      "lat": 37.7643253,
-      "lng": -122.501894,
-      "elevation": 28.6909008026123,
-      "time": 1352424483
-    },
-    "Kirkham St and 4th Ave": {
-      "lat": 37.7605644,
-      "lng": -122.4606704,
-      "elevation": 129.2891387939453,
-      "time": 1352424831
+    "Sacramento St and Jones St": {
+      "lat": 37.7923591,
+      "lng": -122.4142792,
+      "elevation": 106.1431045532227,
+      "time": 1353178909
     },
     "Lincoln Way and 23rd Ave": {
       "lat": 37.7653065,
@@ -9798,12 +9835,6 @@
       "lat": 37.8041923,
       "lng": -122.4099621,
       "elevation": 21.31381607055664,
-      "time": 1353178911
-    },
-    "Green St and Grant Ave": {
-      "lat": 37.7997174,
-      "lng": -122.4074187,
-      "elevation": 31.45706748962402,
       "time": 1353178911
     },
     "Filbert St and Sansome St": {
@@ -9860,17 +9891,17 @@
       "elevation": 38.50669479370117,
       "time": 1352424834
     },
-    "McAllister St and Pierce St": {
-      "lat": 37.7782204,
-      "lng": -122.4350524,
-      "elevation": 54.65487670898438,
-      "time": 1352424545
+    "Santiago St and 41st Ave": {
+      "lat": 37.743879,
+      "lng": -122.499393,
+      "elevation": 38.11850738525391,
+      "time": 1352424431
     },
-    "Clement St and 2nd Ave": {
-      "lat": 37.7831615,
-      "lng": -122.4601436,
-      "elevation": 60.43339920043945,
-      "time": 1352423448
+    "Pacheco St and 33rd Ave": {
+      "lat": 37.749848,
+      "lng": -122.491212,
+      "elevation": 73.75372314453125,
+      "time": 1352424529
     },
     "Lombard St and Lyon St": {
       "lat": 37.7984843,
@@ -9896,11 +9927,10 @@
       "elevation": 59.11174011230469,
       "time": 1352424398
     },
-    "Rivera St and 32nd Ave": {
-      "lat": 37.746165,
-      "lng": -122.489879,
-      "elevation": 67.2692642211914,
-      "time": 1352424402
+    "San Francisco Bicycle Route 30 and Masonic Ave": {
+      "lat": 37.7728632,
+      "lng": -122.4458731,
+      "elevation": 70.78959655761719
     },
     "Grove St and Cole St": {
       "lat": 37.7742621,
@@ -9914,17 +9944,17 @@
       "elevation": 28.58309173583984,
       "time": 1352424403
     },
-    "Lincoln Way and 30th Ave": {
-      "lat": 37.7648962,
-      "lng": -122.4890394,
-      "elevation": 54.9256591796875,
-      "time": 1352424443
+    "Geary Blvd and Laguna St": {
+      "lat": 37.78505579999999,
+      "lng": -122.4280064,
+      "elevation": 53.47917175292969,
+      "time": 1352424405
     },
-    "19th St and Dolores St": {
-      "lat": 37.7598312,
-      "lng": -122.4258747,
-      "elevation": 21.36231803894043,
-      "time": 1354068804
+    "Cabrillo St and 45th Ave": {
+      "lat": 37.77345589999999,
+      "lng": -122.505747,
+      "elevation": 20.71030426025391,
+      "time": 1352424406
     },
     "Grove St and Broderick St": {
       "lat": 37.7757239,
@@ -9950,11 +9980,11 @@
       "elevation": 63.93671035766602,
       "time": 1353178914
     },
-    "Rivera St and 40th Ave": {
-      "lat": 37.7457859,
-      "lng": -122.498453,
-      "elevation": 36.86352920532227,
-      "time": 1352424435
+    "Taraval St and 38th Ave": {
+      "lat": 37.7421509,
+      "lng": -122.4960577,
+      "elevation": 39.54959487915039,
+      "time": 1352424503
     },
     "Judah St and 30th Ave": {
       "lat": 37.761181,
@@ -9986,11 +10016,11 @@
       "elevation": 73.38084411621094,
       "time": 1352424413
     },
-    "Pacheco St and 10th Ave": {
-      "lat": 37.7509415,
-      "lng": -122.4664798,
-      "elevation": 189.29833984375,
-      "time": 1352424747
+    "Ulloa St and 47th Ave": {
+      "lat": 37.7398586,
+      "lng": -122.5055641,
+      "elevation": 8.212042808532715,
+      "time": 1352424549
     },
     "Waller St and Fillmore St": {
       "lat": 37.771188,
@@ -10111,11 +10141,11 @@
       "elevation": 2.617706298828125,
       "time": 1353178917
     },
-    "Haight St and Clayton St": {
-      "lat": 37.7698065,
-      "lng": -122.4485747,
-      "elevation": 80.90133666992188,
-      "time": 1353177811
+    "Cabrillo St and 35th Ave": {
+      "lat": 37.7739449,
+      "lng": -122.4950538,
+      "elevation": 47.19139862060547,
+      "time": 1352424433
     },
     "Lincoln Way and 41st Ave": {
       "lat": 37.7643683,
@@ -10129,11 +10159,11 @@
       "elevation": 31.10985374450684,
       "time": 1352424611
     },
-    "Lake St and 26th Ave": {
-      "lat": 37.7856946,
-      "lng": -122.4862231,
-      "elevation": 46.99310302734375,
-      "time": 1352424694
+    "Pine St and Franklin St": {
+      "lat": 37.7892129,
+      "lng": -122.4238088,
+      "elevation": 63.43522262573242,
+      "time": 1353178918
     },
     "McAllister St and Buchanan St": {
       "lat": 37.7790566,
@@ -10147,11 +10177,11 @@
       "elevation": 137.0622406005859,
       "time": 1352424502
     },
-    "Green St and Buchanan St": {
-      "lat": 37.7965844,
-      "lng": -122.4320042,
-      "elevation": 30.43816947937012,
-      "time": 1353178776
+    "Fell St and Franklin St": {
+      "lat": 37.776164,
+      "lng": -122.4211663,
+      "elevation": 17.72688484191895,
+      "time": 1352424437
     },
     "Clay St and Van Ness Ave": {
       "lat": 37.7921651,
@@ -10273,11 +10303,11 @@
       "elevation": 50.81475830078125,
       "time": 1352424451
     },
-    "Balboa St and 25th Ave": {
-      "lat": 37.7762976,
-      "lng": -122.4844444,
-      "elevation": 57.49016571044922,
-      "time": 1352424421
+    "Fell St and Steiner St": {
+      "lat": 37.7747013,
+      "lng": -122.4326359,
+      "elevation": 77.8890380859375,
+      "time": 1352424409
     },
     "Haight St and Cole St": {
       "lat": 37.7695284,
@@ -10303,11 +10333,11 @@
       "elevation": 84.2867660522461,
       "time": 1352424463
     },
-    "Balboa St and 8th Ave": {
-      "lat": 37.7771297,
-      "lng": -122.4661596,
-      "elevation": 64.85489654541016,
-      "time": 1352424464
+    "Balboa St and 16th Ave": {
+      "lat": 37.7767226,
+      "lng": -122.4748305,
+      "elevation": 62.60627746582031,
+      "time": 1352424746
     },
     "Ellis St and Van Ness Ave": {
       "lat": 37.7838293,
@@ -10441,11 +10471,11 @@
       "elevation": 80.91162872314453,
       "time": 1352424480
     },
-    "18th St and Dolores St": {
-      "lat": 37.7614291,
-      "lng": -122.4261596,
-      "elevation": 17.06522750854492,
-      "time": 1354068811
+    "Hayes St and Cole St": {
+      "lat": 37.77332080000001,
+      "lng": -122.450982,
+      "elevation": 78.6509780883789,
+      "time": 1353177813
     },
     "Jackson St and Columbus Ave": {
       "lat": 37.7963203,
@@ -10573,12 +10603,6 @@
       "elevation": 6.624059677124023,
       "time": 1353178933
     },
-    "Fulton St and 18th Ave": {
-      "lat": 37.7729084,
-      "lng": -122.4766989,
-      "elevation": 75.08174896240234,
-      "time": 1352424504
-    },
     "Vallejo St and Leavenworth St": {
       "lat": 37.79755919999999,
       "lng": -122.4170494,
@@ -10687,11 +10711,11 @@
       "elevation": 20.3759708404541,
       "time": 1352424521
     },
-    "Union St and Front St": {
-      "lat": 37.8015479,
-      "lng": -122.4005199,
-      "elevation": 2.578742980957031,
-      "time": 1353179008
+    "Moraga St and 31st Ave": {
+      "lat": 37.755541,
+      "lng": -122.489459,
+      "elevation": 93.19988250732422,
+      "time": 1352424707
     },
     "Quintara St and 36th Ave": {
       "lat": 37.747841,
@@ -10699,11 +10723,11 @@
       "elevation": 51.98158645629883,
       "time": 1352424712
     },
-    "Moraga St and 46th Ave": {
-      "lat": 37.7548296,
-      "lng": -122.5055465,
-      "elevation": 13.73909664154053,
-      "time": 1352424717
+    "Balboa St and 48th Ave": {
+      "lat": 37.775175,
+      "lng": -122.5091035,
+      "elevation": 21.89376068115234,
+      "time": 1352424524
     },
     "Anza St and 36th Ave": {
       "lat": 37.7776252,
@@ -10717,11 +10741,11 @@
       "elevation": 55.82682037353516,
       "time": 1352424528
     },
-    "Noriega St and 15th Ave": {
-      "lat": 37.7544032,
-      "lng": -122.4721336,
-      "elevation": 156.7019653320312,
-      "time": 1352424736
+    "Moraga St and 23rd Ave": {
+      "lat": 37.755919,
+      "lng": -122.48089,
+      "elevation": 90.20317840576172,
+      "time": 1352424528
     },
     "Grove St and Central Ave": {
       "lat": 37.7750898,
@@ -10831,11 +10855,11 @@
       "elevation": 18.01292610168457,
       "time": 1352424832
     },
-    "Santiago St and 41st Ave": {
-      "lat": 37.743879,
-      "lng": -122.499393,
-      "elevation": 38.11850738525391,
-      "time": 1352424431
+    "McAllister St and Pierce St": {
+      "lat": 37.7782204,
+      "lng": -122.4350524,
+      "elevation": 54.65487670898438,
+      "time": 1352424545
     },
     "Sacramento St and Walnut St": {
       "lat": 37.7879774,
@@ -10873,11 +10897,11 @@
       "elevation": 38.4998664855957,
       "time": 1354068819
     },
-    "Post St and Larkin St": {
-      "lat": 37.78705360000001,
-      "lng": -122.4183215,
-      "elevation": 38.05027008056641,
-      "time": 1353178940
+    "Sutter St and Buchanan St": {
+      "lat": 37.7864983,
+      "lng": -122.4299484,
+      "elevation": 49.35020446777344,
+      "time": 1353179027
     },
     "Fulton St and Park Presidio Blvd": {
       "lat": 37.7731406,
@@ -10987,17 +11011,17 @@
       "elevation": 20.05654335021973,
       "time": 1353178942
     },
-    "Grove St and Baker St": {
-      "lat": 37.7755105,
-      "lng": -122.4413014,
-      "elevation": 65.79747772216797,
-      "time": 1352424716
+    "Broadway St and Sansome St": {
+      "lat": 37.7984455,
+      "lng": -122.4022486,
+      "elevation": 13.67500114440918,
+      "time": 1353178908
     },
-    "Noriega St and 21st Ave": {
-      "lat": 37.7541455,
-      "lng": -122.4786133,
-      "elevation": 102.466438293457,
-      "time": 1352424573
+    "Vallejo St and Front St": {
+      "lat": 37.7996962,
+      "lng": -122.4000828,
+      "elevation": 3.595471620559692,
+      "time": 1353178943
     },
     "Rivera St and 14th Ave": {
       "lat": 37.747037,
@@ -11095,11 +11119,11 @@
       "elevation": 65.21744537353516,
       "time": 1352424585
     },
-    "Quintara St and 32nd Ave": {
-      "lat": 37.748031,
-      "lng": -122.490009,
-      "elevation": 74.70808410644531,
-      "time": 1352424576
+    "Page St and Pierce St": {
+      "lat": 37.77263689999999,
+      "lng": -122.4339101,
+      "elevation": 51.91054916381836,
+      "time": 1352424585
     },
     "Anza St and 46th Ave": {
       "lat": 37.7771517,
@@ -11142,12 +11166,6 @@
       "lng": -122.4540694,
       "elevation": 79.20442199707031,
       "time": 1353177815
-    },
-    "Lincoln Way and 15th Ave": {
-      "lat": 37.7656916,
-      "lng": -122.472933,
-      "elevation": 76.3818130493164,
-      "time": 1352424592
     },
     "California St and 28th Ave": {
       "lat": 37.7837394,
@@ -11209,11 +11227,11 @@
       "elevation": 25.37770080566406,
       "time": 1353178948
     },
-    "Haight St and Baker St": {
-      "lat": 37.7708415,
-      "lng": -122.4403594,
-      "elevation": 85.22675323486328,
-      "time": 1352424604
+    "Lawton St and 40th Ave": {
+      "lat": 37.7569788,
+      "lng": -122.4992457,
+      "elevation": 40.21976089477539,
+      "time": 1352424755
     },
     "Quintara St and 42nd Ave": {
       "lat": 37.747557,
@@ -11287,11 +11305,11 @@
       "elevation": 219.7477264404297,
       "time": 1352424614
     },
-    "Kirkham St and 41st Ave": {
-      "lat": 37.758803,
-      "lng": -122.5004339,
-      "elevation": 33.10861206054688,
-      "time": 1352424724
+    "Pacific Ave and Laguna St": {
+      "lat": 37.793986,
+      "lng": -122.4297929,
+      "elevation": 76.17810821533203,
+      "time": 1353178972
     },
     "Green St and Scott St": {
       "lat": 37.7955388,
@@ -11310,12 +11328,6 @@
       "lng": -122.4815284,
       "elevation": 43.17547988891602,
       "time": 1352424620
-    },
-    "Jackson St and Mason St": {
-      "lat": 37.7954401,
-      "lng": -122.4115822,
-      "elevation": 55.2901725769043,
-      "time": 1353179053
     },
     "Judah St and 16th Ave": {
       "lat": 37.7617882,
@@ -11359,11 +11371,11 @@
       "elevation": 43.73309326171875,
       "time": 1353178951
     },
-    "Lake St and 3rd Ave": {
-      "lat": 37.78682,
-      "lng": -122.4614869,
-      "elevation": 61.26982879638672,
-      "time": 1352423457
+    "Geary Blvd and 2nd Ave": {
+      "lat": 37.7811469,
+      "lng": -122.459992,
+      "elevation": 62.3226203918457,
+      "time": 1352423450
     },
     "Lake St and Park Presidio Blvd": {
       "lat": 37.7863252,
@@ -11473,23 +11485,29 @@
       "elevation": 5.323083400726318,
       "time": 1352424641
     },
-    "Page St and Pierce St": {
-      "lat": 37.77263689999999,
-      "lng": -122.4339101,
-      "elevation": 51.91054916381836,
-      "time": 1352424585
-    },
     "Holly Park Cir and Elsie St": {
       "lat": 37.7380765,
       "lng": -122.4205411,
       "elevation": 84.16649627685547,
       "time": 1353179691
     },
+    "Waller St and Divisadero St": {
+      "lat": 37.7703437,
+      "lng": -122.4368039,
+      "elevation": 67.32605743408203,
+      "time": 1352424452
+    },
     "Haight St and Fillmore St": {
       "lat": 37.7721283,
       "lng": -122.4304283,
       "elevation": 48.32704162597656,
       "time": 1352424643
+    },
+    "Bay St and Baker St": {
+      "lat": 37.8014358,
+      "lng": -122.4465275,
+      "elevation": 4.779232978820801,
+      "time": 1353178956
     },
     "Page St and Scott St": {
       "lat": 37.772424,
@@ -11647,12 +11665,6 @@
       "elevation": 80.0351333618164,
       "time": 1353178962
     },
-    "Oak St and Pierce St": {
-      "lat": 37.773562,
-      "lng": -122.4341048,
-      "elevation": 60.6954231262207,
-      "time": 1352424597
-    },
     "Bush St and Baker St": {
       "lat": 37.7857635,
       "lng": -122.4433684,
@@ -11749,11 +11761,11 @@
       "elevation": 16.00253677368164,
       "time": 1352424683
     },
-    "Jackson St and Davis St": {
-      "lat": 37.7971042,
-      "lng": -122.3983464,
-      "elevation": 2.622955322265625,
-      "time": 1353178916
+    "Washington St and Hyde St": {
+      "lat": 37.7937201,
+      "lng": -122.4179631,
+      "elevation": 80.5937271118164,
+      "time": 1353179055
     },
     "Bay St and Leavenworth St": {
       "lat": 37.8050167,
@@ -11767,11 +11779,11 @@
       "elevation": 53.17596435546875,
       "time": 1352424490
     },
-    "Geary Blvd and 36th Ave": {
-      "lat": 37.77960240000001,
-      "lng": -122.4965282,
-      "elevation": 83.53836059570312,
-      "time": 1352424687
+    "Anza St and Parker Ave": {
+      "lat": 37.7802385,
+      "lng": -122.4538763,
+      "elevation": 79.6942367553711,
+      "time": 1353575013
     },
     "Waller St and Cole St": {
       "lat": 37.76859760000001,
@@ -11875,12 +11887,6 @@
       "elevation": 33.68942642211914,
       "time": 1353178968
     },
-    "Beach St and Mason St": {
-      "lat": 37.8075069,
-      "lng": -122.414002,
-      "elevation": 2.651557445526123,
-      "time": 1353179051
-    },
     "Kirkham St and 25th Ave": {
       "lat": 37.7595554,
       "lng": -122.483293,
@@ -11964,6 +11970,12 @@
       "lng": -122.4347949,
       "elevation": 55.42631530761719,
       "time": 1354068807
+    },
+    "Balboa St and 35th Ave": {
+      "lat": 37.7758074,
+      "lng": -122.4951786,
+      "elevation": 62.35151290893555,
+      "time": 1352424754
     },
     "Bay St and Webster St": {
       "lat": 37.8028638,
@@ -12139,6 +12151,12 @@
       "elevation": 46.259521484375,
       "time": 1352424742
     },
+    "Washington St and Davis St": {
+      "lat": 37.7961921,
+      "lng": -122.3981801,
+      "elevation": 2.614229679107666,
+      "time": 1353178782
+    },
     "Santiago St and 33rd Ave": {
       "lat": 37.744257,
       "lng": -122.490822,
@@ -12187,11 +12205,11 @@
       "elevation": 23.3835563659668,
       "time": 1353610281
     },
-    "Ulloa St and 43rd Ave": {
-      "lat": 37.74004900000001,
-      "lng": -122.501285,
-      "elevation": 28.10952568054199,
-      "time": 1352424400
+    "Lincoln Way and 21st Ave": {
+      "lat": 37.7653114,
+      "lng": -122.4794099,
+      "elevation": 62.18260955810547,
+      "time": 1352424749
     },
     "O'Farrell St and Scott St": {
       "lat": 37.7826711,
@@ -12205,11 +12223,11 @@
       "elevation": 36.52764129638672,
       "time": 1352424754
     },
-    "Lawton St and 40th Ave": {
-      "lat": 37.7569788,
-      "lng": -122.4992457,
-      "elevation": 40.21976089477539,
-      "time": 1352424755
+    "Haight St and Baker St": {
+      "lat": 37.7708415,
+      "lng": -122.4403594,
+      "elevation": 85.22675323486328,
+      "time": 1352424604
     },
     "Post St and Baker St": {
       "lat": 37.7838966,
@@ -12247,11 +12265,11 @@
       "elevation": 59.56146240234375,
       "time": 1353178975
     },
-    "Persia Ave and Mission St": {
-      "lat": 37.7231408,
-      "lng": -122.4359722,
-      "elevation": 53.33755493164062,
-      "time": 1354068809
+    "Bay St and Buchanan St": {
+      "lat": 37.8030737,
+      "lng": -122.4333225,
+      "elevation": 8.259002685546875,
+      "time": 1353178975
     },
     "Moraga St and 30th Ave": {
       "lat": 37.75558789999999,
@@ -12307,12 +12325,6 @@
       "elevation": 86.3096694946289,
       "time": 1353176731
     },
-    "Holly Park Cir and Appleton Ave": {
-      "lat": 37.7376209,
-      "lng": -122.4209136,
-      "elevation": 82.89423370361328,
-      "time": 1353179691
-    },
     "Pacific Ave and Jones St": {
       "lat": 37.795885,
       "lng": -122.4150486,
@@ -12343,11 +12355,11 @@
       "elevation": 47.49948120117188,
       "time": 1352424777
     },
-    "Cabrillo St and 48th Ave": {
-      "lat": 37.773309,
-      "lng": -122.508971,
-      "elevation": 13.37448883056641,
-      "time": 1352424669
+    "Grove St and Fillmore St": {
+      "lat": 37.776776,
+      "lng": -122.4313897,
+      "elevation": 45.54075622558594,
+      "time": 1352424752
     },
     "Post St and Grant Ave": {
       "lat": 37.7887278,
@@ -12373,11 +12385,11 @@
       "elevation": 43.32854843139648,
       "time": 1352424781
     },
-    "Lincoln Way and 14th Ave": {
-      "lat": 37.7657402,
-      "lng": -122.4718114,
-      "elevation": 71.81613159179688,
-      "time": 1352424753
+    "Jackson St and Hyde St": {
+      "lat": 37.7945734,
+      "lng": -122.4181313,
+      "elevation": 74.56227111816406,
+      "time": 1353178979
     },
     "Greenwich St and Octavia St": {
       "lat": 37.7997933,
@@ -12499,11 +12511,11 @@
       "elevation": 8.237178802490234,
       "time": 1353178985
     },
-    "Filbert St and Mason St": {
-      "lat": 37.80098539999999,
-      "lng": -122.4127329,
-      "elevation": 25.00255966186523,
-      "time": 1353178881
+    "Hayes St and Gough St": {
+      "lat": 37.7768943,
+      "lng": -122.4229876,
+      "elevation": 19.53360176086426,
+      "time": 1352424804
     },
     "Sacramento St and Broderick St": {
       "lat": 37.788781,
@@ -12547,17 +12559,17 @@
       "elevation": 21.10392379760742,
       "time": 1353178987
     },
-    "Euclid Ave and Commonwealth Ave": {
-      "lat": 37.7839805,
-      "lng": -122.4557107,
-      "elevation": 67.69039154052734,
-      "time": 1353574993
+    "Union St and Buchanan St": {
+      "lat": 37.797519,
+      "lng": -122.4321778,
+      "elevation": 24.81608390808105,
+      "time": 1353178987
     },
-    "Fulton St and 12th Ave": {
-      "lat": 37.7732078,
-      "lng": -122.4701694,
-      "elevation": 69.43633270263672,
-      "time": 1352424809
+    "Sutter St and Laguna St": {
+      "lat": 37.7867161,
+      "lng": -122.4283505,
+      "elevation": 57.98140716552734,
+      "time": 1353178798
     },
     "Moraga St and 41st Ave": {
       "lat": 37.7550655,
@@ -12649,11 +12661,11 @@
       "elevation": 34.97544860839844,
       "time": 1354068822
     },
-    "Irving St and 16th Ave": {
-      "lat": 37.7637197,
-      "lng": -122.4739361,
-      "elevation": 75.98788452148438,
-      "time": 1352424603
+    "Kirkham St and 29th Ave": {
+      "lat": 37.7593589,
+      "lng": -122.48758,
+      "elevation": 74.88190460205078,
+      "time": 1352424744
     },
     "Washington St and Spruce St": {
       "lat": 37.7891114,
@@ -12661,29 +12673,35 @@
       "elevation": 87.02157592773438,
       "time": 1353575017
     },
-    "Post St and Powell St": {
-      "lat": 37.7883216,
-      "lng": -122.4084512,
-      "elevation": 25.22031402587891,
-      "time": 1353178895
-    },
-    "Ortega St and 34th Ave": {
-      "lat": 37.75166189999999,
-      "lng": -122.492417,
-      "elevation": 66.01132202148438,
+    "Haight St and Broderick St": {
+      "lat": 37.7710594,
+      "lng": -122.4387011,
+      "elevation": 75.23363494873047,
       "time": 1352424820
     },
-    "Ulloa St and 20th Ave": {
-      "lat": 37.741138,
-      "lng": -122.47663,
-      "elevation": 90.66020202636719,
-      "time": 1352424833
+    "Pacific Ave and Gough St": {
+      "lat": 37.7943931,
+      "lng": -122.4265472,
+      "elevation": 63.7831916809082,
+      "time": 1353178988
     },
-    "23rd St and Dolores St": {
-      "lat": 37.7534284,
-      "lng": -122.4253845,
-      "elevation": 37.85278701782227,
-      "time": 1354068816
+    "Fell St and Gough St": {
+      "lat": 37.7759739,
+      "lng": -122.4228058,
+      "elevation": 18.67043304443359,
+      "time": 1352424823
+    },
+    "Page St and Gough St": {
+      "lat": 37.7741061,
+      "lng": -122.4224287,
+      "elevation": 17.20699882507324,
+      "time": 1352424823
+    },
+    "Moraga St and 9th Ave": {
+      "lat": 37.7565813,
+      "lng": -122.4657911,
+      "elevation": 134.2504730224609,
+      "time": 1352424569
     },
     "Page St and Webster St": {
       "lat": 37.7732534,
@@ -12691,23 +12709,23 @@
       "elevation": 59.44293212890625,
       "time": 1352424826
     },
-    "Vallejo St and Larkin St": {
-      "lat": 37.797128,
-      "lng": -122.4203331,
-      "elevation": 54.46437454223633,
-      "time": 1353178904
+    "Ortega St and 23rd Ave": {
+      "lat": 37.752188,
+      "lng": -122.4806368,
+      "elevation": 115.9016418457031,
+      "time": 1352424826
     },
-    "Green St and Stockton St": {
-      "lat": 37.799524,
-      "lng": -122.4089584,
-      "elevation": 27.99155044555664,
-      "time": 1353178906
+    "Rivera St and 20th Ave": {
+      "lat": 37.7467346,
+      "lng": -122.4770377,
+      "elevation": 128.9950408935547,
+      "time": 1352424827
     },
-    "Green St and Van Ness Ave": {
-      "lat": 37.7976202,
-      "lng": -122.4238873,
-      "elevation": 34.6887321472168,
-      "time": 1353178907
+    "Balboa St and 6th Ave": {
+      "lat": 37.777228,
+      "lng": -122.4640135,
+      "elevation": 61.28627014160156,
+      "time": 1352424799
     },
     "Lawton St and 28th Ave": {
       "lat": 37.7575477,
@@ -12733,11 +12751,17 @@
       "elevation": 120.5502166748047,
       "time": 1352424832
     },
-    "Pacheco St and 33rd Ave": {
-      "lat": 37.749848,
-      "lng": -122.491212,
-      "elevation": 73.75372314453125,
-      "time": 1352424529
+    "Jackson St and Montgomery St": {
+      "lat": 37.7964279,
+      "lng": -122.4035339,
+      "elevation": 4.521083354949951,
+      "time": 1353179061
+    },
+    "Clement St and 2nd Ave": {
+      "lat": 37.7831615,
+      "lng": -122.4601436,
+      "elevation": 60.43339920043945,
+      "time": 1352423448
     },
     "Turk Blvd and Masonic Ave": {
       "lat": 37.7786376,
@@ -12781,11 +12805,11 @@
       "elevation": 75.90035247802734,
       "time": 1353178990
     },
-    "Fell St and Steiner St": {
-      "lat": 37.7747013,
-      "lng": -122.4326359,
-      "elevation": 77.8890380859375,
-      "time": 1352424409
+    "Balboa St and 25th Ave": {
+      "lat": 37.7762976,
+      "lng": -122.4844444,
+      "elevation": 57.49016571044922,
+      "time": 1352424421
     },
     "Lawton St and 26th Ave": {
       "lat": 37.7576419,
@@ -12793,11 +12817,11 @@
       "elevation": 79.81489562988281,
       "time": 1352424410
     },
-    "Balboa St and 16th Ave": {
-      "lat": 37.7767226,
-      "lng": -122.4748305,
-      "elevation": 62.60627746582031,
-      "time": 1352424746
+    "Balboa St and 8th Ave": {
+      "lat": 37.7771297,
+      "lng": -122.4661596,
+      "elevation": 64.85489654541016,
+      "time": 1352424464
     },
     "Broadway St and Polk St": {
       "lat": 37.795992,
@@ -12847,11 +12871,11 @@
       "elevation": 13.59659862518311,
       "time": 1353178991
     },
-    "Sacramento St and Polk St": {
-      "lat": 37.791526,
-      "lng": -122.4209171,
-      "elevation": 54.68500900268555,
-      "time": 1353178886
+    "Sutter St and Van Ness Ave": {
+      "lat": 37.7875681,
+      "lng": -122.4218391,
+      "elevation": 52.44084930419922,
+      "time": 1353178992
     },
     "Pacheco St and 20th Ave": {
       "lat": 37.7504661,
@@ -12907,11 +12931,11 @@
       "elevation": 59.93384552001953,
       "time": 1352423453
     },
-    "Fulton St and 21st Ave": {
-      "lat": 37.772766,
-      "lng": -122.4799299,
-      "elevation": 70.73121643066406,
-      "time": 1352424644
+    "Cabrillo St and 41st Ave": {
+      "lat": 37.7736543,
+      "lng": -122.5014748,
+      "elevation": 38.70458221435547,
+      "time": 1352424594
     },
     "Rivera St and 39th Ave": {
       "lat": 37.745833,
@@ -12949,17 +12973,17 @@
       "elevation": 91.01679992675781,
       "time": 1352424638
     },
-    "Geary Blvd and Collins St": {
-      "lat": 37.7820526,
-      "lng": -122.4500918,
-      "elevation": 76.19020080566406,
-      "time": 1353574978
+    "Kirkham St and 14th Ave": {
+      "lat": 37.7600773,
+      "lng": -122.4714165,
+      "elevation": 101.6919708251953,
+      "time": 1352424439
     },
-    "Bay St and Baker St": {
-      "lat": 37.8014358,
-      "lng": -122.4465275,
-      "elevation": 4.779232978820801,
-      "time": 1353178956
+    "Jackson St and Scott St": {
+      "lat": 37.7918461,
+      "lng": -122.439482,
+      "elevation": 91.74471282958984,
+      "time": 1353178995
     },
     "Broadway St and Grant Ave": {
       "lat": 37.79784739999999,
@@ -13015,11 +13039,11 @@
       "elevation": 25.70382690429688,
       "time": 1353178996
     },
-    "Noriega St and 45th Ave": {
-      "lat": 37.7530128,
-      "lng": -122.5043382,
-      "elevation": 15.77657127380371,
-      "time": 1352424570
+    "Clement St and Funston Ave": {
+      "lat": 37.7826131,
+      "lng": -122.4719281,
+      "elevation": 49.58609771728516,
+      "time": 1352424449
     },
     "California St and Laurel St": {
       "lat": 37.786712,
@@ -13033,11 +13057,11 @@
       "elevation": 26.22702789306641,
       "time": 1352424560
     },
-    "Waller St and Divisadero St": {
-      "lat": 37.7703437,
-      "lng": -122.4368039,
-      "elevation": 67.32605743408203,
-      "time": 1352424452
+    "Lincoln Way and 15th Ave": {
+      "lat": 37.7656916,
+      "lng": -122.472933,
+      "elevation": 76.3818130493164,
+      "time": 1352424592
     },
     "Kirkham St and 31st Ave": {
       "lat": 37.759265,
@@ -13093,11 +13117,11 @@
       "elevation": 72.6047592163086,
       "time": 1352424772
     },
-    "Pacheco St and 18th Ave": {
-      "lat": 37.7505604,
-      "lng": -122.4751438,
-      "elevation": 129.6835632324219,
-      "time": 1352424469
+    "California St and 29th Ave": {
+      "lat": 37.7836888,
+      "lng": -122.489301,
+      "elevation": 49.84250640869141,
+      "time": 1352424775
     },
     "Clement St and 18th Ave": {
       "lat": 37.7823567,
@@ -13105,11 +13129,11 @@
       "elevation": 44.83588027954102,
       "time": 1352424462
     },
-    "Clay St and Pierce St": {
-      "lat": 37.7902998,
-      "lng": -122.4374866,
-      "elevation": 67.34754943847656,
-      "time": 1353178979
+    "Lincoln Way and 42nd Ave": {
+      "lat": 37.7643253,
+      "lng": -122.501894,
+      "elevation": 28.6909008026123,
+      "time": 1352424483
     },
     "Waller St and Clayton St": {
       "lat": 37.7688761,
@@ -13153,11 +13177,11 @@
       "elevation": 18.07737922668457,
       "time": 1353179001
     },
-    "Lincoln Way and 25th Ave": {
-      "lat": 37.76513140000001,
-      "lng": -122.4836826,
-      "elevation": 58.01206207275391,
-      "time": 1352424575
+    "Lake St and 4th Ave": {
+      "lat": 37.7867745,
+      "lng": -122.4625544,
+      "elevation": 59.83157348632812,
+      "time": 1352423458
     },
     "Chestnut St and Polk St": {
       "lat": 37.8025005,
@@ -13225,11 +13249,11 @@
       "elevation": 71.94996643066406,
       "time": 1352424446
     },
-    "Union St and Taylor St": {
-      "lat": 37.7998334,
-      "lng": -122.4141412,
-      "elevation": 49.93257141113281,
-      "time": 1353179004
+    "Ulloa St and 30th Ave": {
+      "lat": 37.7406639,
+      "lng": -122.487346,
+      "elevation": 59.27970504760742,
+      "time": 1352424558
     },
     "Ellis St and Gough St": {
       "lat": 37.7834238,
@@ -13243,11 +13267,11 @@
       "elevation": 28.6669807434082,
       "time": 1352424482
     },
-    "Green St and Webster St": {
-      "lat": 37.7963698,
-      "lng": -122.4336389,
-      "elevation": 33.54085159301758,
-      "time": 1353178835
+    "Sacramento St and Baker St": {
+      "lat": 37.7885743,
+      "lng": -122.4439266,
+      "elevation": 67.60604095458984,
+      "time": 1353178872
     },
     "Santiago St and 42nd Ave": {
       "lat": 37.743832,
@@ -13255,11 +13279,11 @@
       "elevation": 35.802734375,
       "time": 1352424454
     },
-    "Lake St and 4th Ave": {
-      "lat": 37.7867745,
-      "lng": -122.4625544,
-      "elevation": 59.83157348632812,
-      "time": 1352423458
+    "Lincoln Way and 25th Ave": {
+      "lat": 37.76513140000001,
+      "lng": -122.4836826,
+      "elevation": 58.01206207275391,
+      "time": 1352424575
     },
     "McAllister St and Octavia St": {
       "lat": 37.7794901,
@@ -13273,11 +13297,11 @@
       "elevation": 10.96488189697266,
       "time": 1353179004
     },
-    "Ulloa St and 30th Ave": {
-      "lat": 37.7406639,
-      "lng": -122.487346,
-      "elevation": 59.27970504760742,
-      "time": 1352424558
+    "Union St and Taylor St": {
+      "lat": 37.7998334,
+      "lng": -122.4141412,
+      "elevation": 49.93257141113281,
+      "time": 1353179004
     },
     "Waller St and Shrader St": {
       "lat": 37.76844730000001,
@@ -13381,11 +13405,11 @@
       "elevation": 80.38626861572266,
       "time": 1352424499
     },
-    "Beach St and Buchanan St": {
-      "lat": 37.8049626,
-      "lng": -122.4337111,
-      "elevation": 4.88416051864624,
-      "time": 1353179006
+    "Filbert St and Gough St": {
+      "lat": 37.7990714,
+      "lng": -122.4274756,
+      "elevation": 17.21382331848145,
+      "time": 1353179062
     },
     "Post St and Stockton St": {
       "lat": 37.7885239,
@@ -13573,12 +13597,6 @@
       "elevation": 41.83614349365234,
       "time": 1353179013
     },
-    "Haight St and Masonic Ave": {
-      "lat": 37.7702169,
-      "lng": -122.4453249,
-      "elevation": 81.82523345947266,
-      "time": 1352424778
-    },
     "Noriega St and 25th Ave": {
       "lat": 37.753957,
       "lng": -122.482899,
@@ -13615,12 +13633,6 @@
       "elevation": 86.6392593383789,
       "time": 1353575000
     },
-    "Greenwich St and Grant Ave": {
-      "lat": 37.8025266,
-      "lng": -122.40799,
-      "elevation": 49.31443405151367,
-      "time": 1353178794
-    },
     "Fulton St and Shrader St": {
       "lat": 37.7749794,
       "lng": -122.452976,
@@ -13651,11 +13663,11 @@
       "elevation": 96.68896484375,
       "time": 1352424548
     },
-    "Edward St and Arguello Blvd": {
-      "lat": 37.7780042,
-      "lng": -122.4586431,
-      "elevation": 66.5524673461914,
-      "time": 1353574967
+    "Broadway St and Pierce St": {
+      "lat": 37.79385,
+      "lng": -122.438209,
+      "elevation": 57.09099960327148,
+      "time": 1353179015
     },
     "Ortega St and 24th Ave": {
       "lat": 37.752142,
@@ -13771,23 +13783,23 @@
       "elevation": 57.80915451049805,
       "time": 1353179019
     },
-    "Haight St and Pierce St": {
-      "lat": 37.7717004,
-      "lng": -122.4337105,
-      "elevation": 45.43647384643555,
-      "time": 1352424569
+    "Greenwich St and Divisadero St": {
+      "lat": 37.798119,
+      "lng": -122.442461,
+      "elevation": 19.9025936126709,
+      "time": 1353178769
     },
-    "Moraga St and 9th Ave": {
-      "lat": 37.7565813,
-      "lng": -122.4657911,
-      "elevation": 134.2504730224609,
-      "time": 1352424569
+    "Greenwich St and Grant Ave": {
+      "lat": 37.8025266,
+      "lng": -122.40799,
+      "elevation": 49.31443405151367,
+      "time": 1353178794
     },
-    "Washington St and Divisadero St": {
-      "lat": 37.7907576,
-      "lng": -122.4409852,
-      "elevation": 79.01839447021484,
-      "time": 1353178789
+    "Moraga St and Sunset Blvd": {
+      "lat": 37.75527719999999,
+      "lng": -122.4954377,
+      "elevation": 56.05393218994141,
+      "time": 1352424515
     },
     "Haight St and Central Ave": {
       "lat": 37.7704323,
@@ -13819,11 +13831,11 @@
       "elevation": 67.16547393798828,
       "time": 1353575023
     },
-    "Green St and The Embarcadero": {
-      "lat": 37.8009687,
-      "lng": -122.3990399,
-      "elevation": 2.525497198104858,
-      "time": 1353179021
+    "North Point St and Taylor St": {
+      "lat": 37.8063673,
+      "lng": -122.4154651,
+      "elevation": 3.388216972351074,
+      "time": 1353178778
     },
     "California St and 31st Ave": {
       "lat": 37.7835899,
@@ -13843,11 +13855,11 @@
       "elevation": 50.56457138061523,
       "time": 1352424578
     },
-    "Washington St and Davis St": {
-      "lat": 37.7961921,
-      "lng": -122.3981801,
-      "elevation": 2.614229679107666,
-      "time": 1353178782
+    "Rivera St and 27th Ave": {
+      "lat": 37.746401,
+      "lng": -122.484524,
+      "elevation": 102.8509979248047,
+      "time": 1352424578
     },
     "Taraval St and 47th Ave": {
       "lat": 37.7417285,
@@ -13867,11 +13879,11 @@
       "elevation": 9.339364051818848,
       "time": 1353179022
     },
-    "Filbert St and Hyde St": {
-      "lat": 37.8001452,
-      "lng": -122.4192806,
-      "elevation": 88.09449768066406,
-      "time": 1353178790
+    "Anza St and 23rd Ave": {
+      "lat": 37.7782621,
+      "lng": -122.4824904,
+      "elevation": 44.7160530090332,
+      "time": 1352424605
     },
     "Cabrillo St and 31st Ave": {
       "lat": 37.7741421,
@@ -13987,11 +13999,11 @@
       "elevation": 32.07415390014648,
       "time": 1352424596
     },
-    "Euclid Ave and Palm Ave": {
-      "lat": 37.783878,
-      "lng": -122.4579208,
-      "elevation": 61.51573181152344,
-      "time": 1353574982
+    "Oak St and Pierce St": {
+      "lat": 37.773562,
+      "lng": -122.4341048,
+      "elevation": 60.6954231262207,
+      "time": 1352424597
     },
     "Sacramento St and Powell St": {
       "lat": 37.7930063,
@@ -14023,11 +14035,11 @@
       "elevation": 78.09722137451172,
       "time": 1353177824
     },
-    "Pine St and Polk St": {
-      "lat": 37.7896487,
-      "lng": -122.4205116,
-      "elevation": 49.18943786621094,
-      "time": 1353179026
+    "Vallejo St and Battery St": {
+      "lat": 37.7995536,
+      "lng": -122.4012806,
+      "elevation": 5.993607997894287,
+      "time": 1353178813
     },
     "Pacific Ave and Polk St": {
       "lat": 37.7950275,
@@ -14119,11 +14131,11 @@
       "elevation": 68.0396957397461,
       "time": 1352424613
     },
-    "Balboa St and 2nd Ave": {
-      "lat": 37.7774207,
-      "lng": -122.4597315,
-      "elevation": 63.04511642456055,
-      "time": 1352423463
+    "Washington St and Lyon St": {
+      "lat": 37.7901247,
+      "lng": -122.4459361,
+      "elevation": 94.99495697021484,
+      "time": 1353178806
     },
     "Sacramento St and Buchanan St": {
       "lat": 37.7902622,
@@ -14191,11 +14203,11 @@
       "elevation": 50.5666618347168,
       "time": 1352424439
     },
-    "Santiago St and 46th Ave": {
-      "lat": 37.7436348,
-      "lng": -122.5047487,
-      "elevation": 13.62683773040771,
-      "time": 1352424625
+    "Greenwich St and Stockton St": {
+      "lat": 37.8023083,
+      "lng": -122.4096006,
+      "elevation": 31.89216995239258,
+      "time": 1353178839
     },
     "Cabrillo St and 37th Ave": {
       "lat": 37.7738466,
@@ -14215,11 +14227,11 @@
       "elevation": 49.05462265014648,
       "time": 1353179033
     },
-    "Quintara St and 19th Ave": {
-      "lat": 37.7486529,
-      "lng": -122.4759773,
-      "elevation": 136.6012878417969,
-      "time": 1352424530
+    "Fulton St and 38th Ave": {
+      "lat": 37.77193400000001,
+      "lng": -122.498114,
+      "elevation": 36.4816780090332,
+      "time": 1352424460
     },
     "Clay St and Sansome St": {
       "lat": 37.7948753,
@@ -14335,11 +14347,11 @@
       "elevation": 27.99155044555664,
       "time": 1353179037
     },
-    "Pine St and Stockton St": {
-      "lat": 37.791318,
-      "lng": -122.4073417,
-      "elevation": 51.34259033203125,
-      "time": 1353179037
+    "Holly Park Cir and Appleton Ave": {
+      "lat": 37.7376209,
+      "lng": -122.4209136,
+      "elevation": 82.89423370361328,
+      "time": 1353179691
     },
     "Post St and Hyde St": {
       "lat": 37.7872478,
@@ -14353,11 +14365,11 @@
       "elevation": 46.18281173706055,
       "time": 1353179038
     },
-    "Judah St and 15th Ave": {
-      "lat": 37.7618347,
-      "lng": -122.4726695,
-      "elevation": 84.10697937011719,
-      "time": 1352424601
+    "Broadway St and Lyon St": {
+      "lat": 37.7928089,
+      "lng": -122.4464361,
+      "elevation": 103.6479797363281,
+      "time": 1353178872
     },
     "Anza St and 39th Ave": {
       "lat": 37.7774858,
@@ -14431,6 +14443,12 @@
       "elevation": 17.84169387817383,
       "time": 1353179039
     },
+    "Euclid Ave and Parker Ave": {
+      "lat": 37.7840336,
+      "lng": -122.4546215,
+      "elevation": 70.61193084716797,
+      "time": 1353575026
+    },
     "Lincoln Way and 3rd Ave": {
       "lat": 37.766196,
       "lng": -122.459543,
@@ -14461,11 +14479,11 @@
       "elevation": 40.45028305053711,
       "time": 1352424664
     },
-    "McAllister St and Central Ave": {
-      "lat": 37.776954,
-      "lng": -122.4449679,
-      "elevation": 73.17098999023438,
-      "time": 1352424665
+    "Fulton St and 18th Ave": {
+      "lat": 37.7729084,
+      "lng": -122.4766989,
+      "elevation": 75.08174896240234,
+      "time": 1352424504
     },
     "Greenwich St and Pierce St": {
       "lat": 37.7985384,
@@ -14521,11 +14539,11 @@
       "elevation": 62.21649551391602,
       "time": 1352424675
     },
-    "Washington St and Mason St": {
-      "lat": 37.7945396,
-      "lng": -122.4114196,
-      "elevation": 58.36394500732422,
-      "time": 1353178897
+    "Irving St and 42nd Ave": {
+      "lat": 37.7624749,
+      "lng": -122.5017671,
+      "elevation": 27.29631233215332,
+      "time": 1352424760
     },
     "Pacheco St and 21st Ave": {
       "lat": 37.750416,
@@ -14599,11 +14617,11 @@
       "elevation": 42.58987426757812,
       "time": 1353179045
     },
-    "Clay St and Mason St": {
-      "lat": 37.7936556,
-      "lng": -122.4112275,
-      "elevation": 69.68726348876953,
-      "time": 1353179045
+    "Pine St and Fillmore St": {
+      "lat": 37.7879634,
+      "lng": -122.4336384,
+      "elevation": 51.29002380371094,
+      "time": 1353179066
     },
     "Clay St and Laurel St": {
       "lat": 37.7886452,
@@ -14785,11 +14803,11 @@
       "elevation": 53.32189178466797,
       "time": 1352424709
     },
-    "Euclid Ave and Laurel St": {
-      "lat": 37.7846879,
-      "lng": -122.4492729,
-      "elevation": 98.29363250732422,
-      "time": 1353574981
+    "Beach St and Mason St": {
+      "lat": 37.8075069,
+      "lng": -122.414002,
+      "elevation": 2.651557445526123,
+      "time": 1353179051
     },
     "Cabrillo St and 40th Ave": {
       "lat": 37.7737064,
@@ -14803,11 +14821,11 @@
       "elevation": 56.60642623901367,
       "time": 1352424712
     },
-    "Sutter St and Buchanan St": {
-      "lat": 37.7864983,
-      "lng": -122.4299484,
-      "elevation": 49.35020446777344,
-      "time": 1353179027
+    "Post St and Larkin St": {
+      "lat": 37.78705360000001,
+      "lng": -122.4183215,
+      "elevation": 38.05027008056641,
+      "time": 1353178940
     },
     "Pacific Ave and Mason St": {
       "lat": 37.7962,
@@ -14821,11 +14839,11 @@
       "elevation": 46.10143661499023,
       "time": 1352424559
     },
-    "Broadway St and Sansome St": {
-      "lat": 37.7984455,
-      "lng": -122.4022486,
-      "elevation": 13.67500114440918,
-      "time": 1353178908
+    "Grove St and Baker St": {
+      "lat": 37.7755105,
+      "lng": -122.4413014,
+      "elevation": 65.79747772216797,
+      "time": 1352424716
     },
     "Bay St and Powell St": {
       "lat": 37.8058499,
@@ -14845,11 +14863,11 @@
       "elevation": 42.37142944335938,
       "time": 1352424651
     },
-    "Euclid Ave and Parker Ave": {
-      "lat": 37.7840336,
-      "lng": -122.4546215,
-      "elevation": 70.61193084716797,
-      "time": 1353575026
+    "Jackson St and Mason St": {
+      "lat": 37.7954401,
+      "lng": -122.4115822,
+      "elevation": 55.2901725769043,
+      "time": 1353179053
     },
     "Noriega St and 42nd Ave": {
       "lat": 37.7531539,
@@ -14863,11 +14881,11 @@
       "elevation": 56.43367767333984,
       "time": 1352424723
     },
-    "Bush St and Battery St": {
-      "lat": 37.7913308,
-      "lng": -122.3996203,
-      "elevation": 3.892536401748657,
-      "time": 1353178755
+    "Judah St and 32nd Ave": {
+      "lat": 37.7610869,
+      "lng": -122.4909213,
+      "elevation": 70.53132629394531,
+      "time": 1352424815
     },
     "Quintara St and 20th Ave": {
       "lat": 37.7485956,
@@ -14887,11 +14905,11 @@
       "elevation": 58.71494674682617,
       "time": 1352423449
     },
-    "Geary Blvd and 2nd Ave": {
-      "lat": 37.7811469,
-      "lng": -122.459992,
-      "elevation": 62.3226203918457,
-      "time": 1352423450
+    "Lake St and 3rd Ave": {
+      "lat": 37.78682,
+      "lng": -122.4614869,
+      "elevation": 61.26982879638672,
+      "time": 1352423457
     },
     "Oak St and Clayton St": {
       "lat": 37.7716789,
@@ -14929,11 +14947,11 @@
       "elevation": 96.67546081542969,
       "time": 1353177826
     },
-    "Cabrillo St and 29th Ave": {
-      "lat": 37.7742409,
-      "lng": -122.4886069,
-      "elevation": 53.18403625488281,
-      "time": 1352424733
+    "Lawton St and 21st Ave": {
+      "lat": 37.7578879,
+      "lng": -122.478891,
+      "elevation": 87.55207824707031,
+      "time": 1352424729
     },
     "Chestnut St and Octavia St": {
       "lat": 37.8016583,
@@ -14953,11 +14971,11 @@
       "elevation": 71.00161743164062,
       "time": 1353179054
     },
-    "Washington St and Hyde St": {
-      "lat": 37.7937201,
-      "lng": -122.4179631,
-      "elevation": 80.5937271118164,
-      "time": 1353179055
+    "Jackson St and Davis St": {
+      "lat": 37.7971042,
+      "lng": -122.3983464,
+      "elevation": 2.622955322265625,
+      "time": 1353178916
     },
     "Taraval St and Funston Ave": {
       "lat": 37.7433361,
@@ -15031,11 +15049,11 @@
       "elevation": 4.56793737411499,
       "time": 1353179056
     },
-    "Lincoln Way and 21st Ave": {
-      "lat": 37.7653114,
-      "lng": -122.4794099,
-      "elevation": 62.18260955810547,
-      "time": 1352424749
+    "Ulloa St and 43rd Ave": {
+      "lat": 37.74004900000001,
+      "lng": -122.501285,
+      "elevation": 28.10952568054199,
+      "time": 1352424400
     },
     "Jackson St and Laguna St": {
       "lat": 37.7930907,
@@ -15055,11 +15073,11 @@
       "elevation": 102.3291168212891,
       "time": 1352424750
     },
-    "Post St and Lyon St": {
-      "lat": 37.783688,
-      "lng": -122.4446442,
-      "elevation": 67.12956237792969,
-      "time": 1353178802
+    "Haight St and Masonic Ave": {
+      "lat": 37.7702169,
+      "lng": -122.4453249,
+      "elevation": 81.82523345947266,
+      "time": 1352424778
     },
     "Page St and Central Ave": {
       "lat": 37.7713688,
@@ -15067,11 +15085,11 @@
       "elevation": 78.44551849365234,
       "time": 1352424753
     },
-    "Jackson St and Hyde St": {
-      "lat": 37.7945734,
-      "lng": -122.4181313,
-      "elevation": 74.56227111816406,
-      "time": 1353178979
+    "Lincoln Way and 14th Ave": {
+      "lat": 37.7657402,
+      "lng": -122.4718114,
+      "elevation": 71.81613159179688,
+      "time": 1352424753
     },
     "Lake St and 5th Ave": {
       "lat": 37.7867274,
@@ -15121,11 +15139,11 @@
       "elevation": 64.4794921875,
       "time": 1353179060
     },
-    "Jackson St and Montgomery St": {
-      "lat": 37.7964279,
-      "lng": -122.4035339,
-      "elevation": 4.521083354949951,
-      "time": 1353179061
+    "Green St and Leavenworth St": {
+      "lat": 37.7985117,
+      "lng": -122.4172479,
+      "elevation": 93.01090240478516,
+      "time": 1353178844
     },
     "Ortega St and 21st Ave": {
       "lat": 37.752282,
@@ -15199,11 +15217,11 @@
       "elevation": 74.00626373291016,
       "time": 1352424461
     },
-    "California St and 29th Ave": {
-      "lat": 37.7836888,
-      "lng": -122.489301,
-      "elevation": 49.84250640869141,
-      "time": 1352424775
+    "Pacheco St and 18th Ave": {
+      "lat": 37.7505604,
+      "lng": -122.4751438,
+      "elevation": 129.6835632324219,
+      "time": 1352424469
     },
     "Santiago St and 24th Ave": {
       "lat": 37.7446801,
@@ -15229,11 +15247,11 @@
       "elevation": 60.67462921142578,
       "time": 1352424779
     },
-    "Filbert St and Gough St": {
-      "lat": 37.7990714,
-      "lng": -122.4274756,
-      "elevation": 17.21382331848145,
-      "time": 1353179062
+    "Beach St and Buchanan St": {
+      "lat": 37.8049626,
+      "lng": -122.4337111,
+      "elevation": 4.88416051864624,
+      "time": 1353179006
     },
     "Irving St and 4th Ave": {
       "lat": 37.7642783,
@@ -15271,11 +15289,11 @@
       "elevation": 68.85969543457031,
       "time": 1352424784
     },
-    "Holly Park Cir and Murray St": {
-      "lat": 37.7361571,
-      "lng": -122.4201294,
-      "elevation": 82.41316986083984,
-      "time": 1353179692
+    "Quintara St and 34th Ave": {
+      "lat": 37.7479359,
+      "lng": -122.492156,
+      "elevation": 58.54088592529297,
+      "time": 1352424525
     },
     "Fulton St and 48th Ave": {
       "lat": 37.7714477,
@@ -15355,11 +15373,11 @@
       "elevation": 77.3276138305664,
       "time": 1352424793
     },
-    "Lincoln Way and 38th Ave": {
-      "lat": 37.7645155,
-      "lng": -122.4976268,
-      "elevation": 36.88948059082031,
-      "time": 1352424543
+    "Pacific Ave and Scott St": {
+      "lat": 37.7927289,
+      "lng": -122.4396633,
+      "elevation": 86.38322448730469,
+      "time": 1353178756
     },
     "Anza St and 11th Ave": {
       "lat": 37.7788505,
@@ -15457,11 +15475,11 @@
       "elevation": 99.02832794189453,
       "time": 1353575030
     },
-    "Balboa St and 46th Ave": {
-      "lat": 37.7752737,
-      "lng": -122.5069619,
-      "elevation": 30.38126564025879,
-      "time": 1352424828
+    "Moraga St and 48th Ave": {
+      "lat": 37.7547362,
+      "lng": -122.5076863,
+      "elevation": 5.328267574310303,
+      "time": 1352424798
     },
     "Greenwich St and Van Ness Ave": {
       "lat": 37.8004117,
@@ -15481,11 +15499,11 @@
       "elevation": 63.7844123840332,
       "time": 1352424810
     },
-    "Pine St and Fillmore St": {
-      "lat": 37.7879634,
-      "lng": -122.4336384,
-      "elevation": 51.29002380371094,
-      "time": 1353179066
+    "Clay St and Mason St": {
+      "lat": 37.7936556,
+      "lng": -122.4112275,
+      "elevation": 69.68726348876953,
+      "time": 1353179045
     },
     "Clement St and 31st Ave": {
       "lat": 37.78172600000001,
@@ -15517,11 +15535,11 @@
       "elevation": 28.28645324707031,
       "time": 1352424815
     },
-    "Judah St and 32nd Ave": {
-      "lat": 37.7610869,
-      "lng": -122.4909213,
-      "elevation": 70.53132629394531,
-      "time": 1352424815
+    "Bush St and Battery St": {
+      "lat": 37.7913308,
+      "lng": -122.3996203,
+      "elevation": 3.892536401748657,
+      "time": 1353178755
     },
     "Judah St and 34th Ave": {
       "lat": 37.760992,
@@ -15589,11 +15607,11 @@
       "elevation": 33.39175796508789,
       "time": 1353610286
     },
-    "Quintara St and 34th Ave": {
-      "lat": 37.7479359,
-      "lng": -122.492156,
-      "elevation": 58.54088592529297,
-      "time": 1352424525
+    "Holly Park Cir and Murray St": {
+      "lat": 37.7361571,
+      "lng": -122.4201294,
+      "elevation": 82.41316986083984,
+      "time": 1353179692
     },
     "Clement St and 19th Ave": {
       "lat": 37.7823125,
@@ -15613,11 +15631,11 @@
       "elevation": 71.35852813720703,
       "time": 1352424510
     },
-    "Moraga St and 48th Ave": {
-      "lat": 37.7547362,
-      "lng": -122.5076863,
-      "elevation": 5.328267574310303,
-      "time": 1352424798
+    "Balboa St and 46th Ave": {
+      "lat": 37.7752737,
+      "lng": -122.5069619,
+      "elevation": 30.38126564025879,
+      "time": 1352424828
     },
     "Kirkham St and Sunset Blvd": {
       "lat": 37.7589983,
