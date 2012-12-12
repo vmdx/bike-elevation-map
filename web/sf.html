@@ -37,11 +37,11 @@
         <p class="control-header">Flattest Path Search</p>
 
         <form>
-            <input id="search-start" type="text" data-provide="typeahead" placeholder="Start" style="padding: 0px 6px; margin-bottom: 5px;">
-            <button onclick="BikeMap.Search.AStarSearchWrapper();" style="margin-left: 5px;">Go</button>
+            <input id="search-start" type="text" data-provide="typeahead" placeholder="Start" style="padding: 0px 6px; margin-bottom: 5px;" autocomplete="off">
+            <button type="button" onclick="BikeMap.Search.AStarSearchWrapper();" style="margin-left: 5px;">Go</button>
             <br/>
 
-            <input id="search-dest" type="text" data-provide="typeahead" placeholder="Destination" style="padding: 0px 6px;">
+            <input id="search-dest" type="text" data-provide="typeahead" placeholder="Destination" style="padding: 0px 6px;" autocomplete="off">
 
 
         </form>
