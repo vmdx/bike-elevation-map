@@ -2,17 +2,16 @@
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      p { margin: 0; padding: 0 }
-      .control-column { float: left }
-    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bikemap.css" rel="stylesheet" type="text/css">
 
     <!-- jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <!-- include the geometry library -->
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false"></script>
+
+    <!-- bootstrap typeahead 2.2.2 -->
+    <script type="text/javascript" src="js/bootstrap-typeahead.js"></script>
     <!-- bikemap javascript-->
     <script type="text/javascript" src="js/bikemap.js"></script>
 
@@ -20,38 +19,97 @@
 
   <body onload="BikeMap.drawMap('data/sf-min.json', 37.770443,-122.448172); BikeMap.Navigation.renderDropdown();">
 
-    <div id="wrapper" style="min-height: 100%; height: 100%; margin-top: -100px;">
-        <div id="map_canvas" style="width:100%; height:100%;">
+
+    <div id="control-bar">
+
+        <div id="title-credits" class="control-column">
+            <p class="control-header">the bike map</p>
+
+            <p id="city-tag" class="control-header">
+                San Francisco, CA
+                <span id="expand-nav" class="arrow-down"></span>
+            </p>
+            <select id="nav-dropdown" class="input-medium" style="font-weight: bold; display: none;"></select>
+        </div>
+
+
+        <div id="best-path-search" class="control-column">
+        <p class="control-header">Flattest Path Search</p>
+
+        <form>
+            <input id="search-start" type="text" data-provide="typeahead" placeholder="Start" style="padding: 0px 6px; margin-bottom: 5px;">
+            <button onclick="BikeMap.Search.AStarSearchWrapper();" style="margin-left: 5px;">Go</button>
+            <br/>
+
+            <input id="search-dest" type="text" data-provide="typeahead" placeholder="Destination" style="padding: 0px 6px;">
+
+
+        </form>
+
+        </div>
+
+        <div id="path-controls" class="control-column">
+            <p class="control-header">Path Controls</p>
+            <label class="radio" style="display: inline-block; margin-right: 30px; margin-bottom: 0px;">
+            <input type="radio" name="path-control-radio" value="clear">
+            Hide all paths
+            </label>
+            <label class="radio" style="display: inline-block; margin-bottom: 0px;">
+            <input type="radio" name="path-control-radio" value="option2" disabled>
+            Show major bike routes only (soon!)
+            </label>
+            <label class="radio">
+            <input type="radio" name="path-control-radio" value="all" checked>
+            Show all paths
+            </label>
+        </div>
+
+        <div id="legend" style="float: right;">
+            <p class="control-header">Legend</p>
+
+            <div class="legend-column" style="float:left;">
+                <div class="media">
+                    <div class="media-object pull-left" style="background: -webkit-linear-gradient(left, #00ff00, #ffff00); width: 40px; height: 20px;"></div>
+                    <div class="media-body">
+                    0-5% grade
+                    </div>
+                </div>
+
+                <div class="media">
+                    <div class="media-object pull-left" style="background: -webkit-linear-gradient(left, #ffff00, #ffab00); width: 40px; height: 20px;"></div>
+                    <div class="media-body">
+                    5-10% grade
+                    </div>
+                </div>
+
+            </div>
+            <div class="legend-column" style="float:left;">
+
+                <div class="media">
+                    <div class="media-object pull-left" style="background: -webkit-linear-gradient(left, #ffab00, #ff0000); width: 40px; height: 20px;"></div>
+                    <div class="media-body">
+                    10-15+% grade
+                    </div>
+                </div>
+
+                <div class="media">
+                    <div class="media-object pull-left" style="background-color:white; width: 40px; height: 20px;">&nbsp;&nbsp;> > ></div>
+                    <div class="media-body">
+                    Arrows point downhill
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
         </div>
     </div>
-    <div id="control_bar" style="height: 100px; position: relative; background-color: #FFEED3;">
 
-        <div id="best_path_search" class="control-column">
-        <button>best path search</button>
-
-        </div>
-
-        <div id="toggle_major_only" class="control-column">
-        <button>only major bike paths vs all paths</button>
-
-        </div>
-
-
-        <div id="navigation" class="control-column">
-            <select id="nav-dropdown">
-            </select>
-        </div>
-
-        <div id="title_credits" style="float: right; width: 200px; height: 100%;">
-            <p style="font-family: Helvetica Neue, serif; font-weight: bold; text-align: right;" id="city-tag">San Francisco, CA</p>
-            <p style="font-family: Helvetica Neue, sans-serif; font-weight: medium; text-align: right;">the bike map</p>
-        </div>
-
-
-        <div id="legend" style="float: right; width: 150px; height: 100%;">
-            <button>legend</button>
-        </div>
-    </div>
+    <!-- Height must be explicitly set in javascript! -->
+    <div id="map_canvas" style="width:100%;"></div>
 
   </body>
 

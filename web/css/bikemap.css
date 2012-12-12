@@ -1,0 +1,63 @@
+/* resets */
+p { 
+    margin: 0;
+    padding: 0;
+}
+
+/* control bar */
+#control-bar {
+    height: 70px;
+    position: relative;
+    background-color: #FFEED3;
+    padding: 5px;
+}
+
+#control-bar * {font-size: 12px;}
+
+.control-column {
+    float: left;
+    height: 100%;
+}
+
+.control-header {
+    font-weight: bold;
+}
+
+#title-credits {
+    width: 170px;
+}
+
+#expand-nav {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#best-path-search {
+    width: 290px;
+}
+
+#path-controls {
+
+}
+
+#legend {
+    float: right;
+    width: 350px;
+}
+
+#legend .media {
+    margin-top: 0px;
+    margin-bottom: 7px;
+    margin-right: 8px;
+}
+
+
+/* inline down arrow for control bar */
+.arrow-down {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid blue;
+}
+
