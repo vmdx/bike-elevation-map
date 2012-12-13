@@ -186,14 +186,14 @@ def get_elevation(lat, lng):
     return data['results'][0]['elevation']
 
 
-def get_directions_and_length(origin, destination):
+def get_directions_and_length(origin, destination, city):
     """
     Given an origin and destination, return the
     encoded directions path, as well as the distance of the trip,
     in a dict.
     """
     directions_uri = 'http://maps.googleapis.com/maps/api/directions/json?origin=%s&destination=%s&sensor=false&mode=walking' % \
-                        (origin.replace(' ', '+'), destination.replace(' ', '+'))
+                        (origin.replace(' ', '+') + ', ' + city, destination.replace(' ', '+') + ', ' + city)
     data = make_json_request(directions_uri)
     print directions_uri
 
@@ -377,7 +377,7 @@ def sort_path_cache(cache, input_data):
     return cache
 
 @timeit
-def lookup_curved_road_directions(cache, input_data):
+def lookup_curved_road_directions(cache, input_data, city):
     p_cache = cache['paths']
     d_cache = cache['directions']
     curved_roads = get_curved_roads(input_data)
@@ -403,7 +403,7 @@ def lookup_curved_road_directions(cache, input_data):
                 if key_name in d_cache:
                     print ' [skipped directions] %s -> %s' % (last_intersection, intersection)
                 else:
-                    d_cache[key_name] = get_directions_and_length(last_intersection, intersection)
+                    d_cache[key_name] = get_directions_and_length(last_intersection, intersection, city)
                     print ' [fetched directions] %s -> %s' % (last_intersection, intersection)
 
                 # Are we done with this section?
@@ -467,7 +467,7 @@ def lookup_and_add_custom_paths(cache, input_data, city):
             if key_name in d_cache:
                 print ' [skipped custom directions] %s -> %s' % (last_intersection, intersection)
             else:
-                d_cache[key_name] = get_directions_and_length(last_intersection, intersection)
+                d_cache[key_name] = get_directions_and_length(last_intersection, intersection, city)
                 print ' [fetched custom directions] %s -> %s' % (last_intersection, intersection)
 
             last_intersection = intersection
@@ -535,7 +535,7 @@ if __name__ == "__main__":
     cache = sort_path_cache(cache, args.input_data)
 
     # Get any custom Google Directions API info we need.
-    cache = lookup_curved_road_directions(cache, args.input_data)
+    cache = lookup_curved_road_directions(cache, args.input_data, city)
 
 
     cache['buildtime'] = datetime.datetime.fromtimestamp(now).strftime('%Y-%m-%d-%H%M')
