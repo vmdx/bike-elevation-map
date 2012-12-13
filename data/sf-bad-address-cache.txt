@@ -2,7 +2,7 @@
 Lawton St and Willard St
 Jackson St and Willard N
 Eddy St and Baker St
-Terra Vista Ave and Laurel St
+Rivera St and Willard St
 Edward St and Spruce St
 Hugo St and Sunset Blvd
 McAllister St and Willard N
@@ -110,10 +110,12 @@ Moraga St and 4th Ave
 Hugo St and 34th Ave
 Hugo St and 33rd Ave
 Geary Blvd and Central Ave
+Pacific Ave and Palm Ave
 Mayfair Dr and Presidio Ave
 Quintara St and 6th Ave
 Lincoln Way and Willard St
 Lake St and 31st Ave
+North Point St and Drumm St
 Turk St and Cole St
 Lombard St and Battery St
 North Point St and Steiner St
@@ -172,7 +174,7 @@ Broderick St and The Embarcadero
 Jackson St and Beaumont Ave
 27th St and Mission St
 Geary Blvd and Octavia Blvd
-Euclid Ave and Locust St
+Eddy St and Central Ave
 Turk Blvd and Webster St
 Pacheco St and 2nd Ave
 Gough St and Columbus Ave
@@ -223,7 +225,6 @@ Irving St and Willard St
 Ellis St and Masonic Ave
 Taraval St and 5th Ave
 Judah St and 4th Ave
-Sansome St and Columbus Ave
 Lawton St and 19th Ave
 Greenwich St and Front St
 Chestnut St and Octavia Blvd
@@ -242,7 +243,7 @@ Clement St and Willard St
 O'Farrell St and Clayton St
 Edward St and St Joseph's Ave
 Broadway St and Hyde St
-Anza Vista Ave and Walnut St
+Frederick St and Funston Ave
 Mayfair Dr and Jordan Ave
 Montgomery St and The Embarcadero
 Clement St and 46th Ave
@@ -252,7 +253,7 @@ Taraval St and 2nd Ave
 Anza Vista Ave and Stanyan St
 Hugo St and 22nd Ave
 Post St and Columbus Ave
-Rivera St and Willard St
+Terra Vista Ave and Laurel St
 Ulloa St and 9th Ave
 Lake St and 41st Ave
 Bush St and Columbus Ave
@@ -287,7 +288,7 @@ Lake St and 38th Ave
 Lincoln Way and Park Presidio Blvd
 Eddy St and Parker Ave
 Clay St and Parker Ave
-Eddy St and Central Ave
+Euclid Ave and Locust St
 Washington St and Stanyan St
 Jackson St and Parker Ave
 Noriega St and Park Presidio Blvd
@@ -560,7 +561,7 @@ Geary Blvd and Wood St
 Noriega St and 7th Ave
 Mayfair Dr and Maple St
 Turk Blvd and Clayton St
-North Point St and Drumm St
+Sansome St and Columbus Ave
 Hugo St and 14th Ave
 Oak St and Parker Ave
 Frederick St and 28th Ave
@@ -628,7 +629,6 @@ Waller St and Franklin St
 Anza St and Presidio Ave
 McAllister St and Palm Ave
 Kirkham St and Arguello Blvd
-Frederick St and Funston Ave
 Geary Blvd and Octavia St
 Geary Blvd and Park Presidio Blvd
 Anza St and Sunset Blvd
@@ -657,7 +657,7 @@ Mayfair Dr and Stanyan St
 Kirkham St and 19th Ave
 Geneva Ave and Dolores St
 Ney St and Dolores St
-Pacific Ave and Palm Ave
+Anza Vista Ave and Walnut St
 Pacific Ave and Stanyan St
 Anza Vista Ave and Jordan Ave
 Clay St and Octavia Blvd

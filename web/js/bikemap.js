@@ -130,9 +130,14 @@ BikeMap.drawPolylinesForIntersections = function(intersections, dest_array) {
         // Set the path of the line to draw - either from Google Directions API,
         // or as a straight line. Also get the distance between these two points.
         var link_name = current_intersection + ' | ' + next_intersection;
+        var flip_link = next_intersection + ' | ' + current_intersection;
         if (BikeMap.CITY_DATA['directions'][link_name] != undefined) {
             var lineCoordinates = google.maps.geometry.encoding.decodePath(BikeMap.CITY_DATA['directions'][link_name]['path']);
             var run_distance = BikeMap.CITY_DATA['directions'][link_name]['length'];
+        }
+        else if (BikeMap.CITY_DATA['directions'][flip_link] != undefined) {
+            var lineCoordinates = google.maps.geometry.encoding.decodePath(BikeMap.CITY_DATA['directions'][flip_link]['path']);
+            var run_distance = BikeMap.CITY_DATA['directions'][flip_link]['length'];
         }
         else {
             var lineCoordinates = [
@@ -140,7 +145,6 @@ BikeMap.drawPolylinesForIntersections = function(intersections, dest_array) {
                 new google.maps.LatLng(next_coords['lat'], next_coords['lng']),
             ];
             var run_distance = google.maps.geometry.spherical.computeDistanceBetween(lineCoordinates[0], lineCoordinates[1]);
-
         }
 
         // Check if the path is uphill or downhill, and define an arrow symbol accordingly
@@ -329,6 +333,7 @@ BikeMap.Search.AStarSearchWrapper = function() {
     var goal = $('#search-dest').val();
     // TODO: Do some validation, here.
     var path = BikeMap.Search.AStarSearch(start, goal);
+    console.log(path);
     BikeMap.drawPolylinesForIntersections(path, BikeMap.SEARCH_PATH_LINES);
 
 }
@@ -396,9 +401,15 @@ BikeMap.Search.GetNeighbors = function(intersection) {
         return neighbors;
     }
 
+    // Add all the custom paths to the check.
+    paths = paths.concat(BikeMap.CITY_DATA['custom_path_names']);
+
     for (var i=0; i < paths.length; i++) {
         // Whew, what a mess. TODO: needs refactor
         var path = paths[i];
+        if (BikeMap.CITY_DATA['paths'][path] == undefined) {
+            continue;
+        }
         var intersection_index = BikeMap.CITY_DATA['paths'][path].indexOf(intersection);
         if (intersection_index == -1) {
             continue;

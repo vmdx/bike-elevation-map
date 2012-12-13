@@ -1,5 +1,9 @@
 {
   "directions": {
+    "Fell St and Baker St | San Francisco Bicycle Route 30 and Masonic Ave": {
+      "path": "gtpeFtfijVTRDLFv@DPTd@VpBVbBAp@Gf@@bAN|Cb@zH",
+      "length": 455
+    },
     "Lawton St and 15th Ave | Lawton St and Funston Ave": {
       "path": "_ymeFrhojVT}@Vk@LUx@}@RYDMJm@?Y?i@",
       "length": 182
@@ -12,17 +16,13 @@
       "path": "_|leFxiojVc@OUAiBC}AbAI@qAx@YH",
       "length": 226
     },
-    "San Francisco Bicycle Route 30 and Masonic Ave | San Francisco Bicycle Route 30 and Stanyan St": {
-      "path": "kopeFtejjVRx@Xn@BZAl@Gv@Bj@Jt@JtCHx@J`@`@x@PbAAz@In@C`ABnAHhAHj@B\\@nAFdABp@DRVZNVBL?RDNPXFPFH@\\Fj@Fh@OBDJHX",
-      "length": 771
-    },
     "Moraga St and 15th Ave | Lawton St and 15th Ave": {
       "path": "wgmeFlmojVm@Aq@k@kAs@}@[OEMDI[OWWUSIi@KoDbA",
       "length": 343
     },
-    "Baker St and Fell St | San Francisco Bicycle Route 30 and Masonic Ave": {
-      "path": "gtpeFvfijVTRDJFv@DPNTDPVnBVbBAp@Gf@@bAN|Cb@zH",
-      "length": 454
+    "San Francisco Bicycle Route 30 and Masonic Ave | Kezar Dr and Stanyan St": {
+      "path": "kopeFtejjVRx@Xn@BZAl@Gv@Bj@Jt@JtCHx@J`@`@x@PbAAz@In@C`ABnAHhAHj@B\\@nAFdABp@DRVZNVBL?RDNPXFPFH@\\Fj@Fh@OBDJHX",
+      "length": 771
     }
   },
   "paths": {
@@ -208,9 +208,9 @@
       "Lake St and 9th Ave"
     ],
     "The Panhandle / SF Bike Route 30": [
-      "Baker St and Fell St",
+      "Fell St and Baker St",
       "San Francisco Bicycle Route 30 and Masonic Ave",
-      "San Francisco Bicycle Route 30 and Stanyan St"
+      "Kezar Dr and Stanyan St"
     ],
     "Central Ave": [
       "Waller St and Central Ave",
@@ -1609,9 +1609,27 @@
       "Clement St and Funston Ave",
       "Lake St and Funston Ave"
     ],
-    "17th St": [
-      "17th St and Dolores St",
-      "17th St and Mission St"
+    "Beach St": [
+      "Beach St and Baker St",
+      "Beach St and Broderick St",
+      "Beach St and Divisadero St",
+      "Beach St and Scott St",
+      "Beach St and Pierce St",
+      "Beach St and Fillmore St",
+      "Beach St and Webster St",
+      "Beach St and Buchanan St",
+      "Beach St and Polk St",
+      "Beach St and Larkin St",
+      "Beach St and Hyde St",
+      "Beach St and Columbus Ave",
+      "Beach St and Leavenworth St",
+      "Beach St and Jones St",
+      "Beach St and Taylor St",
+      "Beach St and Mason St",
+      "Beach St and Powell St",
+      "Beach St and Stockton St",
+      "Beach St and The Embarcadero",
+      "Beach St and Grant Ave"
     ],
     "Front St": [
       "Pine St and Front St",
@@ -1758,27 +1776,9 @@
       "Green St and The Embarcadero",
       "Broadway St and The Embarcadero"
     ],
-    "Beach St": [
-      "Beach St and Baker St",
-      "Beach St and Broderick St",
-      "Beach St and Divisadero St",
-      "Beach St and Scott St",
-      "Beach St and Pierce St",
-      "Beach St and Fillmore St",
-      "Beach St and Webster St",
-      "Beach St and Buchanan St",
-      "Beach St and Polk St",
-      "Beach St and Larkin St",
-      "Beach St and Hyde St",
-      "Beach St and Columbus Ave",
-      "Beach St and Leavenworth St",
-      "Beach St and Jones St",
-      "Beach St and Taylor St",
-      "Beach St and Mason St",
-      "Beach St and Powell St",
-      "Beach St and Stockton St",
-      "Beach St and The Embarcadero",
-      "Beach St and Grant Ave"
+    "17th St": [
+      "17th St and Dolores St",
+      "17th St and Mission St"
     ],
     "31st Ave": [
       "Ulloa St and 31st Ave",
@@ -2040,6 +2040,7 @@
       "Haight St and Masonic Ave",
       "Page St and Masonic Ave",
       "Oak St and Masonic Ave",
+      "San Francisco Bicycle Route 30 and Masonic Ave",
       "Fell St and Masonic Ave",
       "Hayes St and Masonic Ave",
       "Grove St and Masonic Ave",
@@ -3009,6 +3010,7 @@
       "Haight St and Stanyan St",
       "Page St and Stanyan St",
       "Oak St and Stanyan St",
+      "Kezar Dr and Stanyan St",
       "Fell St and Stanyan St",
       "Hayes St and Stanyan St",
       "Fulton St and Stanyan St",
@@ -4316,7 +4318,7 @@
       "Clement St and Arguello Blvd"
     ]
   },
-  "buildtime": "2012-12-08-2049",
+  "buildtime": "2012-12-13-0013",
   "intersections": {
     "Lawton St and 18th Ave": {
       "lat": 37.7580167,
@@ -5626,12 +5628,6 @@
       "elevation": 67.34754943847656,
       "time": 1353178979
     },
-    "Clay St and Baker St": {
-      "lat": 37.7894581,
-      "lng": -122.4441109,
-      "elevation": 75.73797607421875,
-      "time": 1353178784
-    },
     "California St and 2nd Ave": {
       "lat": 37.7855411,
       "lng": -122.4603149,
@@ -6556,11 +6552,6 @@
       "elevation": 19.2833309173584,
       "time": 1352424742
     },
-    "San Francisco Bicycle Route 30 and Stanyan St": {
-      "lat": 37.7714822,
-      "lng": -122.4540587,
-      "elevation": 77.54386138916016
-    },
     "Balboa St and 44th Ave": {
       "lat": 37.775372,
       "lng": -122.504816,
@@ -6585,11 +6576,11 @@
       "elevation": 101.7957458496094,
       "time": 1353177801
     },
-    "Green St and Grant Ave": {
-      "lat": 37.7997174,
-      "lng": -122.4074187,
-      "elevation": 31.45706748962402,
-      "time": 1353178911
+    "Balboa St and 35th Ave": {
+      "lat": 37.7758074,
+      "lng": -122.4951786,
+      "elevation": 62.35151290893555,
+      "time": 1352424754
     },
     "Union St and Jones St": {
       "lat": 37.7996317,
@@ -6621,11 +6612,11 @@
       "elevation": 76.05532836914062,
       "time": 1353574979
     },
-    "Lake St and 15th Ave": {
-      "lat": 37.7862414,
-      "lng": -122.4743964,
-      "elevation": 41.63795852661133,
-      "time": 1352424749
+    "Green St and Grant Ave": {
+      "lat": 37.7997174,
+      "lng": -122.4074187,
+      "elevation": 31.45706748962402,
+      "time": 1353178911
     },
     "Waller St and Webster St": {
       "lat": 37.7713965,
@@ -7947,11 +7938,11 @@
       "elevation": 52.23318099975586,
       "time": 1352424526
     },
-    "Golden Gate Ave and Central Ave": {
-      "lat": 37.777891,
-      "lng": -122.4451544,
-      "elevation": 80.86479949951172,
-      "time": 1352424526
+    "Clay St and Baker St": {
+      "lat": 37.7894581,
+      "lng": -122.4441109,
+      "elevation": 75.73797607421875,
+      "time": 1353178784
     },
     "Ortega St and 17th Ave": {
       "lat": 37.752466,
@@ -9039,6 +9030,11 @@
       "elevation": 46.99310302734375,
       "time": 1352424694
     },
+    "Kezar Dr and Stanyan St": {
+      "lat": 37.7714822,
+      "lng": -122.4540587,
+      "elevation": 77.54386138916016
+    },
     "Silver Ave and Mission St": {
       "lat": 37.7287511,
       "lng": -122.4312801,
@@ -9891,11 +9887,11 @@
       "elevation": 38.50669479370117,
       "time": 1352424834
     },
-    "Santiago St and 41st Ave": {
-      "lat": 37.743879,
-      "lng": -122.499393,
-      "elevation": 38.11850738525391,
-      "time": 1352424431
+    "McAllister St and Pierce St": {
+      "lat": 37.7782204,
+      "lng": -122.4350524,
+      "elevation": 54.65487670898438,
+      "time": 1352424545
     },
     "Pacheco St and 33rd Ave": {
       "lat": 37.749848,
@@ -10045,11 +10041,6 @@
       "lng": -122.4506014,
       "elevation": 76.27782440185547,
       "time": 1353177811
-    },
-    "Baker St and Fell St": {
-      "lat": 37.7736412,
-      "lng": -122.4409112,
-      "elevation": 64.4334945678711
     },
     "Washington St and Montgomery St": {
       "lat": 37.7955514,
@@ -10609,6 +10600,12 @@
       "elevation": 77.42447662353516,
       "time": 1353178934
     },
+    "Lake St and 15th Ave": {
+      "lat": 37.7862414,
+      "lng": -122.4743964,
+      "elevation": 41.63795852661133,
+      "time": 1352424749
+    },
     "Holly Park Cir and Bocana St": {
       "lat": 37.7381789,
       "lng": -122.4193308,
@@ -10825,6 +10822,12 @@
       "elevation": 64.1567153930664,
       "time": 1352424537
     },
+    "Oak St and Clayton St": {
+      "lat": 37.7716789,
+      "lng": -122.448962,
+      "elevation": 75.3508071899414,
+      "time": 1353177826
+    },
     "Fulton St and 31st Ave": {
       "lat": 37.7722762,
       "lng": -122.4906261,
@@ -10855,11 +10858,11 @@
       "elevation": 18.01292610168457,
       "time": 1352424832
     },
-    "McAllister St and Pierce St": {
-      "lat": 37.7782204,
-      "lng": -122.4350524,
-      "elevation": 54.65487670898438,
-      "time": 1352424545
+    "Santiago St and 41st Ave": {
+      "lat": 37.743879,
+      "lng": -122.499393,
+      "elevation": 38.11850738525391,
+      "time": 1352424431
     },
     "Sacramento St and Walnut St": {
       "lat": 37.7879774,
@@ -11970,12 +11973,6 @@
       "lng": -122.4347949,
       "elevation": 55.42631530761719,
       "time": 1354068807
-    },
-    "Balboa St and 35th Ave": {
-      "lat": 37.7758074,
-      "lng": -122.4951786,
-      "elevation": 62.35151290893555,
-      "time": 1352424754
     },
     "Bay St and Webster St": {
       "lat": 37.8028638,
@@ -14911,11 +14908,11 @@
       "elevation": 61.26982879638672,
       "time": 1352423457
     },
-    "Oak St and Clayton St": {
-      "lat": 37.7716789,
-      "lng": -122.448962,
-      "elevation": 75.3508071899414,
-      "time": 1353177826
+    "Golden Gate Ave and Central Ave": {
+      "lat": 37.777891,
+      "lng": -122.4451544,
+      "elevation": 80.86479949951172,
+      "time": 1352424526
     },
     "Geary Blvd and 34th Ave": {
       "lat": 37.7797013,
@@ -15697,5 +15694,8 @@
       "elevation": 98.19918060302734,
       "time": 1352424835
     }
-  }
+  },
+  "custom_path_names": [
+    "The Panhandle / SF Bike Route 30"
+  ]
 }

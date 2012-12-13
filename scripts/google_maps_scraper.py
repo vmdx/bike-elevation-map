@@ -321,13 +321,24 @@ def sort_path_cache(cache, input_data):
     """
     i_cache = cache['intersections']
     p_cache = cache['paths']
+    cp_cache = cache['custom_path_names']
 
     for path in p_cache:
+        # do NOT sort custom paths
+        if path in cp_cache:
+            continue
 
         #print path,
 
         # kill all the breaks in the cache - we will recompute these every time.
         p_cache[path] = filter(lambda k: k != 'BREAK', p_cache[path])
+
+        # just make sure everything is unique...
+        try:
+            assert len(p_cache[path]) == len(set(p_cache[path]))
+        except AssertionError:
+            print p_cache[path]
+            p_cache[path] = list(set(p_cache[path]))
 
         # compute the min and max lats
         min_lat = i_cache[min(p_cache[path], key=lambda k: i_cache[k]['lat'])]['lat']
@@ -409,24 +420,45 @@ def lookup_and_add_custom_paths(cache, input_data, city):
     i_cache = cache['intersections']
     p_cache = cache['paths']
     d_cache = cache['directions']
+    cp_cache = cache['custom_path_names']
+
     custom_paths = get_custom_paths(input_data)
 
     for custom_path, intersections in custom_paths.iteritems():
+        cache['custom_path_names'].append(custom_path)
+        p_cache[custom_path] = []
+
         for intersection in intersections:
-            # look it up if its not there already
-            if intersection not in i_cache:
+            # look it up if it, or its flip, is not there already
+            parts = intersection.split(' and ')
+            flipped_intersection = parts[1] + ' and ' + parts[0]
+            if intersection not in i_cache and flipped_intersection not in i_cache:
                 latitude, longitude, elevation = get_lat_lng_and_elevation(intersection, city)
                 # TODO: error handling similar to lookup_all_intersections
                 i_cache[intersection] = {'lat': latitude,
                                         'lng': longitude,
                                         'elevation': elevation}
+
+                # if one street matches, add it to the pcache to be sorted
+                for index in (0, 1):
+                    if parts[index] in p_cache:
+                        p_cache[parts[index]].append(intersection)
+
                 print ' [fetched] %s  %s' % (intersection, str(i_cache[intersection]))
+                p_cache[custom_path].append(intersection)
             else:
                 print ' [cached custom intersection] %s' % intersection
+                # if the intersection or its flip is already cached, make sure
+                # we add the cached one to the path.
+                if intersection in i_cache:
+                    p_cache[custom_path].append(intersection)
+                elif flipped_intersection in i_cache:
+                    p_cache[custom_path].append(flipped_intersection)
 
         # get directions for all the intersections
+        # note that we are used the possibly flipped intersections in p_cache
         last_intersection = None
-        for intersection in intersections:
+        for intersection in p_cache[custom_path]:
             if last_intersection is None:
                 last_intersection = intersection
                 continue
@@ -439,8 +471,6 @@ def lookup_and_add_custom_paths(cache, input_data, city):
                 print ' [fetched custom directions] %s -> %s' % (last_intersection, intersection)
 
             last_intersection = intersection
-
-        p_cache[custom_path] = intersections
 
     return cache
 
@@ -473,13 +503,14 @@ if __name__ == "__main__":
 
     # Set the cache from an existing output file
     if args.force or not os.path.exists(args.output_file):
-        cache = {'paths': {}, 'intersections': {}, 'directions': {}}
+        cache = {'paths': {}, 'intersections': {}, 'directions': {}, 'custom_path_names': []}
     else:
         with open(args.output_file) as filecache:
             cache = json.load(filecache)
             for key in ['paths', 'intersections', 'directions']:
                 if key not in cache:
                     cache[key] = {}
+            cache['custom_path_names'] = []
 
     # Get the bad address cache, if it exists
     if args.bad_cache and os.path.exists(args.bad_cache):
@@ -497,14 +528,15 @@ if __name__ == "__main__":
     # Lookup every intersection's lat/lng/elevation, fill out the paths json
     cache, bad_address_cache, stats = lookup_all_intersections(cache, intersections, bad_address_cache, city)
 
+    # Look up custom paths. These should all be ordered, so we do not need to sort these paths!
+    cache = lookup_and_add_custom_paths(cache, args.input_data, city)
+
     # Sort the paths json. TODO: fix docs - this also adds BREAKs into the paths.
     cache = sort_path_cache(cache, args.input_data)
 
     # Get any custom Google Directions API info we need.
     cache = lookup_curved_road_directions(cache, args.input_data)
 
-    # TODO: Look up custom paths. These should all be ordered, so we do not need to sort these paths!
-    cache = lookup_and_add_custom_paths(cache, args.input_data, city)
 
     cache['buildtime'] = datetime.datetime.fromtimestamp(now).strftime('%Y-%m-%d-%H%M')
 

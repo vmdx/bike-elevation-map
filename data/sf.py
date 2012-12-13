@@ -250,7 +250,7 @@ custom_paths = {
     'The Panhandle / SF Bike Route 30': [
         'Baker St and Fell St',
         'San Francisco Bicycle Route 30 and Masonic Ave',
-        'San Francisco Bicycle Route 30 and Stanyan St',
+        'Kezar Dr and Stanyan St',
     ]
 
 
