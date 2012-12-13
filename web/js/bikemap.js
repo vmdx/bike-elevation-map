@@ -67,13 +67,31 @@ BikeMap.drawMap = function(data_file, center_lat, center_lng) {
         $('#search-start').typeahead({
             source: Object.keys(BikeMap.CITY_DATA['intersections']),
             minLength: 3,
+            // Matching - case insensitive, word by word. (i.e. 'mcall brod' will match "McAllister St and Broderick St")
+            matcher: function(item) {
+                var words = this.query.split(' ');
+                for (var i=0; i<words.length; i++) {
+                    var word = words[i].toLowerCase();
+                    if (item.toLowerCase().indexOf(word) == -1) {
+                        return false;
+                    }
+                }
+                return true;
+            },
         });
-        // Also initialize the typeahead directions boxes
         $('#search-dest').typeahead({
             source: Object.keys(BikeMap.CITY_DATA['intersections']),
             minLength: 3,
-            // TODO: improve the matcher function: http://twitter.github.com/bootstrap/javascript.html#typeahead
-            // do a case insensitive word membership sort of thing.
+            matcher: function(item) {
+                var words = this.query.split(' ');
+                for (var i=0; i<words.length; i++) {
+                    var word = words[i].toLowerCase();
+                    if (item.toLowerCase().indexOf(word) == -1) {
+                        return false;
+                    }
+                }
+                return true;
+            },
         });
 
     });
