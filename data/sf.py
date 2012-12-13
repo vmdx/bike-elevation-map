@@ -61,10 +61,13 @@ regions = [
         ],
     ],
 
-    # Marina / Pac Hgts / Fillmore / Nob Hill / North Beach
+    # Marina / Pac Hgts / Fillmore / Nob Hill / North Beach / TL
     [
         # west -> east streets
         [
+            'Oak St', 'Fell St', 'Hayes St', 'Grove St',
+            'McAllister St', 'Golden Gate Ave', 'Turk St',
+            'Eddy St', 'Ellis St', "O'Farrell St", 'Geary St',
             'Post St', 'Sutter St', 'Bush St', 'Pine St',
             'California St', 'Sacramento St', 'Clay St',
             'Washington St', 'Jackson St', 'Pacific Ave',
@@ -88,7 +91,7 @@ regions = [
         ],
         # weirdo diagonal streets
         [
-            'Columbus Ave', 'The Embarcadero',
+            'Columbus Ave', 'The Embarcadero', 'Market St'
         ]
     ],
 
@@ -146,6 +149,75 @@ regions = [
         ],
     ],
 
+    # Ashbury Heights / Duboce Triangle / Frederick Knob
+
+    [
+        # west->east streets
+        [
+            'Beulah St', 'Frederick St', 'Carl St', 'Parnassus Ave',
+            'Grattan St', 'Alma St', 'Rivoli St',
+            'Duboce Ave', 'Hermann St', 'Germania St', 'Henry St',
+            '14th St', '15th St', '16th St', '17th St'
+        ],
+
+        # north->south streets
+        [
+            '4th Ave', '3rd Ave', 'Hillway Ave', 'Willard St', 'Arguello Blvd',
+            'Stanyan St', 'Shrader St', 'Cole St', 'Belvedere St', 'Clayton St',
+            'Downey St', 'Ashbury St', 'Delmar St', 'Masonic Ave',
+            'Divisadero St', 'Castro St', 'Scott St', 'Noe St', 'Steiner St',
+            'Sanchez St', 'Fillmore St', 'Church St', 'Webster St', 'Buchanan St',
+            'Laguna St'
+        ],
+        ['Market St'],
+    ],
+
+    # SOMA
+    [
+        # northwest->southeast streets
+        [
+            'Spear St', 'Main St', 'Beale St', 'Fremont St',
+            '1st St', '2nd St', 'New Montgomery St', '3rd St',
+            '4th St', '5th St', '6th St', '7th St', '8th St',
+            '9th St', '10th St', '11th St', '12th St'
+        ],
+
+        # northeast->southwest streets
+        [
+            'Market St', 'Mission St', 'Howard St',
+            'Folsom St', 'Harrison St', 'Bryant St', 'Brannan St',
+            'Townsend St', 'King St'
+        ],
+
+        ['Van Ness Ave'],
+
+    ],
+
+    # The Mission
+    [
+        # west->east streets
+        [
+            'Duboce Ave', 'Division St', '14th St', 'Alameda St',
+            '15th St', '16th St', '17th St', '18th St', 'Mariposa St',
+            '19th St', '20th St', '21st St', '22nd St', '23rd St', '24th St',
+            '25th St', '26th St', 'Cesar Chavez St', '27th St', '28th St',
+            'Clipper St', 'Elizabeth St', '29th St', 'Day St', '30th St',
+        ],
+
+        # north->south streets
+        [
+            'Douglass St', 'Diamond St', 'Collingwood St', 'Castro St',
+            'Noe St', 'Sanchez St', 'Church St', 'Dolores St', 'Guerrero St',
+            'Valencia St', 'Mission St', 'Capp St', 'Van Ness Ave', 'Shotwell St',
+            'Folsom St', 'Harrison St', 'Alabama St', 'Florida St', 'Bryant St',
+            'York St', 'Hampshire St', 'Potrero Ave', 'Utah St', 'Vermont St',
+            'Kansas St', 'Rhode Island St', 'De Haro St', 'Carolina St',
+            'Arkansas St', 'Connecticut St', 'Missouri St', 'Mississippi St',
+            'Pennsylvania Ave', 'Indiana St', 'Minnesota St', 'Tennessee St',
+            '3rd St', 'Illinois St'
+        ],
+
+    ],
 
 ]
 
@@ -240,7 +312,9 @@ breaks = {
 # SOUTH -> NORTH
 curved_roads = {
     'Lawton St': [('16th Ave', 'Funston Ave')],
-    '15th Ave': [('Noriega St', 'Lawton St')]
+    '15th Ave': [('Noriega St', 'Lawton St')],
+    'Clayton St': [('Market St', '17th St')],
+    'Market St': [('Clayton St', 'Castro St')],
 }
 
 # These will be copied straight into the paths json object.
@@ -251,7 +325,9 @@ custom_paths = {
         'Baker St and Fell St',
         'San Francisco Bicycle Route 30 and Masonic Ave',
         'Kezar Dr and Stanyan St',
-    ]
-
-
+    ],
+    'Lincoln Way to Frederick St': [
+        '2nd Ave and Lincoln Way',
+        'Arguello Blvd and Frederick St',
+    ],
 }
