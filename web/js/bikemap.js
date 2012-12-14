@@ -105,12 +105,6 @@ BikeMap.drawPolylinesForIntersections = function(intersections, dest_array) {
         // Lists that come out of JSON seem to have string numbered indices... yuck.
         i = parseInt(i);
 
-        //var current_intersection = BikeMap.CITY_DATA['paths'][street][index];
-        //var next_intersection = BikeMap.CITY_DATA['paths'][street][index+1];
-        var current_intersection = intersections[i];
-        var next_intersection = intersections[i+1];
-        var current_coords = BikeMap.CITY_DATA['intersections'][current_intersection];
-        var next_coords = BikeMap.CITY_DATA['intersections'][next_intersection];
         /*
             If any of the following are true, we skip drawing the
             path from this intersection to the next.
@@ -119,13 +113,27 @@ BikeMap.drawPolylinesForIntersections = function(intersections, dest_array) {
                 - this intersection is a "BREAK"
                 - the next intersection is a "BREAK"
         */
-        if (current_coords == undefined ||
-            next_coords == undefined ||
-            current_intersection == 'BREAK' ||
-            next_intersection == 'BREAK')
+        var current_intersection = intersections[i];
+        var next_intersection = intersections[i+1];
+        if (current_intersection == '--BREAK' ||
+            next_intersection == '--BREAK')
         {
             continue;
         }
+        var current_coords = BikeMap.CITY_DATA['intersections'][current_intersection];
+        var next_coords = BikeMap.CITY_DATA['intersections'][next_intersection];
+        if (current_coords == undefined ||
+            next_coords == undefined)
+        {
+            continue;
+        }
+
+        // Set the path type based on route directives.
+        var link_index = current_intersection + ' | ' + next_intersection;
+        var flip_link = next_intersection + ' | ' + current_intersection;
+        // If both are undefined, we assume standard.
+        var path_type = BikeMap.CITY_DATA['route_directives'][link_index] || BikeMap.CITY_DATA['route_directives'][flip_link] || 'standard';
+
 
         // Set the path of the line to draw - either from Google Directions API,
         // or as a straight line. Also get the distance between these two points.
@@ -200,13 +208,24 @@ BikeMap.drawPolylinesForIntersections = function(intersections, dest_array) {
         }
 
 
+        var opacity = 0.1;
+        var weight = 3;
+        if (path_type == 'path') {
+            opacity = 0.6;
+            weight = 10;
+        }
+        else if (path_type == 'route') {
+            opacity = 0.3;
+            weight = 8;
+        }
+
         // Draw two lines - the colored line, and the downhill/uphill arrow line
         dest_array.push(
             new google.maps.Polyline({
                 path: lineCoordinates,
                 strokeColor: color,
-                strokeOpacity: 0.5,
-                strokeWeight: 8,
+                strokeOpacity: opacity,
+                strokeWeight: weight,
                 map: BikeMap.MAP_OBJECT
             })
         );
@@ -410,23 +429,17 @@ BikeMap.Search.GetNeighbors = function(intersection) {
         if (BikeMap.CITY_DATA['paths'][path] == undefined) {
             continue;
         }
-        var intersection_index = BikeMap.CITY_DATA['paths'][path].indexOf(intersection);
+
+        var intersection_index = intersections_in_path.indexOf(intersection);
         if (intersection_index == -1) {
             continue;
         }
-        var next_intersection = BikeMap.CITY_DATA['paths'][path][intersection_index + 1];
-        var prev_intersection = BikeMap.CITY_DATA['paths'][path][intersection_index - 1];
-        // can't travel across breaks (later: major delineation?)
-        if (next_intersection == 'BREAK') {
-            //next_intersection = BikeMap.CITY_DATA['paths'][path][intersection_index + 2];
-        }
-        if (prev_intersection == 'BREAK') {
-           // prev_intersection = BikeMap.CITY_DATA['paths'][path][intersection_index - 2];
-        }
-        if (next_intersection != undefined && next_intersection != 'BREAK' && neighbors.indexOf(next_intersection) == -1) {
+        var next_intersection = intersections_in_path[intersection_index + 1];
+        var prev_intersection = intersections_in_path[intersection_index - 1];
+        if (next_intersection != undefined && next_intersection != '--BREAK' && neighbors.indexOf(next_intersection) == -1) {
             neighbors.push(next_intersection);
         }
-        if (prev_intersection != undefined && prev_intersection != 'BREAK' && neighbors.indexOf(prev_intersection) == -1) {
+        if (prev_intersection != undefined && prev_intersection != '--BREAK' && neighbors.indexOf(prev_intersection) == -1) {
             neighbors.push(prev_intersection);
         }
     }

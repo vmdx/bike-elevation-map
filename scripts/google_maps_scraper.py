@@ -89,6 +89,13 @@ def get_custom_paths(source_file):
     data_module = imp.load_source('local_data', source_file)
     return data_module.custom_paths
 
+def get_route_directives(source_file):
+    """
+    Given a source file, get the dict of route directives.
+    """
+    data_module = imp.load_source('local_data', source_file)
+    return data_module.route_directives
+
 def get_city(source_file):
     """
     Given a source file, get the city it refers to.
@@ -330,8 +337,9 @@ def sort_path_cache(cache, input_data):
 
         #print path,
 
-        # kill all the breaks in the cache - we will recompute these every time.
-        p_cache[path] = filter(lambda k: k != 'BREAK', p_cache[path])
+        # kill all the control data in the cache - we will recompute these every time.
+        # i.e. --BREAK, --ROUTE-BEGIN-MAJOR, --ROUTE-END-MAJOR, etc.
+        p_cache[path] = filter(lambda k: not k.startswith('--'), p_cache[path])
 
         # just make sure everything is unique...
         try:
@@ -368,7 +376,7 @@ def sort_path_cache(cache, input_data):
             path_with_breaks.append(intersection)
             parts = intersection.split(' and ')
             if parts[0] in breaks or parts[1] in breaks:
-                path_with_breaks.append('BREAK')
+                path_with_breaks.append('--BREAK')
 
         #print path_with_breaks
 
@@ -474,6 +482,56 @@ def lookup_and_add_custom_paths(cache, input_data, city):
 
     return cache
 
+@timeit
+def define_route_directives(cache, input_data):
+    p_cache = cache['paths']
+    # start from scratch every time.
+    rd_cache = {}
+
+    route_directives = get_route_directives(input_data)
+
+    in_section = False
+    last_intersection = None
+    for path, sections in route_directives.iteritems():
+        for intersection in p_cache[path]:
+            if len(sections) == 0:
+                break
+
+            secondary_street = sections[0][0] if not in_section else sections[0][1]
+            int_name1 = ' and '.join([path, secondary_street])
+            int_name2 = ' and '.join([secondary_street, path])
+
+            # Start the section if needed. We will add route directive on the NEXT intersection.
+            if not in_section and (int_name1 == intersection or int_name2 == intersection):
+                in_section = True
+
+            # Add the route directive
+            elif in_section:
+                key_name = '%s | %s' % (last_intersection, intersection)
+                rd_cache[key_name] = sections[0][2]
+
+                # Are we done with this section?
+                if int_name1 == intersection or int_name2 == intersection:
+                    in_section = False
+                    sections.pop(0)
+
+                    # Start the NEXT section immediately if needed.
+                    if len(sections) == 0:
+                        break
+                    secondary_street = sections[0][0] if not in_section else sections[0][1]
+                    int_name1 = ' and '.join([path, secondary_street])
+                    int_name2 = ' and '.join([secondary_street, path])
+
+                    if int_name1 == intersection or int_name2 == intersection:
+                        in_section = True
+
+
+            last_intersection = intersection
+
+    # BREAKS OVERRIDE ROUTE DIRECTIVES
+    cache['route_directives'] = rd_cache
+    return cache
+
 #################
 # main script executable
 #################
@@ -536,6 +594,9 @@ if __name__ == "__main__":
 
     # Get any custom Google Directions API info we need.
     cache = lookup_curved_road_directions(cache, args.input_data, city)
+
+    # Get the route directive definitions (bike paths, etc)
+    cache = define_route_directives(cache, args.input_data)
 
 
     cache['buildtime'] = datetime.datetime.fromtimestamp(now).strftime('%Y-%m-%d-%H%M')
