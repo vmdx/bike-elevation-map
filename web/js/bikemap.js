@@ -14,20 +14,35 @@ BikeMap.CITY_DATA = null;
 BikeMap.ALL_PATH_LINES = [];
 BikeMap.MAJOR_PATH_LINES = [];
 BikeMap.SEARCH_PATH_LINES = [];
+BikeMap.DOWNHILL_ARROWS = [];
 
 BikeMap.MAP_STYLE = [
     {
         featureType: "all",
         stylers: [
-            { saturation: -40 }
         ]
     },
     {
         featureType: "road.arterial",
         elementType: "geometry",
         stylers: [
-            { hue: "#00ffee" },
-            { saturation: 50 }
+            { hue: "#FFFFFF" },
+            { saturation: 50 },
+            { lightness: 100 }
+        ]
+    },
+    {
+        featureType: "road.highway",
+        elementType: "all",
+        stylers: [
+            { visibility: "off" },
+        ]
+    },
+    {
+        featureType: "road.arterial",
+        elementType: "labels.text.stroke",
+        stylers: [
+            { visibility: "off" },
         ]
     },
 ];
@@ -58,7 +73,7 @@ BikeMap.drawMap = function(data_file, center_lat, center_lng) {
         // For each path/street...
         for (var street in area_data['paths']) {
 
-            BikeMap.drawPolylinesForIntersections(area_data['paths'][street], BikeMap.ALL_PATH_LINES);
+            BikeMap.drawPolylinesForIntersections(area_data['paths'][street], false);
 
         }
 
@@ -96,10 +111,20 @@ BikeMap.drawMap = function(data_file, center_lat, center_lng) {
 
     });
 
+    /* Set up map event listeners
+    */
+    google.maps.event.addListener(BikeMap.MAP_OBJECT, 'zoom_changed', function() {
+
+      var zoom_level = BikeMap.MAP_OBJECT.getZoom();
+
+      console.log(zoom_level);
+
+    });
+
 }
 
 
-BikeMap.drawPolylinesForIntersections = function(intersections, dest_array) {
+BikeMap.drawPolylinesForIntersections = function(intersections, search_bool) {
 
     for (var i in intersections) {
         // Lists that come out of JSON seem to have string numbered indices... yuck.
@@ -165,11 +190,6 @@ BikeMap.drawPolylinesForIntersections = function(intersections, dest_array) {
             arrowLocation = '0%';
         }
 
-        var lineSymbol = {
-          path: arrowPoint
-          // https://developers.google.com/maps/documentation/javascript/reference#Symbol
-        };
-
         // Calculate the slope and define the color of the line
         var elevation_diff = Math.abs(current_coords['elevation'] - next_coords['elevation']);
 
@@ -208,15 +228,58 @@ BikeMap.drawPolylinesForIntersections = function(intersections, dest_array) {
         }
 
 
-        var opacity = 0.1;
-        var weight = 3;
-        if (path_type == 'path') {
-            opacity = 0.6;
-            weight = 10;
+        var opacity = 0.3;
+        var weight = 5;
+
+        if (search_bool) {
+            dest_array = BikeMap.SEARCH_PATH_LINES;
         }
-        else if (path_type == 'route') {
-            opacity = 0.3;
-            weight = 8;
+        else {
+            if (path_type == 'route' || path_type == 'path') {
+                dest_array = BikeMap.MAJOR_PATH_LINES;
+            }
+            else {
+                dest_array = BikeMap.ALL_PATH_LINES;
+            }
+        }
+
+        // If we are a route/path, make borders
+        if (path_type == 'route' || path_type == 'path') {
+            var borderColor = 'blue';
+            if (path_type == 'route') {
+                borderColor = 'indigo';
+            }
+            var borderBottomSymbol = {
+              path: 'M 2.5,-1 2.5,1',
+              strokeOpacity: 1,
+              strokeColor: borderColor,
+              scale: 2
+            };
+            var borderTopSymbol = {
+              path: 'M -2.5,-1 -2.5,1',
+              strokeOpacity: 1,
+              strokeColor: borderColor,
+              scale: 2
+
+            };
+
+            dest_array.push(
+                new google.maps.Polyline({
+                    path: lineCoordinates,
+                    icons: [{
+                        icon: borderTopSymbol,
+                        offset: 0,
+                        repeat: '2px'
+                    }, {
+                        icon: borderBottomSymbol,
+                        offset: 0,
+                        repeat: '2px'
+                    }],
+                    strokeOpacity: 0.0,
+                    strokeWeight: weight,
+                    map: BikeMap.MAP_OBJECT
+                })
+            );
         }
 
         // Draw two lines - the colored line, and the downhill/uphill arrow line
@@ -230,19 +293,34 @@ BikeMap.drawPolylinesForIntersections = function(intersections, dest_array) {
             })
         );
 
-        dest_array.push(
-            new google.maps.Polyline({
-                path: lineCoordinates,
-                icons: [{
-                    icon: lineSymbol,
-                    offset: '0',
-                    repeat: '20px'
-                }],
-                strokeOpacity: 0.5,
-                strokeWeight: 1,
-                map: BikeMap.MAP_OBJECT
-            })
-        );
+        var lineSymbol = {
+          path: arrowPoint,
+          strokeOpacity: 1.0,
+          strokeWeight: 1,
+          strokeColor: 'black',
+          //fillColor: 'black',
+          //fillOpacity: 0.8,
+          // https://developers.google.com/maps/documentation/javascript/reference#Symbol
+        };
+
+        // Only show uphill downhill lines on direction searches, OR, later, when explicitly
+        // told to.
+        if (search_bool) {
+            dest_array.push(
+                new google.maps.Polyline({
+                    path: lineCoordinates,
+                    icons: [{
+                        icon: lineSymbol,
+                        offset: '50%',
+                        repeat: '75px'
+                    }],
+                    strokeOpacity: 0.0,
+                    strokeWeight: 1,
+                    map: BikeMap.MAP_OBJECT
+                })
+            );
+        }
+
     }
 
 }
@@ -298,7 +376,6 @@ BikeMap.Navigation.Map = [
 
 BikeMap.Navigation.renderDropdown = function() {
     var current_city = $.trim($('#city-tag').text());
-    console.log(current_city);
     var dropdown = $('#nav-dropdown');
     for (var entry in BikeMap.Navigation.Map) {
         var option = $('<option/>', {text: BikeMap.Navigation.Map[entry]['name']});
@@ -330,13 +407,18 @@ BikeMap.Navigation.renderDropdown = function() {
     });
 
     $("input[name='path-control-radio']").change(function() {
-        console.log("changed");
+        BikeMap.clearPolylines(BikeMap.ALL_PATH_LINES);
+        BikeMap.clearPolylines(BikeMap.MAJOR_PATH_LINES);
+        BikeMap.clearPolylines(BikeMap.SEARCH_PATH_LINES);
         if ($("input[name='path-control-radio']:checked").val() == 'clear') {
-            BikeMap.clearPolylines(BikeMap.ALL_PATH_LINES);
-            BikeMap.clearPolylines(BikeMap.SEARCH_PATH_LINES);
+            return;
         }
         else if ($("input[name='path-control-radio']:checked").val() == 'all') {
             BikeMap.showPolylines(BikeMap.ALL_PATH_LINES);
+            BikeMap.showPolylines(BikeMap.MAJOR_PATH_LINES);
+        }
+        else if ($("input[name='path-control-radio']:checked").val() == 'routes-only') {
+            BikeMap.showPolylines(BikeMap.MAJOR_PATH_LINES);
         }
     });
 }
@@ -352,8 +434,8 @@ BikeMap.Search.AStarSearchWrapper = function() {
     var goal = $('#search-dest').val();
     // TODO: Do some validation, here.
     var path = BikeMap.Search.AStarSearch(start, goal);
-    console.log(path);
-    BikeMap.drawPolylinesForIntersections(path, BikeMap.SEARCH_PATH_LINES);
+    //console.log(path);
+    BikeMap.drawPolylinesForIntersections(path, true);
 
 }
 
@@ -371,8 +453,6 @@ BikeMap.Search.AStarSearch = function(start, goal) {
     while (Object.keys(open_set).length > 0) {
         var current = BikeMap.Search.GetLowestFScoreNode(open_set, f_scores);
         if (current == goal) {
-            console.log(f_scores);
-            console.log(g_scores);
             return BikeMap.Search.AStarReconstructPath(came_from, goal);
         }
 
@@ -380,7 +460,7 @@ BikeMap.Search.AStarSearch = function(start, goal) {
         closed_set[current] = true;
 
         var neighbors = BikeMap.Search.GetNeighbors(current);
-        console.log(neighbors);
+        //console.log(neighbors);
         for (var i=0; i < neighbors.length; i++) {
             var neighbor = neighbors[i];
             if (neighbor in closed_set) {
@@ -416,7 +496,7 @@ BikeMap.Search.GetNeighbors = function(intersection) {
     var paths = intersection.split(' and ');
     var neighbors = [];
     if (paths.length != 2) {
-        console.log('weird intersection did not split: ' + intersection);
+        console.warn('weird intersection did not split: ' + intersection);
         return neighbors;
     }
 
@@ -430,12 +510,12 @@ BikeMap.Search.GetNeighbors = function(intersection) {
             continue;
         }
 
-        var intersection_index = intersections_in_path.indexOf(intersection);
+        var intersection_index = BikeMap.CITY_DATA['paths'][path].indexOf(intersection);
         if (intersection_index == -1) {
             continue;
         }
-        var next_intersection = intersections_in_path[intersection_index + 1];
-        var prev_intersection = intersections_in_path[intersection_index - 1];
+        var next_intersection = BikeMap.CITY_DATA['paths'][path][intersection_index + 1];
+        var prev_intersection = BikeMap.CITY_DATA['paths'][path][intersection_index - 1];
         if (next_intersection != undefined && next_intersection != '--BREAK' && neighbors.indexOf(next_intersection) == -1) {
             neighbors.push(next_intersection);
         }
@@ -492,8 +572,6 @@ BikeMap.Search.CostFunction = function(start, dest) {
 }
 
 BikeMap.Search.AStarHeuristic = function(start, goal) {
-    console.log(start);
-    console.log(goal);
     var start_coords = BikeMap.CITY_DATA['intersections'][start];
     var goal_coords = BikeMap.CITY_DATA['intersections'][goal];
 
