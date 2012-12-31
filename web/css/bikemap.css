@@ -10,6 +10,7 @@ p {
     position: relative;
     background-color: #FFEED3;
     padding: 5px;
+    border-bottom: 1px solid black;
 }
 
 #control-bar * {font-size: 12px;}
