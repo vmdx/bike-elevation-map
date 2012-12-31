@@ -602,11 +602,11 @@ if __name__ == "__main__":
     cache['buildtime'] = datetime.datetime.fromtimestamp(now).strftime('%Y-%m-%d-%H%M')
 
     with open(args.output_file, 'w') as result_file:
-        json.dump(cache, result_file, indent=2, separators=(',', ': '))
+        json.dump(cache, result_file, indent=2, separators=(',', ': '), sort_keys=True)
 
     # Minified
     with open('-min.'.join(args.output_file.split('.', 1)), 'w') as min_result_file:
-        json.dump(cache, min_result_file)
+        json.dump(cache, min_result_file, sort_keys=True)
 
     with open(args.bad_cache, 'w') as bcache_fp:
         write_bad_address_cache(bcache_fp, bad_address_cache)
