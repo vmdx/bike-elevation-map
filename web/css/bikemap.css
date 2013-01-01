@@ -11,6 +11,7 @@ p {
     background-color: #FFEED3;
     padding: 5px;
     border-bottom: 1px solid black;
+    min-width: 1300px;
 }
 
 #control-bar * {font-size: 12px;}
@@ -38,12 +39,21 @@ p {
 }
 
 #path-controls {
+    position: relative;
+}
 
+#path-controls .toggle-label {
+    display: inline-block;
+}
+
+#path-controls .toggle-button {
+    vertical-align: middle;
 }
 
 #legend {
-    float: right;
-    width: 350px;
+    position: absolute;
+    right: 0;
+    width: 470px;
 }
 
 #legend .media {

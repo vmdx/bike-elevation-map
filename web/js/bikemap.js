@@ -13,6 +13,7 @@ BikeMap.CITY_DATA = null;
 
 BikeMap.ALL_PATH_LINES = [];
 BikeMap.MAJOR_PATH_LINES = [];
+BikeMap.MAJOR_PATH_LINES_ZOOMED_IN = [];
 BikeMap.SEARCH_PATH_LINES = [];
 BikeMap.DOWNHILL_ARROWS = [];
 
@@ -115,9 +116,18 @@ BikeMap.drawMap = function(data_file, center_lat, center_lng) {
     */
     google.maps.event.addListener(BikeMap.MAP_OBJECT, 'zoom_changed', function() {
 
-      var zoom_level = BikeMap.MAP_OBJECT.getZoom();
+        var zoom_level = BikeMap.MAP_OBJECT.getZoom();
 
-      console.log(zoom_level);
+        console.log(zoom_level);
+
+        if (zoom_level >= 15) {
+            BikeMap.showPolylines(BikeMap.MAJOR_PATH_LINES_ZOOMED_IN);
+            BikeMap.clearPolylines(BikeMap.MAJOR_PATH_LINES);
+        }
+        else {
+            BikeMap.clearPolylines(BikeMap.MAJOR_PATH_LINES_ZOOMED_IN);
+            BikeMap.showPolylines(BikeMap.MAJOR_PATH_LINES);
+        }
 
     });
 
@@ -231,82 +241,117 @@ BikeMap.drawPolylinesForIntersections = function(intersections, search_bool) {
         var opacity = 0.3;
         var weight = 5;
 
+        /* Symbols for use in line drawing */
+
         if (search_bool) {
-            dest_array = BikeMap.SEARCH_PATH_LINES;
-        }
-        else {
-            if (path_type == 'route' || path_type == 'path') {
-                dest_array = BikeMap.MAJOR_PATH_LINES;
-            }
-            else {
-                dest_array = BikeMap.ALL_PATH_LINES;
-            }
-        }
-
-        // If we are a route/path, make borders
-        if (path_type == 'route' || path_type == 'path') {
-            var borderColor = 'blue';
-            if (path_type == 'route') {
-                borderColor = 'indigo';
-            }
-            var borderBottomSymbol = {
-              path: 'M 2.5,-1 2.5,1',
+            var dashedLineSymbol = {
+              path: 'M 0,-1 0,1',
               strokeOpacity: 1,
-              strokeColor: borderColor,
+              strokeColor: 'black',
               scale: 2
             };
-            var borderTopSymbol = {
-              path: 'M -2.5,-1 -2.5,1',
-              strokeOpacity: 1,
-              strokeColor: borderColor,
-              scale: 2
 
-            };
-
-            dest_array.push(
+            BikeMap.SEARCH_PATH_LINES.push(
                 new google.maps.Polyline({
                     path: lineCoordinates,
                     icons: [{
-                        icon: borderTopSymbol,
+                        icon: dashedLineSymbol,
                         offset: 0,
-                        repeat: '2px'
-                    }, {
-                        icon: borderBottomSymbol,
-                        offset: 0,
-                        repeat: '2px'
+                        repeat: '10px'
                     }],
                     strokeOpacity: 0.0,
                     strokeWeight: weight,
                     map: BikeMap.MAP_OBJECT
                 })
             );
+
         }
+        else {
+            if (path_type == 'route' || path_type == 'path') {
+                // Make borders on paths
+                var borderColor = 'blue';
+                if (path_type == 'route') {
+                    borderColor = 'violet';
+                }
+                var borderBottomSymbol = {
+                  path: 'M 2.5,-1 2.5,1',
+                  strokeOpacity: 1,
+                  strokeColor: borderColor,
+                  scale: 2
+                };
+                var borderTopSymbol = {
+                  path: 'M -2.5,-1 -2.5,1',
+                  strokeOpacity: 1,
+                  strokeColor: borderColor,
+                  scale: 2
 
-        // Draw two lines - the colored line, and the downhill/uphill arrow line
-        dest_array.push(
-            new google.maps.Polyline({
-                path: lineCoordinates,
-                strokeColor: color,
-                strokeOpacity: opacity,
-                strokeWeight: weight,
-                map: BikeMap.MAP_OBJECT
-            })
-        );
+                };
+                var dashedLineSymbol = {
+                  path: 'M 0,-1 0,1',
+                  strokeOpacity: 1,
+                  strokeColor: borderColor,
+                  scale: 2
+                };
 
-        var lineSymbol = {
-          path: arrowPoint,
-          strokeOpacity: 1.0,
-          strokeWeight: 1,
-          strokeColor: 'black',
-          //fillColor: 'black',
-          //fillOpacity: 0.8,
-          // https://developers.google.com/maps/documentation/javascript/reference#Symbol
-        };
 
-        // Only show uphill downhill lines on direction searches, OR, later, when explicitly
-        // told to.
-        if (search_bool) {
-            dest_array.push(
+                BikeMap.MAJOR_PATH_LINES_ZOOMED_IN.push(
+                    new google.maps.Polyline({
+                        path: lineCoordinates,
+                        icons: [{
+                            icon: borderTopSymbol,
+                            offset: 0,
+                            repeat: '2px'
+                        }, {
+                            icon: borderBottomSymbol,
+                            offset: 0,
+                            repeat: '2px'
+                        }],
+                        strokeOpacity: 0.0,
+                        strokeWeight: weight,
+                        map: null
+                    })
+                );
+
+                BikeMap.MAJOR_PATH_LINES.push(
+                    new google.maps.Polyline({
+                        path: lineCoordinates,
+                        icons: [{
+                            icon: dashedLineSymbol,
+                            offset: 0,
+                            repeat: '2px'
+                        }],
+                        zIndex: 100,
+                        strokeOpacity: 0.0,
+                        strokeWeight: weight,
+                        map: BikeMap.MAP_OBJECT
+                    })
+                );
+
+            }
+
+
+            // Draw two lines - the colored line, and the downhill/uphill arrow line
+            BikeMap.ALL_PATH_LINES.push(
+                new google.maps.Polyline({
+                    path: lineCoordinates,
+                    strokeColor: color,
+                    strokeOpacity: opacity,
+                    strokeWeight: weight,
+                    map: BikeMap.MAP_OBJECT
+                })
+            );
+
+            var lineSymbol = {
+              path: arrowPoint,
+              strokeOpacity: 1.0,
+              strokeWeight: 1,
+              strokeColor: 'black',
+              //fillColor: 'black',
+              //fillOpacity: 0.8,
+              // https://developers.google.com/maps/documentation/javascript/reference#Symbol
+            };
+
+            BikeMap.DOWNHILL_ARROWS.push(
                 new google.maps.Polyline({
                     path: lineCoordinates,
                     icons: [{
@@ -316,11 +361,10 @@ BikeMap.drawPolylinesForIntersections = function(intersections, search_bool) {
                     }],
                     strokeOpacity: 0.0,
                     strokeWeight: 1,
-                    map: BikeMap.MAP_OBJECT
+                    map: null
                 })
             );
         }
-
     }
 
 }
@@ -405,30 +449,79 @@ BikeMap.Navigation.renderDropdown = function() {
         $('#nav-dropdown').hide();
         $('#city-tag').show();
     });
+}
 
-    $("input[name='path-control-radio']").change(function() {
-        BikeMap.clearPolylines(BikeMap.ALL_PATH_LINES);
-        BikeMap.clearPolylines(BikeMap.MAJOR_PATH_LINES);
-        BikeMap.clearPolylines(BikeMap.SEARCH_PATH_LINES);
-        if ($("input[name='path-control-radio']:checked").val() == 'clear') {
-            return;
+BikeMap.Navigation.setupToggles = function() {
+    var toggleConfig = {
+        style: {
+            // Accepted values ["primary", "danger", "info", "success", "warning"] or nothing
+            enabled: "success",
+            disabled: "danger"
+        },
+        height: 18,
+        width: 85,
+        font: {
+            'line-height': '18px',
+            'font-size': '14px',
         }
-        else if ($("input[name='path-control-radio']:checked").val() == 'all') {
+    };
+
+    var pathsFunc = function ($el, status, e) {
+        if (status == true) {
             BikeMap.showPolylines(BikeMap.ALL_PATH_LINES);
-            BikeMap.showPolylines(BikeMap.MAJOR_PATH_LINES);
         }
-        else if ($("input[name='path-control-radio']:checked").val() == 'routes-only') {
-            BikeMap.showPolylines(BikeMap.MAJOR_PATH_LINES);
+        else {
+            BikeMap.clearPolylines(BikeMap.ALL_PATH_LINES);
         }
-    });
+    };
+
+    var majorsFunc = function ($el, status, e) {
+        if (status == true) {
+            // Get map zoom level
+            var zoom_level = BikeMap.MAP_OBJECT.getZoom();
+
+            console.log(zoom_level);
+
+            if (zoom_level >= 15) {
+                BikeMap.showPolylines(BikeMap.MAJOR_PATH_LINES_ZOOMED_IN);
+                BikeMap.clearPolylines(BikeMap.MAJOR_PATH_LINES);
+            }
+            else {
+                BikeMap.clearPolylines(BikeMap.MAJOR_PATH_LINES_ZOOMED_IN);
+                BikeMap.showPolylines(BikeMap.MAJOR_PATH_LINES);
+            }
+        }
+        else {
+            BikeMap.clearPolylines(BikeMap.MAJOR_PATH_LINES);
+            BikeMap.clearPolylines(BikeMap.MAJOR_PATH_LINES_ZOOMED_IN);
+        }
+    };
+
+    var hillsFunc = function ($el, status, e) {
+        if (status == true) {
+            BikeMap.showPolylines(BikeMap.DOWNHILL_ARROWS);
+        }
+        else {
+            BikeMap.clearPolylines(BikeMap.DOWNHILL_ARROWS);
+        }
+    };
+
+    toggleConfig['onChange'] = pathsFunc;
+    $('#paths-toggle-button').toggleButtons(toggleConfig);
+    toggleConfig['onChange'] = majorsFunc;
+    $('#majors-toggle-button').toggleButtons(toggleConfig);
+    toggleConfig['onChange'] = hillsFunc;
+    $('#hills-toggle-button').toggleButtons(toggleConfig);
 }
 
 BikeMap.Search = Object();
 
 BikeMap.Search.AStarSearchWrapper = function() {
 
-    BikeMap.clearPolylines(BikeMap.ALL_PATH_LINES);
+    // Clear out any previous searches
     BikeMap.clearPolylines(BikeMap.SEARCH_PATH_LINES);
+    // Remove references.
+    BikeMap.SEARCH_PATH_LINES = [];
 
     var start = $('#search-start').val();
     var goal = $('#search-dest').val();

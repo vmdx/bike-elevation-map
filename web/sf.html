@@ -1,24 +1,27 @@
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="css/bikemap.css" rel="stylesheet" type="text/css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-toggle-buttons.css" rel="stylesheet">
+    <link href="css/bikemap.css" rel="stylesheet" type="text/css">
 
-        <!-- jquery -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-        <!-- include the geometry library -->
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false"></script>
+    <!-- jquery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <!-- include the geometry library -->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false"></script>
 
-        <!-- bootstrap typeahead 2.2.2 -->
+    <!-- bootstrap typeahead 2.2.2 -->
     <script type="text/javascript" src="js/bootstrap-typeahead.js"></script>
+    <!-- bootstrap toggle buttons from github nostalgiaz/bootstrap-toggle-buttons
+    @ 72504f49bd703da653d05b3b966fcbd108a19f47 -->
+    <script type="text/javascript" src="js/jquery.toggle.buttons.js"></script>
     <!-- bikemap javascript-->
     <script type="text/javascript" src="js/bikemap.js"></script>
 
   </head>
 
-  <body onload="BikeMap.drawMap('data/sf-min.json', 37.770443,-122.448172); BikeMap.Navigation.renderDropdown();">
-
+  <body onload="BikeMap.drawMap('data/sf-min.json', 37.770443,-122.448172); BikeMap.Navigation.renderDropdown(); BikeMap.Navigation.setupToggles();">
 
     <div id="control-bar">
 
@@ -50,18 +53,25 @@
 
         <div id="path-controls" class="control-column">
             <p class="control-header">Path Controls</p>
-            <label class="radio" style="display: inline-block; margin-right: 30px; margin-bottom: 0px;">
-            <input type="radio" name="path-control-radio" value="clear">
-            Hide all paths
-            </label>
-            <label class="radio" style="display: inline-block; margin-bottom: 0px;">
-            <input type="radio" name="path-control-radio" value="routes-only">
-            Show major bike routes only
-            </label>
-            <label class="radio">
-            <input type="radio" name="path-control-radio" value="all" checked>
-            Show all paths
-            </label>
+
+            <p class="toggle-label" style="width: 65px;">Slopes</p>
+            <div id="paths-toggle-button" class="toggle-button">
+                <input type="checkbox" checked="checked">
+            </div>
+
+
+            <p class="toggle-label" style="margin-left: 10px;">Downhill Arrows</p>
+            <div id="hills-toggle-button" class="toggle-button">
+                <input type="checkbox">
+            </div>
+
+            <br/>
+
+            <p class="toggle-label" style="width: 65px;">Bike Paths</p>
+            <div id="majors-toggle-button" class="toggle-button">
+                <input type="checkbox" checked="checked">
+            </div>
+
         </div>
 
         <div id="legend" style="float: right;">
@@ -96,6 +106,23 @@
                     <div class="media-object pull-left" style="background-color:white; width: 40px; height: 20px;">&nbsp;&nbsp;> > ></div>
                     <div class="media-body">
                     Arrows point downhill
+                    </div>
+                </div>
+            </div>
+
+            <div class="legend-column" style="float:left;">
+
+                <div class="media">
+                    <div class="media-object pull-left" style="background-color: blue; width: 40px; height: 20px;"></div>
+                    <div class="media-body" style="line-height: 10px;">
+                    Bike route <br/>w/dedicated lane
+                    </div>
+                </div>
+
+                <div class="media">
+                    <div class="media-object pull-left" style="background-color: violet; width: 40px; height: 20px;"></div>
+                    <div class="media-body" style="line-height: 10px;">
+                    Bike route <br/>shared w/ cars
                     </div>
                 </div>
 
