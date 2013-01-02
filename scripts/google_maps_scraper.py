@@ -507,9 +507,11 @@ def define_route_directives(cache, input_data):
 
     route_directives = get_route_directives(input_data)
 
-    in_section = False
-    last_intersection = None
-    for path, sections in route_directives.iteritems():
+    for route_directive in route_directives:
+        path, sections = route_directive
+        in_section = False
+        last_intersection = None
+
         for intersection in p_cache[path]:
             if len(sections) == 0:
                 break
@@ -517,7 +519,6 @@ def define_route_directives(cache, input_data):
             secondary_street = sections[0][0] if not in_section else sections[0][1]
             int_name1 = ' and '.join([path, secondary_street])
             int_name2 = ' and '.join([secondary_street, path])
-
             # Start the section if needed. We will add route directive on the NEXT intersection.
             if not in_section and (int_name1 == intersection or int_name2 == intersection):
                 in_section = True
