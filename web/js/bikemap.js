@@ -118,8 +118,6 @@ BikeMap.drawMap = function(data_file, center_lat, center_lng) {
 
         var zoom_level = BikeMap.MAP_OBJECT.getZoom();
 
-        console.log(zoom_level);
-
         if (zoom_level >= 15) {
             BikeMap.showPolylines(BikeMap.MAJOR_PATH_LINES_ZOOMED_IN);
             BikeMap.clearPolylines(BikeMap.MAJOR_PATH_LINES);
@@ -168,7 +166,6 @@ BikeMap.drawPolylinesForIntersections = function(intersections, search_bool) {
         var flip_link = next_intersection + ' | ' + current_intersection;
         // If both are undefined, we assume standard.
         var path_type = BikeMap.CITY_DATA['route_directives'][link_index] || BikeMap.CITY_DATA['route_directives'][flip_link] || 'standard';
-
 
         // Set the path of the line to draw - either from Google Directions API,
         // or as a straight line. Also get the distance between these two points.
@@ -413,7 +410,7 @@ BikeMap.makeGradientColor = function (color1, color2, percent) {
 BikeMap.Navigation = Object();
 BikeMap.Navigation.Map = [
     {'name': '* Home Page', 'link': '/'},
-    {'name': 'California'},
+    {'name': '-----'},
     {'name': 'San Francisco, CA', 'link': '/sf.html'},
     {'name': 'Berkeley, CA', 'link': '/berkeley.html'}
 ];
@@ -479,8 +476,6 @@ BikeMap.Navigation.setupToggles = function() {
         if (status == true) {
             // Get map zoom level
             var zoom_level = BikeMap.MAP_OBJECT.getZoom();
-
-            console.log(zoom_level);
 
             if (zoom_level >= 15) {
                 BikeMap.showPolylines(BikeMap.MAJOR_PATH_LINES_ZOOMED_IN);
@@ -643,12 +638,9 @@ BikeMap.Search.CostFunction = function(start, dest) {
     var start_elevation = BikeMap.CITY_DATA['intersections'][start]['elevation'];
     var dest_elevation = BikeMap.CITY_DATA['intersections'][dest]['elevation'];
 
+    var elevation_diff = dest_elevation - start_elevation;
+    var elevation_diff_zero_cost_downhill = Math.min(elevation_diff, 0);
 
-    if (dest_elevation < start_elevation) {
-        return 0;
-    }
-
-    /* TBD: Calculate grade, factor in a constant for slope that penalizes steep hills */
     var link_name = start + ' | ' + dest;
     if (BikeMap.CITY_DATA['directions'][link_name] != undefined) {
         var run_distance = BikeMap.CITY_DATA['directions'][link_name]['length'];
@@ -660,10 +652,48 @@ BikeMap.Search.CostFunction = function(start, dest) {
         var run_distance = google.maps.geometry.spherical.computeDistanceBetween(start_latlng, dest_latlng);
     }
 
-    return dest_elevation - start_elevation + run_distance;
+    /* To preserve heuristic optimism, add in scalar PENALTIES (> 1) for not using bike paths, big hills, etc. */
+    var grade_penalty = 1.0;
+    if (elevation_diff > 0) {
+        var grade = elevation_diff / run_distance * 100;
+        if (grade > 2) {
+            grade_penalty = 1.10;
+        }
+        if (grade > 6) {
+            grade_penalty = 2.0;
+        }
+        if (grade > 10) {
+            grade_penalty = 3.0;
+        }
+    }
 
+
+    // Check for bike path
+    var link_index = start + ' | ' + dest;
+    var flip_link = dest + ' | ' + start;
+    // If both are undefined, we assume standard.
+    var path_type = BikeMap.CITY_DATA['route_directives'][link_index] || BikeMap.CITY_DATA['route_directives'][flip_link] || 'standard';
+    switch(path_type) {
+        case 'path':
+            var non_bike_path_penalty = 1.0;
+            break;
+        case 'route':
+            var non_bike_path_penalty = 1.05;
+            break;
+        case 'standard':
+            var non_bike_path_penalty = 1.15;
+            break;
+    }
+
+    return non_bike_path_penalty * grade_penalty * Math.sqrt(Math.pow(run_distance, 2) + Math.pow(Math.min(0, elevation_diff_zero_cost_downhill), 2));
 }
 
+/* The heuristic is PYTHAGOREAN DISTANCE:
+    flat distance ^ 2 + min(0, elevation diff) ^ 2 = heuristic ^ 2
+
+   This MUST BE OPTIMISTIC to the cost function - never overestimating.
+   Why 0 on elevation diff? Since downhill has a 0 cost.
+   */
 BikeMap.Search.AStarHeuristic = function(start, goal) {
     var start_coords = BikeMap.CITY_DATA['intersections'][start];
     var goal_coords = BikeMap.CITY_DATA['intersections'][goal];
@@ -673,8 +703,9 @@ BikeMap.Search.AStarHeuristic = function(start, goal) {
 
     var run_distance = google.maps.geometry.spherical.computeDistanceBetween(start_latlng, goal_latlng);
 
+    var elevation_diff = goal_coords['elevation'] - start_coords['elevation'];
 
-    return goal_coords['elevation'] - start_coords['elevation'] + run_distance;
+    return Math.sqrt(Math.pow(run_distance, 2) + Math.pow(Math.min(0, elevation_diff), 2));
 }
 
 /*
