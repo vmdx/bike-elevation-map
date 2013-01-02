@@ -167,9 +167,25 @@ def get_geocode(intersection, city):
 
     parts = intersection.split(' and ')
 
-    if parts[0] not in data['results'][0]['formatted_address'] or \
-       parts[1] not in data['results'][0]['formatted_address'] or \
-       original_city not in data['results'][0]['formatted_address']:
+    short_parts = data['results'][0]['address_components']
+
+    # Verify the address came back clean
+    # XXX: this is hacky - we should really do this by word splitting
+    translations = {
+        ' St': ' Street',
+        ' Blvd': ' Boulevard',
+        ' Ave': ' Avenue',
+    }
+    def translate_address(address, t_dict):
+        for entry, trans in t_dict.iteritems():
+            address = address.replace(entry, trans)
+        return address
+
+    formatted_addr = data['results'][0]['formatted_address']
+
+    if (parts[0] not in formatted_addr and translate_address(parts[0], translations) not in formatted_addr) or \
+       (parts[1] not in formatted_addr and translate_address(parts[1], translations) not in formatted_addr) or \
+       original_city not in formatted_addr:
         logging.error('This address was not an intersection!: %s' % geocode_uri)
         raise NotIntersectionAddressException(intersection, city)
 
@@ -432,7 +448,8 @@ def lookup_and_add_custom_paths(cache, input_data, city):
 
     custom_paths = get_custom_paths(input_data)
 
-    for custom_path, intersections in custom_paths.iteritems():
+    for custom_path, entry in custom_paths.iteritems():
+        intersections = entry['path']
         cache['custom_path_names'].append(custom_path)
         p_cache[custom_path] = []
 
@@ -527,6 +544,17 @@ def define_route_directives(cache, input_data):
 
 
             last_intersection = intersection
+
+    # Get any route directives in custom paths as well
+    # Note; we need to use the p_cache, since it has been sorted and cleaned (i.e. Baker St + Fell St -> Fell St + Baker St)
+    custom_paths = get_custom_paths(input_data)
+    for custom_path, entry in custom_paths.iteritems():
+        if 'type' in entry and entry['type'] in ['route', 'path']:
+            for index, intersection in enumerate(p_cache[custom_path]):
+                if index+1 == len(p_cache[custom_path]):
+                    continue
+                key_name = '%s | %s' % (intersection, p_cache[custom_path][index+1])
+                rd_cache[key_name] = entry['type']
 
     # BREAKS OVERRIDE ROUTE DIRECTIVES
     cache['route_directives'] = rd_cache
