@@ -103,6 +103,12 @@ def get_city(source_file):
     data_module = imp.load_source('local_data', source_file)
     return data_module.city
 
+def get_tbds(source_file):
+    """
+    Given a source file, get the TBD markers we need.
+    """
+    data_module = imp.load_source('local_data', source_file)
+    return data_module.tbds
 
 ####################
 # bad address cache functions
@@ -638,6 +644,10 @@ if __name__ == "__main__":
 
     # Get the route directive definitions (bike paths, etc)
     cache = define_route_directives(cache, args.input_data)
+
+    cache['tbds'] = {}
+    for tbd, latlng in get_tbds(args.input_data).iteritems():
+        cache['tbds'][tbd] = {'lat': latlng[0], 'lng': latlng[1]}
 
 
     cache['buildtimestamp'] = int(now)

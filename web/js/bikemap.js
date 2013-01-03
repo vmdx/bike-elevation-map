@@ -116,6 +116,20 @@ BikeMap.drawMap = function(data_file, center_lat, center_lng, zoom_begin) {
         var date = new Date(area_data['buildtimestamp'] * 1000);
         $('#timestamp-val').text(date.toString());
 
+        // Draw the TBDs.
+        for (var tbd in area_data['tbds']) {
+            var image = 'tbd.png';
+            var myLatLng = new google.maps.LatLng(area_data['tbds'][tbd]['lat'], area_data['tbds'][tbd]['lng']);
+            console.log(myLatLng);
+            new google.maps.Marker({
+              position: myLatLng,
+              map: BikeMap.MAP_OBJECT,
+              icon: image,
+              title: tbd
+            });
+        }
+
+
     });
 
     /* Set up map event listeners
