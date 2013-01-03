@@ -1,6 +1,6 @@
 # The Bike Map
 
-[The Bike Map](thebikemap.com) displays hill steepness, uphill/downhill directions, and
+[The Bike Map](http://thebikemap.com) displays hill steepness, uphill/downhill directions, and
 bike routes/paths on top of a Google Map. It also runs an A\* search algorithm to suggest
 a path for bikers between points.
 
@@ -12,9 +12,9 @@ render each map is computed beforehand, by the `google_maps_scraper.py` script i
 
 This script takes 3 arguments:
 
-    1. The data file for a city. See the [San Francisco example](https://github.com/vmdx/bike-elevation-map-data/blob/master/united-states/california/san-francisco/sf.py).
-    2. A destination .json file. This can be non-existent at time of call, but must be specified.
-    3. A bad address cache to store invalid addresses in. This can be non-existent at time of call, but must be specified. See the [San Francisco example](https://github.com/vmdx/bike-elevation-map-data/blob/master/united-states/california/san-francisco/sf-bad-address-cache.txt) - but you should not attempt to create one of these yourself! The script will do it for you.
+1. The data file for a city. See the [San Francisco example](https://github.com/vmdx/bike-elevation-map-data/blob/master/united-states/california/san-francisco/sf.py).
+2. A destination .json file. This can be non-existent at time of call, but must be specified.
+3. A bad address cache to store invalid addresses in. This can be non-existent at time of call, but must be specified. See the [San Francisco example](https://github.com/vmdx/bike-elevation-map-data/blob/master/united-states/california/san-francisco/sf-bad-address-cache.txt) - but you should not attempt to create one of these yourself! The script will do it for you.
 
 I generally end up envoking the script like this:
 
