@@ -16,6 +16,25 @@ p {
 
 #control-bar * {font-size: 12px;}
 
+#disclaimer-control {
+    position: absolute;
+    bottom: 5px;
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#disclaimer {
+    position: absolute;
+    top: 78px;
+    border: 1px solid black;
+    background-color: white;
+    z-index: 100;
+    text-align: justify;
+    width: 400px;
+    display: none;
+}
+
 .control-column {
     float: left;
     height: 100%;
@@ -62,6 +81,20 @@ p {
     margin-right: 8px;
 }
 
+#timestamp {
+    position: absolute;
+    top: 78px;
+    right: 4px;
+    z-index: 100;
+    display: none;
+}
+
+.timestamp-text {
+    font-size: 10px !important;
+    text-shadow: 1px 1px 0px #fff;
+    font-style: italic;
+    text-align: right;
+}
 
 /* inline down arrow for control bar */
 .arrow-down {
