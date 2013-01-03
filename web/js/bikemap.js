@@ -50,11 +50,11 @@ BikeMap.MAP_STYLE = [
 
 $(window).resize(function() {$('#map_canvas').height($(window).height() - 80);});
 
-BikeMap.drawMap = function(data_file, center_lat, center_lng) {
+BikeMap.drawMap = function(data_file, center_lat, center_lng, zoom_begin) {
 
     var mapOptions = {
         center: new google.maps.LatLng(center_lat, center_lng),
-        zoom: 13,
+        zoom: zoom_begin,
         mapTypeControl: true,
         mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID],
@@ -109,6 +109,12 @@ BikeMap.drawMap = function(data_file, center_lat, center_lng) {
                 return true;
             },
         });
+
+
+        // Set the timestamp
+        $('#timestamp').show();
+        var date = new Date(area_data['buildtimestamp'] * 1000);
+        $('#timestamp-val').text(date.toString());
 
     });
 
@@ -256,6 +262,7 @@ BikeMap.drawPolylinesForIntersections = function(intersections, search_bool) {
                         offset: 0,
                         repeat: '10px'
                     }],
+                    zIndex: 200,
                     strokeOpacity: 0.0,
                     strokeWeight: weight,
                     map: BikeMap.MAP_OBJECT
@@ -446,6 +453,15 @@ BikeMap.Navigation.renderDropdown = function() {
         $('#nav-dropdown').hide();
         $('#city-tag').show();
     });
+
+    $('#disclaimer-control').mouseenter(function() {
+        $('#disclaimer').show();
+    });
+
+    $('#disclaimer-control').mouseleave(function() {
+        $('#disclaimer').hide();
+    });
+
 }
 
 BikeMap.Navigation.setupToggles = function() {
