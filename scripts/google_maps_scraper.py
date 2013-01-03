@@ -172,6 +172,7 @@ def get_geocode(intersection, city):
     # Verify the address came back clean
     # XXX: this is hacky - we should really do this by word splitting
     translations = {
+        ' Rd': ' Road',
         ' St': ' Street',
         ' Blvd': ' Boulevard',
         ' Ave': ' Avenue',
@@ -425,7 +426,7 @@ def lookup_curved_road_directions(cache, input_data, city):
             elif in_section:
                 key_name = '%s | %s' % (last_intersection, intersection)
                 if key_name in d_cache:
-                    print ' [skipped directions] %s -> %s' % (last_intersection, intersection)
+                    logging.info(' [skipped directions] %s -> %s' % (last_intersection, intersection))
                 else:
                     d_cache[key_name] = get_directions_and_length(last_intersection, intersection, city)
                     print ' [fetched directions] %s -> %s' % (last_intersection, intersection)
@@ -628,7 +629,8 @@ if __name__ == "__main__":
     cache = define_route_directives(cache, args.input_data)
 
 
-    cache['buildtime'] = datetime.datetime.fromtimestamp(now).strftime('%Y-%m-%d-%H%M')
+    cache['buildtimestamp'] = int(now)
+    cache['buildtimereadable'] = datetime.datetime.fromtimestamp(now).strftime('%Y-%m-%d-%H:%M')
 
     with open(args.output_file, 'w') as result_file:
         json.dump(cache, result_file, indent=2, separators=(',', ': '), sort_keys=True)
