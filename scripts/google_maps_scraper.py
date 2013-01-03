@@ -137,18 +137,18 @@ def write_bad_address_cache(fp, cache):
 ##################
 # google api calls
 ##################
-def get_lat_lng_and_elevation(intersection, city):
+def get_lat_lng_and_elevation(intersection, city, custom=False):
     """
     Given an intersection string ("Divisadero St and McAllister St"),
     and a city string ("San Francisco, CA"), return the latitude,
     longitude, and elevation as a tuple, or raise an exception.
     """
-    lat, lng = get_geocode(intersection, city)
+    lat, lng = get_geocode(intersection, city, custom=custom)
     elevation = get_elevation(lat, lng)
     return lat, lng, elevation
 
 
-def get_geocode(intersection, city):
+def get_geocode(intersection, city, custom=False):
     """
     Given an intersection string ("Divisadero St and McAllister St"),
     and a city string ("San Francisco, CA"), return the latitude
@@ -172,6 +172,8 @@ def get_geocode(intersection, city):
     # Verify the address came back clean
     # XXX: this is hacky - we should really do this by word splitting
     translations = {
+        ' Blvd': ' Boulevard',
+        ' Dr': ' Drive',
         ' Rd': ' Road',
         ' St': ' Street',
         ' Blvd': ' Boulevard',
@@ -183,6 +185,9 @@ def get_geocode(intersection, city):
         return address
 
     formatted_addr = data['results'][0]['formatted_address']
+    # XXX: super hacky! to deal with addresses like 360 John F Kennedy Dr.
+    if len(parts) < 2 and custom:
+        parts = [parts[0], '']
 
     if (parts[0] not in formatted_addr and translate_address(parts[0], translations) not in formatted_addr) or \
        (parts[1] not in formatted_addr and translate_address(parts[1], translations) not in formatted_addr) or \
@@ -282,7 +287,7 @@ def lookup_all_intersections(cache, intersections, bad_address_cache, city):
             stats['skipped'] += 1
             continue
 
-        if intersection in i_cache or flip_intersection:
+        if intersection in i_cache or flip_intersection in i_cache:
             logging.info(' [cached] %s' % intersection)
             stats['cached'] += 1
             continue
@@ -357,7 +362,7 @@ def sort_path_cache(cache, input_data):
         #print path,
 
         # kill all the control data in the cache - we will recompute these every time.
-        # i.e. --BREAK, --ROUTE-BEGIN-MAJOR, --ROUTE-END-MAJOR, etc.
+        # i.e. --BREAK, etc.
         p_cache[path] = filter(lambda k: not k.startswith('--'), p_cache[path])
 
         # just make sure everything is unique...
@@ -459,23 +464,27 @@ def lookup_and_add_custom_paths(cache, input_data, city):
         for intersection in intersections:
             # look it up if it, or its flip, is not there already
             parts = intersection.split(' and ')
-            flipped_intersection = parts[1] + ' and ' + parts[0]
+            # ONLY FOR CUSTOM PATHS - we can do without flips
+            if len(parts) < 2:
+                flipped_intersection = intersection
+            else:
+                flipped_intersection = parts[1] + ' and ' + parts[0]
             if intersection not in i_cache and flipped_intersection not in i_cache:
-                latitude, longitude, elevation = get_lat_lng_and_elevation(intersection, city)
+                latitude, longitude, elevation = get_lat_lng_and_elevation(intersection, city, custom=True)
                 # TODO: error handling similar to lookup_all_intersections
                 i_cache[intersection] = {'lat': latitude,
                                         'lng': longitude,
                                         'elevation': elevation}
 
                 # if one street matches, add it to the pcache to be sorted
-                for index in (0, 1):
-                    if parts[index] in p_cache:
-                        p_cache[parts[index]].append(intersection)
+                for part in parts:
+                    if part in p_cache:
+                        p_cache[part].append(intersection)
 
                 print ' [fetched] %s  %s' % (intersection, str(i_cache[intersection]))
                 p_cache[custom_path].append(intersection)
             else:
-                print ' [cached custom intersection] %s' % intersection
+                logging.info(' [cached custom intersection] %s' % intersection)
                 # if the intersection or its flip is already cached, make sure
                 # we add the cached one to the path.
                 if intersection in i_cache:
@@ -493,7 +502,7 @@ def lookup_and_add_custom_paths(cache, input_data, city):
 
             key_name = '%s | %s' % (last_intersection, intersection)
             if key_name in d_cache:
-                print ' [skipped custom directions] %s -> %s' % (last_intersection, intersection)
+                logging.info(' [skipped custom directions] %s -> %s' % (last_intersection, intersection))
             else:
                 d_cache[key_name] = get_directions_and_length(last_intersection, intersection, city)
                 print ' [fetched custom directions] %s -> %s' % (last_intersection, intersection)
