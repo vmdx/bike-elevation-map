@@ -275,12 +275,14 @@ def lookup_all_intersections(cache, intersections, bad_address_cache, city):
     p_cache = cache['paths']
 
     for intersection in intersections:
+        parts = intersection.split(' and ')
+        flip_intersection = parts[1] + ' and ' + parts[0]
         if intersection in bad_address_cache['not_intersection'] or intersection in bad_address_cache['ambiguous']:
             logging.info(' [skipped] %s' % intersection)
             stats['skipped'] += 1
             continue
 
-        if intersection in i_cache:
+        if intersection in i_cache or flip_intersection:
             logging.info(' [cached] %s' % intersection)
             stats['cached'] += 1
             continue
