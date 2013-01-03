@@ -36,7 +36,7 @@
     </p>
     <p class="ptext">
     It's an online bicycle map! Built on top of a familiar Google Map, it will tell you the steepness of hills in an area,
-    where the bike lanes are, or even suggest to you the best path to take to your destination.
+    where the bike lanes are, or even suggest to you a flat, bike routed path to take to your destination.
     </p>
 
     <p class="pheader">
@@ -48,14 +48,14 @@
     </p>
 
     <p class="pheader">
-    How does the best path search work?
+    How does the suggested path search work?
     </p>
     <p class="ptext">
     We use a well known computer science algorithm to find optimal routes, but the hard part is defining what exactly an
     optimal route is! <br/><br/>
 
     This requires us to create a "cost estimate" for each path. We currently take the distance between two points, accounting
-    for elevation difference, and penalize steep hills and use of regular roads instead of bike lanes.<br/><br/>
+    for elevation difference, and penalize steep uphill inclines and use of regular roads instead of bike lanes.<br/><br/>
 
     We're still tweaking the values for the penalties, but so far the algorithm has passed the litmus test - it tells me
     <a href="http://en.wikipedia.org/wiki/The_Wiggle">The Wiggle</a> is indeed the best path from the Panhandle to Market Street
@@ -91,7 +91,28 @@
     <div id="footer" style="width: 100%; height: 80px;">
         <p style="text-align: center;"><a href="index.html" style="display: inline; margin: 0 0 0 0;">(back to home)</a></p>
     </div>
-  </body>
+
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37375592-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><script type="text/javascript">
+  var uvOptions = {};
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/lzMYxCnrhrOXO06KnNUSMw.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();
+</script></body>
+
 
 </html>
 
