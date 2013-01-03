@@ -599,10 +599,6 @@ BikeMap.Search.AStarReconstructPath = function(came_from, node) {
 BikeMap.Search.GetNeighbors = function(intersection) {
     var paths = intersection.split(' and ');
     var neighbors = [];
-    if (paths.length != 2) {
-        console.warn('weird intersection did not split: ' + intersection);
-        return neighbors;
-    }
 
     // Add all the custom paths to the check.
     paths = paths.concat(BikeMap.CITY_DATA['custom_path_names']);
