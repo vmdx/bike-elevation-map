@@ -7,6 +7,6 @@
 # saved API resources for debugging
 resources/
 NOTES.md
-web/data/
+web/data/*.json
 data/*.py
 data/*.txt
