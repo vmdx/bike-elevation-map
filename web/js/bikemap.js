@@ -432,8 +432,8 @@ BikeMap.Navigation = Object();
 BikeMap.Navigation.Map = [
     {'name': '* Home Page', 'link': '/'},
     {'name': '-----'},
-    {'name': 'San Francisco, CA', 'link': '/sf.html'},
-    {'name': 'Berkeley, CA', 'link': '/berkeley.html'}
+    {'name': 'San Francisco, CA', 'link': '/san-francisco'},
+    {'name': 'Berkeley, CA', 'link': '/berkeley'}
 ];
 
 BikeMap.Navigation.renderDropdown = function() {
